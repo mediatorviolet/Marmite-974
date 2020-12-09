@@ -6,15 +6,15 @@
 ## User Stories 
 
 | Role           | Quoi?                                                         | Critères                                         |
-|----------------|---------------------------------------------------------------|--------------------------------------------------||----------------|---------------------------------------------------------------|-----------git ---------------------------------------|
+| :--------------| :-------------------------------------------------------------| :------------------------------------------------|
 
 |   CUISINIER    | Ajouter un nouvelle atelier                                   | Mettre sur la plateforme            
 
 |   CUISINIER    |    Activer ou desactivier un atelier                          | Afficher la photo et la designation    du                     produit                 
 
-|   CUISINIER    | Paramétrer les conditions de lancement de l’enchère           | Donner le prix de départ et la durée initiale     |
+|   CUISINIER    | Paramétrer les conditions de lancement de l’enchère           | Donner le prix de départ et la durée initiale    |
 
-|   CUISINIER    | Paramétrer les conditions de l’enchère                        | Coût du clic, durée ajoutée au clic, prix du clic |
+|   CUISINIER    | Paramétrer les conditions de l’enchère                        | Coût du clic, durée ajoutée au clic, prix du clic|
 
 |  PARTICULIER   | Consulter les produits en ligne                               | Voir l’évolution de des enchères                 |
 
