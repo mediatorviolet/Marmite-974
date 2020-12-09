@@ -70,55 +70,37 @@ Agrément formation : enregistrée sous le numéro 11 93 06676 93. Cet enregistr
 
 
 ## Les fonctionnalités
+## User Stories 
 
-**En tant que je veux afin de critères d’acceptations**
-cuisinier désactiver/activer Rendre visible ou
-invisible pour les
-particuliers
+| En tant que    | je veux                      | afin de                 | Critère                      |                  
+| :--------------| :----------------------------| :-----------------------| :----------------------------|
+|   CUISINIER    | désactiver/activer           | Rendre visible ou       |- Activer l’atelier le rendre |                 |                |                              |                         | visible sur la liste des     |
+|                |                              |                         |                              |
+|   CUISINIER    |modifier un atelier           |changer les informations |Les modificationsapparaissent |  
+|                |                              |rentrées précédemment    |dans la liste des ateliers    |
+|                |                              |                         |                              |
+|   CUISINIER    | créer un atelier             |proposer à des           |L’atelier nouvellement créé   |
+|                |                              |particuliers             |apparaît dans la liste des    |              |                |                              |                         |ateliers                      |
+|                |                              |                         |                              |
+|   CUISINIER    |avoir une interface           |être le seul à pouvoir   |Le cuisinier accède aux pages |
+|                | d’administration sécurisé    |modifier mes ateliers    |sécurisées grâce à un         |
+|                |                              |                         |login et mot de passe.        |
+|                |                              |                         |Le cuisinier ne voit que les  |
+|                |                              |                         |ateliers qu’il a créé         |
+|                |                              |                         |                              |
+|  PARTICULIER   |voir la liste des ateliers    |s’inscrire à un atelier  |une page qui affiche la liste |
+|                |                              |                         |des ateliers disponibles      |
+|                |                              |                         |                              |
+|  PARTICULIER   |m’inscrire à un atelier       |de réserver ma place     |quand un particulier s’inscrit|
+|                |                              |                         |à l’atelier le nombre de      |
+|                |                              |                         |places réservées de celui     |
+|                |                              |                         |augmente                      |
+|                |                              |                         |                              |
 
-- Désactiver l’atelier ne rend
-plus visible sur la liste des
-ateliers.
-- Activer l’atelier le rend
-visible sur la liste des ateliers
-cuisinier modifier un
-atelier
-changer les
-informations rentrées
-précédemment
-Les modifications
-apparaissent dans la liste des
-ateliers
-cuisinier créer un atelier proposer à des
-particuliers
-L’atelier nouvellement créé
-apparaît dans la liste des
-ateliers
-cuisinier avoir une
-interface
-d’administration
-sécurisée
-d’être le seul à
-pouvoir modifier mes
-ateliers
-Le cuisinier accède aux
-pages sécurisées grâce à un
-login et mot de passe.
-Le cuisinier ne voit que les
-ateliers qu’il a créé
-particulier voir la liste des
-ateliers
-s’inscrire à un atelier une page qui affiche la liste
-des ateliers disponibles
-particulier m’inscrire à un
-atelier
-de réserver ma place Lorsqu’un particulier s’inscrit
-à l’atelier le nombre de
-places réservées de celui
-augmente
-Simplon Reunion - 14 rue de la Guadeloupe, ZA Foucherolles, 97490 Sainte-Clotilde -​ ​www.simplonreunion.co -
-792791329000 ​40 - SAS ESUS au capital de 138 950 euros - Code APE 8299Z
-Agrément formation : enregistrée sous le numéro 11 93 06676 93. Cet enregistrement ne vaut pas agrément de l’Etat.
+
+
+
+
 
 
 ## Charte graphique
@@ -158,29 +140,24 @@ Agrément formation : enregistrée sous le numéro 11 93 06676 93. Cet enregistr
 
 
 
-## User Stories 
-
-| Role           | Quoi?                                                         | Critères                                         |
-| :--------------| :-------------------------------------------------------------| :------------------------------------------------|
-
-|   CUISINIER    | Ajouter un nouvelle atelier                                   | Mettre sur la plateforme            
-
-|   CUISINIER    |    Activer ou desactivier un atelier                          | Afficher la photo et la designation    du                     produit                 
-
-|   CUISINIER    | Paramétrer les conditions de lancement de l’enchère           | Donner le prix de départ et la durée initiale    |
-
-|   CUISINIER    | Paramétrer les conditions de l’enchère                        | Coût du clic, durée ajoutée au clic, prix du clic|
-
-|  PARTICULIER   | Consulter les produits en ligne                               | Voir l’évolution de des enchères                 |
 
 
-|  PARTICULIER   | Connaître le temps restant de l’enchère                       | Savoir quand celle-ci prend fin                  |
 
 
-|  PARTICULIER   | Pouvoir naviguer de façon simple sur le site                  | Comprendre rapidement le fonctionnement          |
 
 
-|  PARTICULIER   | Que le site soit disponible sous plusieurs format d’écran | Consulter sur tout type de support                   |
 
 
-|  PARTICULIER   | Savoir comment fonctionne les enchères (règles)           | Comprendre le fonctionnement des enchères            |
+
+
+
+
+
+
+
+
+
+
+
+
+
