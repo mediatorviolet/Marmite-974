@@ -11,16 +11,16 @@
             <label for="description" class="form-label">Description</label>
         </div>
         <div class="col-md-6 form-floating mb-3">
-            <input type="date" class="form-control" id="date" placeholder="">
+            <input type="date" class="form-control" id="date" placeholder="" required pattern="^?(0[1-9]|[12][0-9]|3[01])[\/](0[1-9]|1[012])[\/](19|20)\d\d$">
             <label for="date" class="form-label">Date</label>
         </div>
         <div class="col-md-6 form-floating mb-3">
-            <input type="time" class="form-control" id="heure_debut" placeholder="">
+            <input type="time" class="form-control" id="heure_debut" placeholder="" required pattern="/^(0?[1-9]|1[0-2]):[0-5][0-9]$/">
             <label for="heure_debut" class="form-label">Heure de début</label>
         </div>
         <div class="col-md-6 form-floating mb-3">
-            <input type="number" class="form-control" id="duree" placeholder="">
-            <label for="duree" class="form-label">Duree</label>
+            <input type="number" class="form-control" id="duree" placeholder="" required pattern="[0-9]">
+            <label for="duree" class="form-label">Durée</label>
         </div>
         <div class="col-md-6 form-floating mb-3">
             <input type="number" class="form-control" id="effectif_max" placeholder="">
