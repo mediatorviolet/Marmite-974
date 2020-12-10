@@ -86,8 +86,10 @@ Ces champs sont tous obligatoires.
 ### Couleurs
 
 Les couleurs de notre charte graphique sont :
-![sparkles](ressources/images/couleur1.png) ![sparkles](ressources/images/couleur2.png)
-**#d05c62 #f3671f**
+![sparkles](ressources/images/couleur1.png)
+**#d05c62**
+![sparkles](ressources/images/couleur2.png)
+**#f3671f**
 
 ### Les polices
 
@@ -109,9 +111,9 @@ L’application doit :
 - respecter les normes du W3C
 - être responsive
 
+## Wireframe
 
-
-
+![sparkle](ressources/images/Marmite974-wireframe.png)
 
 
 
