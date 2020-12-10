@@ -26,9 +26,6 @@ avant le début des ateliers.
 
 Nos cibles sont les jeunes actifs entre 25 - 35 ans. Des personnes qui veulent apprendre à
 cuisiner afin de manger correctement.
-Simplon Reunion - 14 rue de la Guadeloupe, ZA Foucherolles, 97490 Sainte-Clotilde -​ ​www.simplonreunion.co -
-792791329000 ​40 - SAS ESUS au capital de 138 950 euros - Code APE 8299Z
-Agrément formation : enregistrée sous le numéro 11 93 06676 93. Cet enregistrement ne vaut pas agrément de l’Etat.
 
 
 ## Utilisateurs
@@ -64,9 +61,6 @@ Chaque atelier possède les champs suivants :
 - le prix
 - une image
 Ces champs sont tous obligatoires.
-Simplon Reunion - 14 rue de la Guadeloupe, ZA Foucherolles, 97490 Sainte-Clotilde -​ ​www.simplonreunion.co -
-792791329000 ​40 - SAS ESUS au capital de 138 950 euros - Code APE 8299Z
-Agrément formation : enregistrée sous le numéro 11 93 06676 93. Cet enregistrement ne vaut pas agrément de l’Etat.
 
 
 ## Les fonctionnalités
@@ -83,18 +77,16 @@ Agrément formation : enregistrée sous le numéro 11 93 06676 93. Cet enregistr
 
 
 
-
-
-
-
-
 ## Charte graphique
 
 ### Notre logo
 
+![sparkles](ressources/images/logo-marmite974.png)
+
 ### Couleurs
 
 Les couleurs de notre charte graphique sont :
+![sparkles](ressources/images/couleur1.png) ![sparkles](ressources/images/couleur2.png)
 **#d05c62 #f3671f**
 
 ### Les polices
@@ -106,9 +98,6 @@ Les autres textes utilisent la police Verdana.
 
 Nous n’avons pas de directives particulières pour la première version de l’application si ce
 n’est que l’interface devra être simple et clean.
-Simplon Reunion - 14 rue de la Guadeloupe, ZA Foucherolles, 97490 Sainte-Clotilde -​ ​www.simplonreunion.co -
-792791329000 ​40 - SAS ESUS au capital de 138 950 euros - Code APE 8299Z
-Agrément formation : enregistrée sous le numéro 11 93 06676 93. Cet enregistrement ne vaut pas agrément de l’Etat.
 
 
 ## Périmètre
@@ -119,9 +108,6 @@ L’application doit :
 - afficher correctement sur plusieurs navigateurs récents (Edge, Chrome, Firefox)
 - respecter les normes du W3C
 - être responsive
-    Simplon Reunion - 14 rue de la Guadeloupe, ZA Foucherolles, 97490 Sainte-Clotilde -​ ​www.simplonreunion.co -
-       792791329000 ​40 - SAS ESUS au capital de 138 950 euros - Code APE 8299Z
-Agrément formation : enregistrée sous le numéro 11 93 06676 93. Cet enregistrement ne vaut pas agrément de l’Etat.
 
 
 
