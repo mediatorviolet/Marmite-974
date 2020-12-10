@@ -7,6 +7,7 @@
 </div>
 <!---DAV 1 PARTICULIER FORMULAIRE INSCRIPTION---->
 <!---DAV  1 les ID doivent bien etre dissocier de ceux du formulaire cuisinier pour eviter les doublons dans la récupération des données----->
+<!--debut securisation form coté html et sereur--->
 
 <div class="container col-8 pb-5 ">
 
@@ -54,18 +55,19 @@
         <div class="mb-3 row">
             <label for="Specialite_Cuisinier" class="col-sm-2 col-form-label">Spécialité : </label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="Specialite_Cuisinier"  name="Specialite_Cuisinier" placeholder="Ex: Bonbon à la salade" pattern="(01|02|03|04|05|06|07|08|09)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}">
+                <input type="text" class="form-control" id="Specialite_Cuisinier"  name="Specialite_Cuisinier" placeholder="Ex: Bonbon à la salade"  pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$"">
             </div>
         </div>
 
         <div class="col-sm-10 offset-2">
-    <button type="submit" name="Inscrire_Cuisinier" class="btn btn-primary px-4" >S'inscrire</button>
+    <button type="submit" action="traitement.php" name="Inscrire_Cuisinier" class="btn btn-primary px-4" >S'inscrire</button>
   </div>
         </form>
 
         <div class="col-sm-8 offset-2"><p><i>(Les champs présentant le symbole * sont obligatoires.)</i></p></div>
 </div>
 
+<?php var_dump($data_post_cuisinier); ?>
 
 
 
