@@ -68,43 +68,53 @@
 </div>
 
 <!-------------------------------------SECURISATION COTEE SERVEUR-------------------------------------------------->
-
+<!---OBJECTIF  
+    Pour chaque information obligatoire, vérifier si elle n'est pas vide.
+    Pour chaque information présentant un format de saisie, vérifier si elle contient le bon format.
+    S'assurer que chacune des validations côté client soit correctement reprise côté serveur.
+---->
 
 
 <?php 
 
 
+
 // *** protection XSS ******************************************************************
 // *** initialisation des variables pour clarifier le code *****************************
 
-$modele = $_POST['modele'];
-
-$description = $_POST['description'];
-
-$annee = $_POST['annee'];
+$Nom_Cuisinier = $_POST['Nom_Cuisinier'];
+$Prenom_Cuisinier = $_POST['Prenom_Cuisinier'];
+$Email_Cuisinier  = $_POST['Email_Cuisinier'];
+$Password_Cuisinier = $_POST['Password_Cuisinier'];
+$Confirmation_Pass_Cuisinier  = $_POST['Confirmation_Pass_Cuisinier'];
+$Specialite_Cuisinier = $_POST['Specialite_Cuisinier'];
 
 // *** validations côté serveur ********************************************************
-$message = '';
+$message = ''; //initialisation de la variblage message donc vide pour le moment
+
 // format attendu : champs obligatoires
-if ('' == $modele) {
-    $message .= 'Le modèle est requis.<br \>';
-}
+if ('' == $_POST['Nom_Cuisinier'] 
+   || '' == $_POST['Prenom_Cuisinier']
+   || '' == $_POST['Email_Cuisinier']
+   || '' == $_POST['Password_Cuisinier']
+   || '' == $_POST['Confirmation_Pass_Cuisinier']
+   || '' == $_POST['Specialite_Cuisinier']
+) {
+    $message = 'Champ vide! Description requise <br \>';
+};
 
-if ('' == $description) {
-    $message .= 'La description est requise.<br \>';
-}
 
-// format attendu : longueur des champs
-if (!empty($annee) && 4 != mb_strlen($annee)) {
+    $message = 'La description ne doit pas comporter plus de 40 caractères.<br \>';
 
-    $message .= 'L\'année, lorsque fournie, doit comporter exactement 4 caractères.<br \>';
-}
-if (mb_strlen($description) > 100) {
-    $message .= 'La description ne doit pas comporter plus de 100 caractères.<br \>';
 
-}
 
-// format attendu : courriel
+?>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+
+
+
+<!---// format attendu : courriel
 
 if (!filter_var( $courriel, FILTER_VALIDATE_EMAIL)) {
     $message .= 'Le courriel n\'est pas valide. Il doit être au format unnom@undomaine.uneextension.<br /> &nbsp; &nbsp; Il doit comporter un seul caractère @.<br /> &nbsp; &nbsp; Ce caractère doit être suivi d\'un nom de domaine qui contient au moins un point puis une extension.<br /> &nbsp; &nbsp; Les caractères spéciaux ne sont pas acceptés.<br \>';
@@ -160,6 +170,7 @@ if ('' != $message) {
 
 
 ?>
+--->
 
 
 
@@ -220,8 +231,3 @@ if ('' != $message) {
 
 
 
-
-
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
