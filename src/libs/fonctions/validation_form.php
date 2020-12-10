@@ -59,42 +59,51 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //QUOTE rend vulnérable les GET ou POST avec de chaine de caractère ET les variables numériques.
 //***********SOLUTION********** */
 // utilisation de la fonction mysql_real_escape_string — Protège une commande SQL de la présence de caractères spéciaux
-
+//  fonction htmlspecialchars(). Cette fonction va permettre d’échapper certains caractères spéciaux comme les chevrons « < » et « > » en les transformant en entités HTML.
+// nettoyer les données avant de les stocker comme trim() qui va supprimer les espaces inutiles et stripslashes() qui va supprimer les antislashes que certains hackers pourraient utiliser pour échapper des caractères spéciaux.
+//***************************************** */
+//     function valid_donnees($donnees){
+//    $donnees = trim($donnees);
+//    $donnees = stripslashes($donnees);
+//    $donnees = htmlspecialchars($donnees);
+//    return $donnees;
+// }
+//***************************************** */
 // format attendu : champs obligatoires
 // format attendu : longueur des champs
 
-if (!empty($annee) && 4 != mb_strlen($annee)) {
-    $message .= 'L\'année, lorsque fournie, doit comporter exactement 4 caractères.<br \>';
-}
+//if (!empty($annee) && 4 != mb_strlen($annee)) {
+    // $message .= 'L\'année, lorsque fournie, doit comporter exactement 4 caractères.<br \>';
+//   }
 // format attendu : courriel
-if (!filter_var( $courriel, FILTER_VALIDATE_EMAIL)) {
-    $message .= 'Le courriel n\'est pas valide. Il doit être au format unnom@undomaine.uneextension.<br /> &nbsp; &nbsp; Il doit comporter un seul caractère @.<br /> &nbsp; &nbsp; Ce caractère doit être suivi d\'un nom de domaine qui contient au moins un point puis une extension.<br /> &nbsp; &nbsp; Les caractères spéciaux ne sont pas acceptés.<br \>';
-}
+//if (!filter_var( $courriel, FILTER_VALIDATE_EMAIL)) {
+    // $message .= 'Le courriel n\'est pas valide. Il doit être au format unnom@undomaine.uneextension.<br /> &nbsp; &nbsp; Il doit comporter un seul caractère @.<br /> &nbsp; &nbsp; Ce caractère doit être suivi d\'un nom de domaine qui contient au moins un point puis une extension.<br /> &nbsp; &nbsp; Les caractères spéciaux ne sont pas acceptés.<br \>';
+// }
 // données valables : champs numérique
-if (!empty($annee) && !ctype_digit($annee)) {
-    $message .= 'L\'année, lorsque fournie, doit être un entier.<br \>';
-}
+//  if (!empty($annee) && !ctype_digit($annee)) {
+    // $message .= 'L\'année, lorsque fournie, doit être un entier.<br \>';
+//  }
 //données valables : valeur décimale
-if (!empty($rang)) {
+// if (!empty($rang)) {
     // si on n'a pas besoin de vérifier la valeur maximale, omettre le else
-    if (!is_numeric($annee)) {
-        $message .= 'Le rang, lorsque fourni, doit être un nombre qui peut comporter une partie décimale.<br \>';
-    }
-    else {
+    // if (!is_numeric($annee)) {
+        // $message .= 'Le rang, lorsque fourni, doit être un nombre qui peut comporter une partie décimale.<br \>';
+    // }
+    // else {
 // si on vérifie avec l'expression régulière, pas besoin de vérifier le is_numeric()
-        if (!preg_match("/^[0-9]{1,3}([.,][0-9]{1,2})?$/", $rang)) {
-            $message .= "Le rang, lorsque fourni, doit être au format 999.99";
-        }
-    }
-}
-if ('' != $message) {
+// if (!preg_match("/^[0-9]{1,3}([.,][0-9]{1,2})?$/", $rang)) {
+            // $message .= "Le rang, lorsque fourni, doit être au format 999.99";
+        // }
+    // }
+// }
+// if ('' != $message) {
 
     // *** affichage du message ********************************************************
-    echo "<div class='messageerreur'>$message</div>";
+    // echo "<div class='messageerreur'>$message</div>";
     // *** réaffichage du formulaire avec les données qui y ont été saisies ************
-} else {
+//   } else {
     // *** enregistrement *************************************************************
-}
+ // }
 
 
 
