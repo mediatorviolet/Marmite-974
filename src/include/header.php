@@ -7,8 +7,56 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="d-flex justify-content-end w-100 mt-md-0 mt-sm-3">
-                <button type="button" class="btn btn-primary me-3 px-4">S'inscrire</button>
-                <button type="button" class="btn btn-primary px-4">Connexion</button>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary me-3 px-4" data-bs-toggle="modal" data-bs-target="#choix_inscription">S'inscrire</button>
+                <!-- Modal -->
+                <div class="modal fade" id="choix_inscription" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">S'inscrire en tant que :</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body d-flex justify-content-around">
+                                <button type="button" class="btn btn-primary text-uppercase px-4">Particulier</button>
+                                <button type="button" class="btn btn-primary text-uppercase px-4">Cuisinier</button>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary px-4" data-bs-toggle="modal" data-bs-target="#form_connexion">Connexion</button>
+                <!-- Modal -->
+                <div class="modal fade" id="form_connexion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Identification</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="col-9 mx-auto">
+                                    <div class="row mb-3 form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="">
+                                        <label for="email" class="col-form-label">Email</label>
+                                    </div>
+                                    <div class="row mb-3 form-floating">
+                                        <input type="password" class="form-control" id="password" placeholder="">
+                                        <label for="password" class="col-form-label">Mot de passe</label>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary px-4">Connexion</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
