@@ -1,6 +1,3 @@
-<!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
 <?php include "../include/header.php" ?>
 <div class="container-fluid mt-5">
     <h1 class="text-uppercase text-center">Ajouter un atelier</h1>
