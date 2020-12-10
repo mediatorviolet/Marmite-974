@@ -72,30 +72,15 @@ Agrément formation : enregistrée sous le numéro 11 93 06676 93. Cet enregistr
 ## Les fonctionnalités
 ## User Stories 
 
-| En tant que    | je veux                      | afin de                 | Critère                      |                  
-| :--------------| :----------------------------| :-----------------------| :----------------------------|
-|   CUISINIER    | désactiver/activer           | Rendre visible ou       |- Activer l’atelier le rendre |                 |                |                              |                         | visible sur la liste des     |
-|                |                              |                         |                              |
-|   CUISINIER    |modifier un atelier           |changer les informations |Les modificationsapparaissent |  
-|                |                              |rentrées précédemment    |dans la liste des ateliers    |
-|                |                              |                         |                              |
-|   CUISINIER    | créer un atelier             |proposer à des           |L’atelier nouvellement créé   |
-|                |                              |particuliers             |apparaît dans la liste des    |              |                |                              |                         |ateliers                      |
-|                |                              |                         |                              |
-|   CUISINIER    |avoir une interface           |être le seul à pouvoir   |Le cuisinier accède aux pages |
-|                | d’administration sécurisé    |modifier mes ateliers    |sécurisées grâce à un         |
-|                |                              |                         |login et mot de passe.        |
-|                |                              |                         |Le cuisinier ne voit que les  |
-|                |                              |                         |ateliers qu’il a créé         |
-|                |                              |                         |                              |
-|  PARTICULIER   |voir la liste des ateliers    |s’inscrire à un atelier  |une page qui affiche la liste |
-|                |                              |                         |des ateliers disponibles      |
-|                |                              |                         |                              |
-|  PARTICULIER   |m’inscrire à un atelier       |de réserver ma place     |quand un particulier s’inscrit|
-|                |                              |                         |à l’atelier le nombre de      |
-|                |                              |                         |places réservées de celui     |
-|                |                              |                         |augmente                      |
-|                |                              |                         |                              |
+| En tant que    | je veux                      | afin de                                           | Critère                                         |                  
+| :--------------| :----------------------------| :-------------------------------------------------| :------------------------------------------------------------|
+|   CUISINIER    | désactiver/activer           | Rendre visible ou invisible pour les particuliers |- Désactiver l'atelier ne rend plus visible sur la liste des ateliers  - Activer l’atelier le rend visible sur la liste des ateliers |
+|   CUISINIER    |modifier un atelier           |changer les informations rentrées précédemment     |Les modifications apparaissent dans la liste des ateliers      |
+|   CUISINIER    | créer un atelier             |proposer à des particuliers                        |L’atelier nouvellement créé apparaît dans la liste des ateliers|
+|   CUISINIER    |avoir une interface d’administration sécurisé|être le seul à pouvoir modifier mes ateliers|Le cuisinier accède aux pages sécurisées grâce à un login et mot de passe. Le cuisinier ne voit que les ateliers qu’il a créé|
+|  PARTICULIER   |voir la liste des ateliers    |s’inscrire à un atelier                            |une page qui affiche la liste des ateliers disponibles         |
+|  PARTICULIER   |m’inscrire à un atelier       |de réserver ma place     |quand un particulier s’inscrit à l’atelier le nombre de places réservées de celui augmente|
+
 
 
 
