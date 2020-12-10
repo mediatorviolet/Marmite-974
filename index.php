@@ -7,7 +7,7 @@
 </head>
 <body>
     <?php include 'header.php'?>
-    <?php echo 'test' ?>
+   
 </body>
 </html>
 
