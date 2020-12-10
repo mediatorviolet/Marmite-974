@@ -5,10 +5,9 @@
 <div class="container d-flex justify-content-center mt-3  mb-3">
     <h2>CUISINIER</h2>
 </div>
+<!---DAV 1 PARTICULIER FORMULAIRE INSCRIPTION---->
+<!---DAV  1 les ID doivent bien etre dissocier de ceux du formulaire cuisinier pour eviter les doublons dans la récupération des données----->
 
-
-
-<!---CUISINIER FORMULAIRE INSCRIPTION---->
 <div class="container col-8 pb-5 ">
 
      <form method="POST" action="" class="form" id="FormCUISINIER">
@@ -60,7 +59,7 @@
         </div>
 
         <div class="col-sm-10 offset-2">
-    <button type="submit" class="btn btn-primary">ENREGISTRER</button>
+    <button type="submit_cuisinier" class="btn btn-primary">S'inscrire</button>
   </div>
         </form>
 
