@@ -10,6 +10,7 @@
 </head>
 <body>
     <?php include 'src/include/header.php'?>
+    <?php include 'src/pages/FormCUISINIER.php'?>
    
 
 
