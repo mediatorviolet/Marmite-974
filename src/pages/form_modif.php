@@ -27,7 +27,7 @@
         </div>
         <div class="col-md-6 form-floating mb-3">
             <input type="number" class="form-control" id="effectif_max" placeholder="" required  pattern = "[0-100]">
-            <label for="effectif_max" class="form-label">Effectif maximal</label>
+            <label for="effectif_max" class="form-label">Effectif maximum</label>
         </div>
         <div class="col-md-6 form-floating mb-3">
             <input type="number" class="form-control" id="prix" placeholder="" required pattern = "[0-10000]">

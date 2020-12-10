@@ -32,7 +32,7 @@
         </div>
         <div class="col-md-6 d-flex align-items-center mb-3">
             <label for="image" class="form-label me-3">Image</label>
-            <input type="file" class="form-control-lg" id="image" placeholder="">
+            <input type="file" class="form-control-lg" id="image" placeholder="" required>
         </div>
         <div class="col-12 d-flex justify-content-end">
             <button type="submit" class="btn-lg btn-primary px-5">Ajouter</button>
