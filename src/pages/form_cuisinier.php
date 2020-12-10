@@ -59,10 +59,9 @@
         </div>
 
         <div class="col-sm-10 offset-2">
-    <button type="submit_cuisinier" class="btn btn-primary">S'inscrire</button>
+    <button type="submit" name="inscrire_cuisinier" class="btn btn-primary">S'inscrire</button>
   </div>
         </form>
-
 
         <div class="col-sm-8 offset-2"><p><i>(Les champs présentant le symbole * sont obligatoire)</i></p></div>
 </div>
