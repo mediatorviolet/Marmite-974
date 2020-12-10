@@ -59,7 +59,7 @@
         </div>
 
         <div class="col-sm-10 offset-2">
-    <button type="submit" name="Inscrire_Cuisinier" class="btn btn-primary" style = "width:20%">S'inscrire</button>
+    <button type="submit" name="Inscrire_Cuisinier" class="btn btn-primary px-4" >S'inscrire</button>
   </div>
         </form>
 

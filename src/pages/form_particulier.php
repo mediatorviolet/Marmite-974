@@ -58,7 +58,7 @@
         </div>
 
         <div class="col-sm-10 offset-2">
-    <button type="submit" name="Inscrire_Particulier" class="btn btn-primary" style = "width:20%">S'inscrire</button>
+    <button type="submit" name="Inscrire_Particulier" class="btn btn-primary px-4" >S'inscrire</button>
   </div>
         </form>
         <div class="col-sm-8 offset-2"><p><i>(Les champs présentant le symbole * sont obligatoires.)</i></p></div>
