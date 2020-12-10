@@ -1,7 +1,7 @@
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <form class="container-fluid justify-content">
         <div>
-            <img src="src/ressources/images/logo-marmites974.png" alt="logo" style = "width:100%;"></img>
+            <img src="../ressources/images/logo-marmite974.png" alt="logo" style = "width:50%;"></img>
             <button class="btn btn-outline-success me-2" type="button">Main button</button>
         </div>
         <div>
