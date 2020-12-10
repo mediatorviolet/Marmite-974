@@ -1,4 +1,5 @@
 <?php
+
 //require_once 'upload.php';
 
 //initialisation err pour les chamsp inscription CUISINIER
@@ -51,6 +52,52 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
+// *** validations côté serveur ********************************************************
+//** DAV ( 3 )SECURISATION DES REQUETES EVITER LES INJECTIONS SQL OU LE DETOURNEMENT DES REQUETE */
+
+//*********  OBJECTIF******* */ Éviter les injections SQL. Evite l'utilisation de QUOTE qui enleve les '
+//QUOTE rend vulnérable les GET ou POST avec de chaine de caractère ET les variables numériques.
+//***********SOLUTION********** */
+// utilisation de la fonction mysql_real_escape_string — Protège une commande SQL de la présence de caractères spéciaux
+
+// format attendu : champs obligatoires
+// format attendu : longueur des champs
+
+if (!empty($annee) && 4 != mb_strlen($annee)) {
+    $message .= 'L\'année, lorsque fournie, doit comporter exactement 4 caractères.<br \>';
+}
+// format attendu : courriel
+if (!filter_var( $courriel, FILTER_VALIDATE_EMAIL)) {
+    $message .= 'Le courriel n\'est pas valide. Il doit être au format unnom@undomaine.uneextension.<br /> &nbsp; &nbsp; Il doit comporter un seul caractère @.<br /> &nbsp; &nbsp; Ce caractère doit être suivi d\'un nom de domaine qui contient au moins un point puis une extension.<br /> &nbsp; &nbsp; Les caractères spéciaux ne sont pas acceptés.<br \>';
+}
+// données valables : champs numérique
+if (!empty($annee) && !ctype_digit($annee)) {
+    $message .= 'L\'année, lorsque fournie, doit être un entier.<br \>';
+}
+//données valables : valeur décimale
+if (!empty($rang)) {
+    // si on n'a pas besoin de vérifier la valeur maximale, omettre le else
+    if (!is_numeric($annee)) {
+        $message .= 'Le rang, lorsque fourni, doit être un nombre qui peut comporter une partie décimale.<br \>';
+    }
+    else {
+// si on vérifie avec l'expression régulière, pas besoin de vérifier le is_numeric()
+        if (!preg_match("/^[0-9]{1,3}([.,][0-9]{1,2})?$/", $rang)) {
+            $message .= "Le rang, lorsque fourni, doit être au format 999.99";
+        }
+    }
+}
+if ('' != $message) {
+
+    // *** affichage du message ********************************************************
+    echo "<div class='messageerreur'>$message</div>";
+    // *** réaffichage du formulaire avec les données qui y ont été saisies ************
+} else {
+    // *** enregistrement *************************************************************
+}
+
+
+
 
 // INITIALISATION DES CLASSE ET MESSAGE D'ALERTE
 $class_alert = "";
@@ -59,6 +106,10 @@ $msg_alert = "";
 // Variables définit en global pour etre accesible à tous le site et que la fonction return les valeurs.
 // Déclaration de la fonction.
 // La fonction possede tout les posts (form_cuisinier form_paticulier form_ajout form_modif)
+
+//***************************************************************************************************************************************************************************************************************************************************** */
+
+
 function validationForm()
 {
     global $class_alert;
