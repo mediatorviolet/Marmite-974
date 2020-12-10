@@ -9,7 +9,8 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
             <div class="card">
-                <img src="../ressources/images/chinh-le-duc-vuDXJ60mJOA-unsplash.jpg" class="card-img-top" alt="...">
+                <img src="../ressources/images/chinh-le-duc-vuDXJ60mJOA-unsplash.jpg" class="card-img-top" alt="Illustration atelier">
+                <div class="date bg-light p-3 position-absolute d-flex justify-content-center align-items-center fw-bold">18/07/2021</div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -48,7 +49,8 @@
         </div>
         <div class="col">
             <div class="card">
-                <img src="../ressources/images/clem-onojeghuo-r8lDTtSWGUc-unsplash.jpg" class="card-img-top" alt="...">
+                <img src="../ressources/images/clem-onojeghuo-r8lDTtSWGUc-unsplash.jpg" class="card-img-top" alt="Illustration atelier">
+                <div class="date bg-light p-3 position-absolute d-flex justify-content-center align-items-center fw-bold">18/07/2021</div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -87,7 +89,8 @@
         </div>
         <div class="col">
             <div class="card">
-                <img src="../ressources/images/epicurrence-ITxG2yay1ak-unsplash.jpg" class="card-img-top" alt="...">
+                <img src="../ressources/images/epicurrence-ITxG2yay1ak-unsplash.jpg" class="card-img-top" alt="Illustration atelier">
+                <div class="date bg-light p-3 position-absolute d-flex justify-content-center align-items-center fw-bold">18/07/2021</div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
@@ -126,7 +129,8 @@
         </div>
         <div class="col">
             <div class="card">
-                <img src="../ressources/images/maarten-van-den-heuvel-EzH46XCDQRY-unsplash.jpg" class="card-img-top" alt="...">
+                <img src="../ressources/images/maarten-van-den-heuvel-EzH46XCDQRY-unsplash.jpg" class="card-img-top" alt="Illustration atelier">
+                <div class="date bg-light p-3 position-absolute d-flex justify-content-center align-items-center fw-bold">18/07/2021</div>
                 <div class="card-body">
                     <h5 class="card-title">Card title</h5>
                     <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -157,7 +161,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <button class="btn btn-primary px-4">Réserver</button>
                     </div>
                 </div>

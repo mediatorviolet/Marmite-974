@@ -19,7 +19,7 @@
                                 <h5 class="modal-title" id="exampleModalLabel">S'inscrire en tant que :</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body d-flex justify-content-around">
+                            <div class="modal-body d-flex justify-content-around py-5">
                                 <button type="button" class="btn btn-primary text-uppercase px-4">Particulier</button>
                                 <button type="button" class="btn btn-primary text-uppercase px-4">Cuisinier</button>
                             </div>
