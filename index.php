@@ -12,7 +12,7 @@
 <body>
     <?php include 'src/include/header.php'?>
 
-   
+    <?php include "src/include/footer.php" ?>
 
 
 <!-- JavaScript Bundle with Popper -->
