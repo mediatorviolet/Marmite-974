@@ -81,14 +81,14 @@ Ces champs sont tous obligatoires.
 
 ### Notre logo
 
-![sparkles](ressources/images/logo-marmite974.png)
+![sparkles](src/ressources/images/logo-marmite974.png)
 
 ### Couleurs
 
 Les couleurs de notre charte graphique sont :
-![sparkles](ressources/images/couleur1.png)
+![sparkles](src/ressources/images/couleur1.png)
 **#d05c62**
-![sparkles](ressources/images/couleur2.png)
+![sparkles](src/ressources/images/couleur2.png)
 **#f3671f**
 
 ### Les polices
@@ -113,7 +113,7 @@ L’application doit :
 
 ## Wireframe
 
-![sparkle](ressources/images/Marmite974-wireframe.png)
+![sparkle](src/ressources/images/Marmite974-wireframe.png)
 
 
 
