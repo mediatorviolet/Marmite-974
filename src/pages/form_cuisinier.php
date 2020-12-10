@@ -31,7 +31,7 @@
         <div class="mb-3 row">
             <label for="Email_Cuisinier" class="col-sm-2 col-form-label">E-mail* : </label>
             <div class="col-sm-8">
-                <input type="email" class="form-control" id="Email_Cuisinier" placeholder="Ex : Pierre-Giraud@gamail.com" required>
+                <input type="email" class="form-control" id="Email_Cuisinier" placeholder="Ex : Pierre-Giraud@gmail.com" required>
                 </input>
             </div>
         </div>
@@ -54,16 +54,16 @@
         <div class="mb-3 row">
             <label for="Specialite_Cuisinier" class="col-sm-2 col-form-label">Spécialité : </label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="Spécialite_Cuisinier" placeholder="06-92-00-01-02" pattern="(01|02|03|04|05|06|07|08|09)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}">
+                <input type="text" class="form-control" id="Specialite_Cuisinier" placeholder="Ex: Bonbon à la salade" pattern="(01|02|03|04|05|06|07|08|09)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}">
             </div>
         </div>
 
         <div class="col-sm-10 offset-2">
-    <button type="submit" name="Inscrire_Cuisinier" class="btn btn-primary">S'inscrire</button>
+    <button type="submit" name="Inscrire_Cuisinier" class="btn btn-primary" style = "width:20%">S'inscrire</button>
   </div>
         </form>
 
-        <div class="col-sm-8 offset-2"><p><i>(Les champs présentant le symbole * sont obligatoire)</i></p></div>
+        <div class="col-sm-8 offset-2"><p><i>(Les champs présentant le symbole * sont obligatoires.)</i></p></div>
 </div>
 
 

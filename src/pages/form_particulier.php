@@ -30,7 +30,7 @@
         <div class="mb-3 row">
             <label for="Email_Particulier" class="col-sm-2 col-form-label">E-mail* : </label>
             <div class="col-sm-8">
-                <input type="email" class="form-control" id="Email_Particulier" placeholder="Ex : Pierre-Giraud@gamail.com" required>
+                <input type="email" class="form-control" id="Email_Particulier" placeholder="Ex : Pierre-Giraud@gmail.com" required>
                 </input>
             </div>
         </div>
@@ -58,10 +58,10 @@
         </div>
 
         <div class="col-sm-10 offset-2">
-    <button type="submit" name="Inscrire_Particulier" class="btn btn-primary">S'inscrire</button>
+    <button type="submit" name="Inscrire_Particulier" class="btn btn-primary" style = "width:20%">S'inscrire</button>
   </div>
         </form>
-        <div class="col-sm-8 offset-2"><p><i>(Les champs présentant le symbole * sont obligatoire)</i></p></div>
+        <div class="col-sm-8 offset-2"><p><i>(Les champs présentant le symbole * sont obligatoires.)</i></p></div>
 </div>
 
 
