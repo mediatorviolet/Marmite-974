@@ -2,33 +2,56 @@
 //require_once 'upload.php';
 
 //initialisation err pour les chamsp inscription CUISINIER
-$Nom_Cuisinier_Err = $Prenom_Cuisinier_Err = $Email_Cuisinier_Err = $Password_Cuisinier_Err = $Confirmation_Pass_Cuisinier_Err 
-= $Specialite_Cuisinier_Err = "";
+$Nom_Cuisinier_Err = $Prenom_Cuisinier_Err = $Prenom_Cuisinier_Err = $Email_Cuisinier_Err = $Password_Cuisinier_Err = $Confirmation_Pass_Cuisinier_Err = $Specialite_Cuisinier_Err = "";
 //initialisation err pour les chamsp inscription PARTICULIER
 $Nom_Particulier_Err = $Prenom_Particulier_Err = $Email_Particulier_Err = $Password_Particulier_Err = $Confirmation_Pass_Particulier_Err 
-= $Specialite_Particulier_Err = "";
+= $Telephone_Particulier_Err = "";
 
-//Vérification des champs vides afin d'éviter les envoie coté serveur meme si les champs sont vides
+// DAV ( 1 )POUR CUISINIER Vérification des champs vides afin d'éviter les envoie coté serveur meme si les champs sont vides
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["nomProduit"])) {
-        $nomProduitErr = "Veuillez entrer un nom pour votre produit.";
+    if (empty($_POST["Nom_Cuisinier"])) {
+        $Nom_Cuisinier_Err = "Veuillez entrer votre nom.";
     }
-    if (empty($_POST["inputPrixLancement"])) {
-        $inputPrixLancementErr = "Veuillez entrer un prix de lancement.";
+    if (empty($_POST["Prenom_Cuisinier"])) {
+        $Prenom_Cuisinier_Err = "Veuillez entrer votre prénom.";
     }
-    if (empty($_POST["inputDuree"])) {
-        $inputDureeErr = "Veuillez entrer une durée.";
+    if (empty($_POST["Email_Cuisinier"])) {
+        $Email_Cuisinier_Err = "Veuillez entrer une adresse email valide.";
     }
-    if (empty($_POST["inputPrixClic"])) {
-        $inputPrixClicErr = "Veuillez entrer le prix du clic.";
+    if (empty($_POST["Password_Cuisinier"])) {
+        $Password_Cuisinier_Err = "Veuillez inscrire un mot de passe.";
     }
-    if (empty($_POST["inputAugmentationPrix"])) {
-        $inputAugmentationPrixErr = "Veuillez entrer une valeur pour l'augmentation du prix par clic.";
+    if (empty($_POST["Confirmation_Pass_Cuisinier"])) {
+        $Confirmation_Pass_Cuisinier_Err = "Veuillez inscrire le mot de passe de confirmation.";
     }
-    if (empty($_POST["inputAugmentationDuree"])) {
-        $inputAugmentationDureeErr = "Veuillez entrer une valeur pour l'augmentation de la durée de l'enchère par clic.";
+    if (empty($_POST["Specialite_Cuisinier"])) {
+        $Specialite_Cuisinier_Err = "Veuillez indiquer une spécialité.";
     }
 }
+
+// DAV ( 2 )POUR PARTICULIER Vérification des champs vides afin d'éviter les envoie coté serveur meme si les champs sont vides
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["Nom_Particulier"])) {
+        $Nom_Particulier_Err = "Veuillez entrer votre nom.";
+    }
+    if (empty($_POST["Prenom_Particulier"])) {
+        $Prenom_Particulier_Err = "Veuillez entrer votre prénom.";
+    }
+    if (empty($_POST["Email_Particulier"])) {
+        $Email_Particulier_Err = "Veuillez entrer une adresse email valide.";
+    }
+    if (empty($_POST["Password_Particulier"])) {
+        $Password_Particulier_Err = "Veuillez inscrire un mot de passe.";
+    }
+    if (empty($_POST["Confirmation_Pass_Particulier"])) {
+        $Confirmation_Pass_Particulier_Err = "Veuillez inscrire le mot de passe de confirmation.";
+    }
+    if (empty($_POST["Telephone_Particulier"])) {
+        $Telephone_Particulier_Err = "Veuillez indiquer une numéro de téléphone.";
+    }
+}
+
+
 
 
 $class_alert = "";
