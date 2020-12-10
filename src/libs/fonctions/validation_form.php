@@ -52,14 +52,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-
-
+// INITIALISATION DES CLASSE ET MESSAGE D'ALERTE
 $class_alert = "";
 $msg_alert = "";
+
+// Variables définit en global pour etre accesible à tous le site et que la fonction return les valeurs.
+// Déclaration de la fonction.
+// La fonction possede tout les posts (form_cuisinier form_paticulier form_ajout form_modif)
 function validationForm()
 {
     global $class_alert;
     global $msg_alert;
+    //Initialisation de count
     $count = 0;
     $required_input = ["nomProduit", "inputPrixLancement", "inputDuree", "inputPrixClic", "inputAugmentationPrix", "inputAugmentationDuree"];
     foreach ($required_input as $input) {
