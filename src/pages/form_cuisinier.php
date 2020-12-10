@@ -32,7 +32,7 @@
         <div class="mb-3 row">
             <label for="Email_Cuisinier" class="col-sm-2 col-form-label">E-mail* : </label>
             <div class="col-sm-8">
-                <input type="email" class="form-control" id="Email_Cuisinier" name="Email_Cuisinier" placeholder="Ex : Pierre-Giraud@gmail.com" required>
+                <input type="email" class="form-control" id="Email_Cuisinier" name="Email_Cuisinier" placeholder="Ex : Pierre-Giraud@gmail.com" required pattern = " [A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})">
                 </input>
             </div>
         </div>
@@ -55,7 +55,7 @@
         <div class="mb-3 row">
             <label for="Specialite_Cuisinier" class="col-sm-2 col-form-label">Spécialité : </label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="Specialite_Cuisinier"  name="Specialite_Cuisinier" placeholder="Ex: Bonbon à la salade"  pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$"">
+                <input type="text" class="form-control" id="Specialite_Cuisinier"  name="Specialite_Cuisinier" placeholder="Ex: Bonbon à la salade"  pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
             </div>
         </div>
 
@@ -75,102 +75,15 @@
 ---->
 
 
-<?php 
 
 
 
-// *** protection XSS ******************************************************************
-// *** initialisation des variables pour clarifier le code *****************************
-
-$Nom_Cuisinier = $_POST['Nom_Cuisinier'];
-$Prenom_Cuisinier = $_POST['Prenom_Cuisinier'];
-$Email_Cuisinier  = $_POST['Email_Cuisinier'];
-$Password_Cuisinier = $_POST['Password_Cuisinier'];
-$Confirmation_Pass_Cuisinier  = $_POST['Confirmation_Pass_Cuisinier'];
-$Specialite_Cuisinier = $_POST['Specialite_Cuisinier'];
-
-// *** validations côté serveur ********************************************************
-$message = ''; //initialisation de la variblage message donc vide pour le moment
-
-// format attendu : champs obligatoires
-if ('' == $_POST['Nom_Cuisinier'] 
-   || '' == $_POST['Prenom_Cuisinier']
-   || '' == $_POST['Email_Cuisinier']
-   || '' == $_POST['Password_Cuisinier']
-   || '' == $_POST['Confirmation_Pass_Cuisinier']
-   || '' == $_POST['Specialite_Cuisinier']
-) {
-    $message = 'Champ vide! Description requise <br \>';
-};
-
-
-    $message = 'La description ne doit pas comporter plus de 40 caractères.<br \>';
-
-
-
-?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 
 
 
-<!---// format attendu : courriel
 
-if (!filter_var( $courriel, FILTER_VALIDATE_EMAIL)) {
-    $message .= 'Le courriel n\'est pas valide. Il doit être au format unnom@undomaine.uneextension.<br /> &nbsp; &nbsp; Il doit comporter un seul caractère @.<br /> &nbsp; &nbsp; Ce caractère doit être suivi d\'un nom de domaine qui contient au moins un point puis une extension.<br /> &nbsp; &nbsp; Les caractères spéciaux ne sont pas acceptés.<br \>';
-}
-
-// format attendu : code postal canadien
-if(!preg_match("/^[ABCEGHJKLMNPRSTVXYabceghjklmnprstvxy][0-9][ABCEGHJKLMNPRSTVWXYZabceghjklmnprstvwxyz] ?[0-9][ABCEGHJKLMNPRSTVWXYZabceghjklmnprstvwxyz][0-9]$/i",$sujet)) {
-    $message .= 'Le code postal n\'est pas valide. Il doit être au format A9A 9A9.<br /> &nbsp; &nbsp; Les lettres D, F, I, O, Q et U ne sont pas acceptées.<br /> &nbsp; &nbsp; Les lettres W et Z sont acceptées mais pas en première position.<br \>';
-}
- 
-// données valables : champs numériques
-if (!empty($annee) && !ctype_digit($annee)) {
-
-    $message .= 'L\'année, lorsque fournie, doit être un entier.<br \>';
-}
-
-//données valables : valeur décimale
-if (!empty($rang)) {
-    // si on n'a pas besoin de vérifier la valeur maximale, omettre le else
-    if (!is_numeric($annee)) {
-        $message .= 'Le rang, lorsque fourni, doit être un nombre qui peut comporter une partie décimale.<br \>';
-    }
-    else {
-        // si on vérifie avec l'expression régulière, pas besoin de vérifier le is_numeric()
-        if (!preg_match("/^[0-9]{1,3}([.,][0-9]{1,2})?$/", $rang)) {
-
-            $message .= "Le rang, lorsque fourni, doit être au format 999.99";
-
-        }
-    }
-}
-
-// données valables : clés étrangères
-
-$requete = "...";
-
-// attention : pour être sécuritaire, utiliser une requête préparée
-if ($stmt->num_rows == 0) {
-
-    $message = 'Le modèle choisi n\'est pas valide.';
-
-}
-
-if ('' != $message) {
-    // *** affichage du message ********************************************************
-    echo "<div class='messageerreur'>$message</div>";
-
-    // *** réaffichage du formulaire avec les données qui y ont été saisies ************
-
-} else {
-    // *** enregistrement *************************************************************
-}
-
-
-?>
---->
 
 
 
