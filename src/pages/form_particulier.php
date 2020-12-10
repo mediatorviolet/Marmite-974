@@ -7,7 +7,7 @@
 </div>
 <!---DAV 2 PARTICULIER FORMULAIRE INSCRIPTION---->
 <!---DAV  2 les ID doivent bien etre dissocier de ceux du formulaire cuisinier pour eviter les doublons dans la récupération des données----->
-<!--les boutons doivent avoir leurs name ou leur type submit dissocier-->
+<!--les boutons doivent avoir leurs name  dissocier-->
 
 <div class="container col-8 pb-5 ">
 
@@ -58,7 +58,7 @@
         </div>
 
         <div class="col-sm-10 offset-2">
-    <button type="submit_particulier" class="btn btn-primary">S'inscrire</button>
+    <button type="submit" name="inscrire_particulier" class="btn btn-primary">S'inscrire</button>
   </div>
         </form>
         <div class="col-sm-8 offset-2"><p><i>(Les champs présentant le symbole * sont obligatoire)</i></p></div>
