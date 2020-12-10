@@ -11,54 +11,54 @@
 
 <div class="container col-8 pb-5 ">
 
-     <form method="POST" action="" class="form" id="FormCUISINIER">
+     <form method="POST" action="" class="form" id="Form_Partiiculier">
 
         <div class="row mb-3 ml-5">
-            <label for="NomCuisinier" class="col-sm-2 col-form-label">Nom* : </label>
+            <label for="Nom_Particulier" class="col-sm-2 col-form-label">Nom* : </label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="NomParticulier" placeholder="NOM" required pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
+                <input type="text" class="form-control" id="Nom_Particulier" placeholder="NOM" required pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
             </div>
         </div>
 
         <div class="mb-3 row">
-            <label for="PrenomParticulier" class="col-sm-2 col-form-label">Prénom* :</label>
-            <div class="col-sm-8"> <input type="text" class="form-control" id="PrenomParticulier" placeholder="Prénom" required pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
+            <label for="Prenom_Particulier" class="col-sm-2 col-form-label">Prénom* :</label>
+            <div class="col-sm-8"> <input type="text" class="form-control" id="Prenom_Particulier" placeholder="Prénom" required pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
                 </input>
             </div>
         </div>
 
         <div class="mb-3 row">
-            <label for="EmailParticulier" class="col-sm-2 col-form-label">E-mail* : </label>
+            <label for="Email_Particulier" class="col-sm-2 col-form-label">E-mail* : </label>
             <div class="col-sm-8">
-                <input type="email" class="form-control" id="EmailParticulier" placeholder="Ex : Pierre-Giraud@gamail.com" required>
+                <input type="email" class="form-control" id="Email_Particulier" placeholder="Ex : Pierre-Giraud@gamail.com" required>
                 </input>
             </div>
         </div>
 
         <div class="mb-3 row">
-            <label for="PasswordParticulier" class="col-sm-2 col-form-label">Mot de passe* : </label>
+            <label for="Password_Particulier" class="col-sm-2 col-form-label">Mot de passe* : </label>
             <div class="col-sm-8">
-                <input type="password" class="form-control" id="PasswordParticulier" placeholder="Entrez votre mot de passe" required>
+                <input type="password" class="form-control" id="Password_Particulier" placeholder="Choisissez votre mot de passe" required>
                 </input>
             </div>
         </div>
 
         <div class="mb-3 row">
-            <label for="ConfirmationPassParticulier" class="col-sm-2 col-form-label">Confirmation* : </label>
+            <label for="Confirmation_Pass_Particulier" class="col-sm-2 col-form-label">Confirmation* : </label>
             <div class="col-sm-8">
-                <input type="password" class="form-control" id="ConfirmationPassParticulier" placeholder="Confirmez votre mot de passe" required>
+                <input type="password" class="form-control" id="Confirmation_Pass_Particulier" placeholder="Confirmez votre mot de passe" required>
             </div>
         </div>
 
         <div class="mb-3 row">
-            <label for="TelephoneParticulier" class="col-sm-2 col-form-label">Téléphone : </label>
+            <label for="Telephone_Particulier" class="col-sm-2 col-form-label">Téléphone : </label>
             <div class="col-sm-8">
-                <input type="tel" class="form-control" id="TelephoneParticulier" placeholder="06-92-00-01-02" pattern="(01|02|03|04|05|06|07|08|09)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}">
+                <input type="tel" class="form-control" id="Telephone_Particulier" placeholder="06-92-00-01-02" pattern="(01|02|03|04|05|06|07|08|09)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}">
             </div>
         </div>
 
         <div class="col-sm-10 offset-2">
-    <button type="submit" name="inscrire_particulier" class="btn btn-primary">S'inscrire</button>
+    <button type="submit" name="Inscrire_Particulier" class="btn btn-primary">S'inscrire</button>
   </div>
         </form>
         <div class="col-sm-8 offset-2"><p><i>(Les champs présentant le symbole * sont obligatoire)</i></p></div>
