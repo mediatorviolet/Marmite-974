@@ -2,6 +2,7 @@
 
 <?php include '../include/header.php'?>
 
+
 <div class="container d-flex justify-content-center mt-3  mb-3">
     <h2>CUISINIER</h2>
 </div>
@@ -17,7 +18,7 @@
             <label for="Nom_Cuisinier" class="col-sm-2 col-form-label">Nom* : </label>
           
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="Nom_Cuisinier" name="Nom_Cuisinier" placeholder="NOM" required pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
+                <input type="text" class="form-control" id="Nom_Cuisinier" name="Nom_Cuisinier" placeholder="NOM" required pattern="[A-Z]">
             </div>
         </div>
 
@@ -67,18 +68,10 @@
         <div class="col-sm-8 offset-2"><p><i>(Les champs présentant le symbole * sont obligatoires.)</i></p></div>
 </div>
 
-<!-------------------------------------SECURISATION COTEE SERVEUR-------------------------------------------------->
-<!---OBJECTIF  
-    Pour chaque information obligatoire, vérifier si elle n'est pas vide.
-    Pour chaque information présentant un format de saisie, vérifier si elle contient le bon format.
-    S'assurer que chacune des validations côté client soit correctement reprise côté serveur.
----->
+<?php include '../include/footer.php'?>
 
 
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
 
 

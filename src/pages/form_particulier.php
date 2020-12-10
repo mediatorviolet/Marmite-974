@@ -9,12 +9,12 @@
 
 <div class="container col-8 pb-5 ">
 
-     <form method="POST" action="" class="form" id="Form_Partiiculier">
+     <form method="POST" action="" class="form" id="Form_Particulier">
 
         <div class="row mb-3 ml-5">
             <label for="Nom_Particulier" class="col-sm-2 col-form-label">Nom* : </label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="Nom_Particulier" name="Nom_Particulier" placeholder="NOM" required pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
+                <input type="text" class="form-control" id="Nom_Particulier" name="Nom_Particulier" placeholder="NOM" required pattern="[A-Z]">
             </div>
         </div>
 
@@ -63,6 +63,4 @@
 </div>
 
 
-
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<?php include '../include/footer.php'?>
