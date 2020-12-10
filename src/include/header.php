@@ -22,7 +22,7 @@
                                 <button type="button" class="btn btn-primary text-uppercase px-4">Cuisinier</button>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                                 </form>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Close</button>
                             </div>
                         </div>
                     </div>
