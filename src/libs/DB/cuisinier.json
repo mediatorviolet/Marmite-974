@@ -1,1 +1,11 @@
-[]
+[
+    {
+        "id": "cuisinier_08e48da93d168de076136c8d7676e61c",
+        "Nom_Cuisinier": "Bon",
+        "Prenom_Cuisinier": "Jean",
+        "Email_Cuisinier": "cuisinier@test.fr",
+        "Password_Cuisinier": "test",
+        "Specialite_Cuisinier": "Aucun",
+        "etat": "inactif"
+    }
+]

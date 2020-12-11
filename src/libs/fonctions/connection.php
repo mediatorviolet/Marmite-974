@@ -1,7 +1,18 @@
 <?php
+function searchEmail($email, $array) {
+    foreach ($array as $key => $val) {
+        if ($val["Email_Cuisinier"] == $email) {
+            return $key;
+        }
+    }
+    return null;
+}
+
 function connection() {
+    $data_cuisinier = "src/libs/DB/cuisinier.json";
+    $array_cuisinier = json_decode(file_get_contents($data_cuisinier), true);
     if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["connexion"])) {
-        if ($_POST["email"] == "cuisinier@test.fr" and $_POST["password"] == "test") {
+        if ((searchEmail($_POST["email"], $array_cuisinier) != null) and $_POST["password"] == "test") {
             $_SESSION["cuisinier"] = true;
             header("Location: index.php?page=tableau_cuisinier");
         }
