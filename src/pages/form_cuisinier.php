@@ -1,3 +1,8 @@
+
+
+<?php include 'src/libs/fonctions/validation_form.php'?>
+
+
 <div class="container d-flex justify-content-center mt-3  mb-3">
     <h2>CUISINIER</h2>
 </div>
@@ -14,6 +19,7 @@
           
             <div class="col-sm-8">
                 <input type="text" class="form-control" id="Nom_Cuisinier" name="Nom_Cuisinier" placeholder="NOM" required pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
+                <span><?= $Nom_Cuisinier_Err?></span>
             </div>
         </div>
 
@@ -21,6 +27,7 @@
             <label for="Prenom_Cuisinier" class="col-sm-2 col-form-label">Prénom* :</label>
             <div class="col-sm-8"> <input type="text" class="form-control" id="Prenom_Cuisinier" name="Prenom_Cuisinier" placeholder="Prénom" required pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
                 </input>
+                <span><?= $Prenom_Cuisinier_Err?></span>
             </div>
         </div>
 
@@ -30,6 +37,7 @@
             <div class="col-sm-8">
                 <input type="email" class="form-control" id="Email_Cuisinier" name="Email_Cuisinier" placeholder="Ex : Pierre-Giraud@gmail.com" required pattern = "^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})?">
                 </input>
+                <span><?= $Email_Cuisinier_Err?></span>
             </div>
         </div>
 
@@ -38,6 +46,7 @@
             <div class="col-sm-8">
                 <input type="password" class="form-control" id="Password_Cuisinier" name="Password_Cuisinier" placeholder="Choisissez un mot de passe" required>
                 </input>
+                <span><?= $Password_Cuisinier_Err?></span>
             </div>
         </div>
 
@@ -45,6 +54,7 @@
             <label for="Confirmation_Pass_Cuisinier" class="col-sm-2 col-form-label">Confirmation* : </label>
             <div class="col-sm-8">
                 <input type="password" class="form-control" id="Confirmation_Pass_Cuisinier" name="Confirmation_Pass_Cuisinier" placeholder="Confirmez votre mot de passe" required>
+                <span><?= $Confirmation_Pass_Particulier_Err?></span>
             </div>
         </div>
 
@@ -52,11 +62,12 @@
             <label for="Specialite_Cuisinier" class="col-sm-2 col-form-label">Spécialité : </label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" id="Specialite_Cuisinier"  name="Specialite_Cuisinier" placeholder="Ex: Bonbon à la salade"  pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
+                <span><?= $Specialite_Cuisinier_Err?></span>
             </div>
         </div>
 
         <div class="col-sm-10 offset-2">
-    <button type="submit" action="traitement.php" name="Inscrire_Cuisinier" class="btn btn-primary px-4" >S'inscrire</button>
+    <button type="submit" action="validation_form.php" name="Inscrire_Cuisinier" class="btn btn-primary px-4" >S'inscrire</button>
   </div>
         </form>
 
