@@ -1,4 +1,5 @@
 <?php include '../include/header.php'?>
+<?php include '../libs/fonctions/envoi_json.php'?>
 
 <div class="container d-flex justify-content-center mt-3  mb-3">
     <h2>PARTICULIER</h2>
@@ -56,7 +57,7 @@
         </div>
 
         <div class="col-sm-10 offset-2">
-    <button type="submit" action="traitement.php" name="Inscrire_Particulier" class="btn btn-primary px-4" >S'inscrire</button>
+    <button type="submit" action="form_particulier.php" name="Inscrire_Particulier" class="btn btn-primary px-4" >S'inscrire</button>
   </div>
         </form>
         <div class="col-sm-8 offset-2"><p><i>(Les champs présentant le symbole * sont obligatoires.)</i></p></div>
