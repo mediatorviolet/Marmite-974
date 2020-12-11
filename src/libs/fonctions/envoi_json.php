@@ -2,12 +2,12 @@
 
 // fonction d'envoi des données sur le fichier json adéquat
 
-function ajout_data()
+function ajout_json()
 {
 
     // d'abord verifier si la validation du formulaire est ok ( en attendant verif avec isset sur un bouton du formulaire d'ajout utilisateur )
 
-
+//envoi des données des formulaires vers les fichiers json appropriés
     if (isset($_POST['Inscrire_Particulier']))
 {    
         $data_file = 'src/libs/DB/utilisateur.json';
@@ -57,5 +57,5 @@ else
 
 
 
-ajout_data();
+ajout_json();
 ?>
