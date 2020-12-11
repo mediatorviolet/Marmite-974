@@ -49,8 +49,8 @@
                                         <div class="row mb-3 form-floating">
                                             <input type="password" name="password" class="form-control" id="password" placeholder="">
                                             <label for="password" class="col-form-label">Mot de passe</label>
+                                            <button type="submit" name="connexion" class="btn btn-primary px-4 mt-3 col-4">Connexion</button>
                                         </div>
-                                        <button type="submit" name="connexion" class="btn btn-primary px-4">Connexion</button>
                                     </form>
                                 </div>
                                 <div class="modal-footer">
