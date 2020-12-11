@@ -1,11 +1,1 @@
-[
-    {
-        "id": "cuisinier_08e48da93d168de076136c8d7676e61c",
-        "Nom_Cuisinier": "Bon",
-        "Prenom_Cuisinier": "Jean",
-        "Email_Cuisinier": "cuisinier@test.fr",
-        "Password_Cuisinier": "test",
-        "Specialite_Cuisinier": "Aucun",
-        "etat": "inactif"
-    }
-]
+[{"id":"cuisinier_0a3bf7e9ab7bea4a51628dacd33655d9","Nom_Cuisinier":"sdc","Prenom_Cuisinier":"sd","Email_Cuisinier":"toto.idiot@gmail.com","Password_Cuisinier":"sqd","Specialite_Cuisinier":"sqd","etat":"inactif"},{"id":"cuisinier_08e48da93d168de076136c8d7676e61c","Nom_Cuisinier":"Bon","Prenom_Cuisinier":"Jean","Email_Cuisinier":"cuisinier@test.fr","Password_Cuisinier":"test","Specialite_Cuisinier":"Aucun","etat":"inactif"}]
