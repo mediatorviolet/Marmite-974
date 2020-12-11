@@ -34,7 +34,7 @@
             <input type="file" class="form-control-lg" id="image" placeholder="" required>
         </div>
         <div class="col-12 d-flex justify-content-end">
-            <button type="submit" class="btn-lg btn-primary px-5">Ajouter</button>
+            <button type="submit" name="Inscrire_Atelier" class="btn-lg btn-primary px-5">Ajouter</button>
         </div>
     </form>
 </div>

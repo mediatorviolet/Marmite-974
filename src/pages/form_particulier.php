@@ -1,4 +1,4 @@
-<?php include '../libs/fonctions/envoi_json.php'?>
+<?php include 'src/libs/fonctions/envoi_json.php'?>
 
 <div class="container d-flex justify-content-center mt-3  mb-3">
     <h2>PARTICULIER</h2>
@@ -61,3 +61,4 @@
         </form>
         <div class="col-sm-8 offset-2"><p><i>(Les champs présentant le symbole * sont obligatoires.)</i></p></div>
 </div>
+
