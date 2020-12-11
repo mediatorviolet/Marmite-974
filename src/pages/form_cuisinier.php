@@ -1,8 +1,3 @@
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
-<?php include '../include/header.php'?>
-
-
 <div class="container d-flex justify-content-center mt-3  mb-3">
     <h2>CUISINIER</h2>
 </div>
@@ -67,16 +62,6 @@
 
         <div class="col-sm-8 offset-2"><p><i>(Les champs présentant le symbole * sont obligatoires.)</i></p></div>
 </div>
-
-<?php include '../include/footer.php'?>
-
-
-
-
-
-
-
-
 
 
 

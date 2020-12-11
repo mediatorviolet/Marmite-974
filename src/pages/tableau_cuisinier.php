@@ -1,5 +1,3 @@
-<?php include '../include/header.php'?>
-
 <div class="container-fluid px-0">
   <h2 class="display-4 text-center p-lg-5 p-md-3 py-3">Tableau de bord</h2>
   <table class=" table px-0 table-responsive table-hover table-dark">
@@ -20,6 +18,5 @@
     <tbody>
     </table>
     </div>
-    <?php include '../include/footer.php'?>
 
 

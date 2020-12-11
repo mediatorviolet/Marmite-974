@@ -1,8 +1,10 @@
-
+<div class="bg-dark p-5 mt-5">
+    <h2 class="display-4 text-light">Bienvenue Joseph</h2>
+</div>
 <div class="container-fluid p-lg-5 p-md-3">
-    <h2 class="display-4 text-center px-lg-5 py-lg-4 p-md-3 py-3 text-uppercase">Nos ateliers</h2>
+    <h2 class="display-4 text-center p-lg-5 p-md-3 py-3">Vous êtes inscrit aux ateliers suivants :</h2>
 
-    <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="col">
             <div class="card">
                 <img src="src/ressources/images/chinh-le-duc-vuDXJ60mJOA-unsplash.jpg" class="card-img-top" alt="Illustration atelier">
@@ -32,13 +34,13 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Fermer</button>
-                                        <button type="button" class="btn btn-primary px-4">Réserver</button>
+                                        <button type="button" class="btn btn-primary px-4">Se désinscrire</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <button class="btn btn-primary px-4">Réserver</button>
+                        <button class="btn btn-primary px-4">Se désinscrire</button>
                     </div>
                 </div>
             </div>
@@ -72,13 +74,13 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Fermer</button>
-                                        <button type="button" class="btn btn-primary px-4">Réserver</button>
+                                        <button type="button" class="btn btn-primary px-4">Se désinscrire</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <button class="btn btn-primary px-4">Réserver</button>
+                        <button class="btn btn-primary px-4">Se désinscrire</button>
                     </div>
                 </div>
             </div>
@@ -112,13 +114,13 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Fermer</button>
-                                        <button type="button" class="btn btn-primary px-4">Réserver</button>
+                                        <button type="button" class="btn btn-primary px-4">Se désinscrire</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <button class="btn btn-primary px-4">Réserver</button>
+                        <button class="btn btn-primary px-4">Se désinscrire</button>
                     </div>
                 </div>
             </div>
@@ -152,13 +154,13 @@
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Fermer</button>
-                                        <button type="button" class="btn btn-primary px-4">Réserver</button>
+                                        <button type="button" class="btn btn-primary px-4">Se désinscrire</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <button class="btn btn-primary px-4">Réserver</button>
+                        <button class="btn btn-primary px-4">Se désinscrire</button>
                     </div>
                 </div>
             </div>

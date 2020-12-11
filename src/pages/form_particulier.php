@@ -1,5 +1,3 @@
-<?php include '../include/header.php'?>
-
 <div class="container d-flex justify-content-center mt-3  mb-3">
     <h2>PARTICULIER</h2>
 </div>
@@ -61,6 +59,3 @@
         </form>
         <div class="col-sm-8 offset-2"><p><i>(Les champs présentant le symbole * sont obligatoires.)</i></p></div>
 </div>
-
-
-<?php include '../include/footer.php'?>
