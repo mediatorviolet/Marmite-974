@@ -3,7 +3,7 @@
 //require_once 'upload.php';
 
 //initialisation err pour les chamsp inscription CUISINIER
-$Nom_Cuisinier_Err = $Prenom_Cuisinier_Err = $Prenom_Cuisinier_Err = $Email_Cuisinier_Err = $Password_Cuisinier_Err = $Confirmation_Pass_Cuisinier_Err = $Specialite_Cuisinier_Err = "";
+$Nom_Cuisinier_Err = $Prenom_Cuisinier_Err = $Email_Cuisinier_Err = $Password_Cuisinier_Err = $Confirmation_Pass_Cuisinier_Err = $Specialite_Cuisinier_Err = "";
 //initialisation err pour les chamsp inscription PARTICULIER
 $Nom_Particulier_Err = $Prenom_Particulier_Err = $Email_Particulier_Err = $Password_Particulier_Err = $Confirmation_Pass_Particulier_Err 
 = $Telephone_Particulier_Err = "";
@@ -62,70 +62,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //  fonction htmlspecialchars(). Cette fonction va permettre d’échapper certains caractères spéciaux comme les chevrons « < » et « > » en les transformant en entités HTML.
 // nettoyer les données avant de les stocker comme trim() qui va supprimer les espaces inutiles et stripslashes() qui va supprimer les antislashes que certains hackers pourraient utiliser pour échapper des caractères spéciaux.
 //***************************************** */
-//     function valid_donnees($donnees){
-//    $donnees = trim($donnees);
-//    $donnees = stripslashes($donnees);
-//    $donnees = htmlspecialchars($donnees);
-//    return $donnees;
-// }
-//***************************************** */
-// format attendu : champs obligatoires
-// format attendu : longueur des champs
-
-//if (!empty($annee) && 4 != mb_strlen($annee)) {
-    // $message .= 'L\'année, lorsque fournie, doit comporter exactement 4 caractères.<br \>';
-//   }
-// format attendu : courriel
-//if (!filter_var( $courriel, FILTER_VALIDATE_EMAIL)) {
-    // $message .= 'Le courriel n\'est pas valide. Il doit être au format unnom@undomaine.uneextension.<br /> &nbsp; &nbsp; Il doit comporter un seul caractère @.<br /> &nbsp; &nbsp; Ce caractère doit être suivi d\'un nom de domaine qui contient au moins un point puis une extension.<br /> &nbsp; &nbsp; Les caractères spéciaux ne sont pas acceptés.<br \>';
-// }
-// données valables : champs numérique
-//  if (!empty($annee) && !ctype_digit($annee)) {
-    // $message .= 'L\'année, lorsque fournie, doit être un entier.<br \>';
-//  }
-//données valables : valeur décimale
-// if (!empty($rang)) {
-    // si on n'a pas besoin de vérifier la valeur maximale, omettre le else
-    // if (!is_numeric($annee)) {
-        // $message .= 'Le rang, lorsque fourni, doit être un nombre qui peut comporter une partie décimale.<br \>';
-    // }
-    // else {
-// si on vérifie avec l'expression régulière, pas besoin de vérifier le is_numeric()
-// if (!preg_match("/^[0-9]{1,3}([.,][0-9]{1,2})?$/", $rang)) {
-            // $message .= "Le rang, lorsque fourni, doit être au format 999.99";
-        // }
-    // }
-// }
-// if ('' != $message) {
-
-    // *** affichage du message ********************************************************
-    // echo "<div class='messageerreur'>$message</div>";
-    // *** réaffichage du formulaire avec les données qui y ont été saisies ************
-//   } else {
-    // *** enregistrement *************************************************************
- // }
 
 
 
+ //****************LES FONCTIONS VALIDATION FORM**************************************************************************************** */
 
 // INITIALISATION DES CLASSE ET MESSAGE D'ALERTE
-$class_alert = "";
-$msg_alert = "";
-
 // Variables définit en global pour etre accesible à tous le site et que la fonction return les valeurs.
 // Déclaration de la fonction.
 // La fonction possede tout les posts (form_cuisinier form_paticulier form_ajout form_modif)
 
-//***************************************************************************************************************************************************************************************************************************************************** */
+$class_alert = "";
+$msg_alert = "";
 
 
-function validationForm()
+
+if(isset ($_POST['Inscrire_Cuisinier'])){
+
+};
+
+function validationForm_Cuisinier()
 {
     global $class_alert;
     global $msg_alert;
     //Initialisation de count
     $count = 0;
-    $required_input = ["nomProduit", "inputPrixLancement", "inputDuree", "inputPrixClic", "inputAugmentationPrix", "inputAugmentationDuree"];
+    $required_input = ["Nom_Cuisinier", "Prenom_Cuisinier", "Email_Cuisinier", "Password_Cuisinier", "Confirmation_Pass_Cuisinier", "Specialite_Cuisinier"];
     foreach ($required_input as $input) {
         if (empty($_POST["$input"])) {
             $count++;
@@ -141,50 +103,100 @@ function validationForm()
     } else {
         $class_alert = "success";
         $msg_alert = "Article ajouté avec succès.";
-        ajout_produit();
+        Inscription_Cuisinier();
     }
 }
 
 
-function ajout_produit()
+function validationForm_Particulier()
 {
-    // Création d'un id unique pour chaque article
-    $id_enchere = "article_" . md5(uniqid(rand(), true));
-    $_POST["id"] = $id_enchere;
+    global $class_alert;
+    global $msg_alert;
+    //Initialisation de count
+    $count = 0;
+    $required_input = ["Nom_Particulier", "Prenom_Particulier", "Email_Particulier", "Password_Particulier", "Confirmation_Pass_Particulier", "Telephone_Particulier"];
+    foreach ($required_input as $input) {
+        if (empty($_POST["$input"])) {
+            $count++;
+        } else {
+            $_POST["$input"] = trim($_POST["$input"]);
+            $_POST["$input"] = stripslashes($_POST["$input"]);
+            $_POST["$input"] = htmlspecialchars($_POST["$input"]);
+        }
+    }
+    if ($count > 0) {
+        $class_alert = "danger";
+        $msg_alert = "Veuillez remplire tous les champs demandés.";
+    } else {
+        $class_alert = "success";
+        $msg_alert = "Article ajouté avec succès.";
+        Inscription_Particulier();
+    }
+}
+//  ************************************LES FONCTIONS INSCRIPTIONS***************************************************************************************************************************************************************************** */
+function Inscription_Cuisinier()
+{
+    // Création d'un id unique pour chaque inscription cuisinier
+    $id_cuisinier = "cuisinier_" . md5(uniqid(rand(), true));
+    $_POST["id"] = $id_cuisinier;
 
     // Ajout du de l'article dans le tableau $json_array
-    $postArray = array(
-        "id" => $id_enchere,
-        "titre" => $_POST["nomProduit"],
-        "image" => "src/resources/img/uploads/" . basename($_FILES["inputUploadImg"]["name"]),
-        "prixLancement" => intval($_POST["inputPrixLancement"]),
-        "duree" => intval($_POST["inputDuree"] * 3600),
-        "prixClic" => intval($_POST["inputPrixClic"]),
-        "augmentationPrix" => intval($_POST["inputAugmentationPrix"]),
-        "augmentationDuree" => intval($_POST["inputAugmentationDuree"]),
+    $Post_Array_Cuisinier = array(
+        "id" => $id_cuisinier,
+        "Nom_Cuisinier" => ($_POST["Nom_Cuisinier"]),
+        "Prenom_Cuisinier" => ($_POST["Prenom_Cuisinier"]),
+        "Email_Cuisinier" => ($_POST["Email_Cuisinier"]),
+        "Password_Cuisinier" => ($_POST["Password_Cuisinier"]),
+        "Specialite_Cuisinier" => ($_POST["Specialite_Cuisinier"]),
         "etat" => "inactif",
-        "date_fin" => mktime(date("H") + ($_POST["inputDuree"]))
+        
     );
-
-    $data_file = 'src/libs/data.json';
-    $json_array = json_decode(file_get_contents($data_file), true);
-    array_unshift($json_array, $postArray);
-    file_put_contents($data_file, json_encode($json_array));
+    // A effacer plus tard. test si les post fonctionne
+    $Data_File_Cuisinier = 'src/libs/DB/cuisinier.json';
+    $Json_Array_Cuisinier = json_decode(file_get_contents($Data_File_Cuisinier), true);
+    array_unshift($Json_Array_Cuisinier, $Post_Array_Cuisinier);
+    file_put_contents($Data_File_Cuisinier, json_encode($Json_Array_Cuisinier));
 }
 
-function enchere()
+
+function Inscription_Particulier()
 {
-    global $data_file;
-    global $json_array;
-    if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["encherir"])) {
-        $id = $_POST["hint"];
-        $json_array = json_decode(file_get_contents($data_file), true);
-        (int) $json_array[$id]["prixLancement"] += (int) $json_array[$id]["augmentationPrix"] * 0.01 / count($json_array); // Division par la longueur de $json_array (bug foreach ?)
-        (int) $json_array[$id]["date_fin"] += (int) $json_array[$id]["augmentationDuree"] / count($json_array); // Division par la longueur de $json_array (bug foreach ?)
-        file_put_contents($data_file, json_encode($json_array));
-        header("Location:  index.php#" . $json_array[$id]["id"]);
-    }
+    // Création d'un id unique pour chaque inscription cuisinier
+    $id_particulier = "particulier_" . md5(uniqid(rand(), true));
+    $_POST["id"] = $id_particulier;
+
+    // Ajout du de l'article dans le tableau $json_array
+    $Post_Array_Particulier = array(
+        "id" => $id_particulier,
+        "Nom_Particulier" => ($_POST["Nom_Particulier"]),
+        "Prenom_Particulier" => ($_POST["Prenom_Particulier"]),
+        "Email_Particulier" => ($_POST["Email_Particulier"]),
+        "Password_Particulier" => ($_POST["Password_Particulier"]),
+        "Specialite_Particulier" => ($_POST["Specialite_Cuisinier"]),
+        "etat" => "inactif",
+        
+    );
+    // A effacer plus tard. test si les post fonctionne
+    $Data_File_Particulier = 'src/libs/DB/utilisateur.json';
+    $json_Array_Particulier = json_decode(file_get_contents($Data_File_Particulier), true);
+    array_unshift($Json_Array_Particulier, $Post_Array_Particulier);
+    file_put_contents($Data_File_Particulier, json_encode($json_Array_Particulier));
 }
+
+
+//test des fonctions inscriptions
+
+if (isset($_POST['Inscrire_Cuisinier'])){
+    Inscription_Cuisinier();
+}
+
+
+//  ************************************LES FONCTIONS AJOUT ATELIER***************************************************************************************************************************************************************************** */
+
+
+
+
+
 
 function change_state() {
     global $data_file;

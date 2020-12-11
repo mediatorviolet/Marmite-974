@@ -13,6 +13,7 @@
             <label for="Nom_Particulier" class="col-sm-2 col-form-label">Nom* : </label>
             <div class="col-sm-8">
                 <input type="text" class="form-control" id="Nom_Particulier" name="Nom_Particulier" placeholder="NOM" required pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
+                <span><?= $Nom_Particulier_Err?></span>
             </div>
         </div>
 
@@ -20,6 +21,7 @@
             <label for="Prenom_Particulier" class="col-sm-2 col-form-label">Prénom* :</label>
             <div class="col-sm-8"> <input type="text" class="form-control" id="Prenom_Particulier" name="Prenom_Particulier" placeholder="Prénom" required pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
                 </input>
+                <span><?= $Prenom_Particulier_Err?></span>
             </div>
         </div>
 
@@ -28,6 +30,7 @@
             <div class="col-sm-8">
                 <input type="email" class="form-control" id="Email_Particulier" name="Email_Particulier" placeholder="Ex : Pierre-Giraud@gmail.com" required pattern = "^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})?$">
                 </input>
+                <span><?= $Email_Particulier_Err?></span>
             </div>
         </div>
 
@@ -36,6 +39,7 @@
             <div class="col-sm-8">
                 <input type="password" class="form-control" id="Password_Particulier" name="Password_Particulier" placeholder="Choisissez votre mot de passe" required>
                 </input>
+                <span><?= $Password_Particulier_Err?></span>
             </div>
         </div>
 
@@ -43,13 +47,15 @@
             <label for="Confirmation_Pass_Particulier" class="col-sm-2 col-form-label">Confirmation* : </label>
             <div class="col-sm-8">
                 <input type="password" class="form-control" id="Confirmation_Pass_Particulier" name="Confirmation_Pass_Particulier" placeholder="Confirmez votre mot de passe" required>
+                <span><?= $Confirmation_Pass_Particulier_Err?></span>
             </div>
         </div>
 
         <div class="mb-3 row">
             <label for="Telephone_Particulier" class="col-sm-2 col-form-label">Téléphone : </label>
             <div class="col-sm-8">
-                <input type="tel" class="form-control" id="Telephone_Particulier" name="Telephone_Particulier" placeholder="06-92-00-01-02" pattern="(01|02|03|04|05|06|07|08|09)[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}[ \.\-]?[0-9]{2}" min="0" max="99">
+                <input type="tel" class="form-control" id="Telephone_Particulier" name="Telephone_Particulier" placeholder="06 92 00 01 02" pattern="^((((\(\d{3}\))|(\d{3}-))\d{3}-\d{4})|(\+?\d{2}((-| )\d{1,8}){1,5}))(( x| ext)\d{1,5}){0,1}$" >
+                <span><?= $Telephone_Particulier_Err?></span>
             </div>
         </div>
 
