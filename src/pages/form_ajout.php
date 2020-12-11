@@ -37,9 +37,9 @@
             <button type="submit" name="Inscrire_Atelier" class="btn-lg btn-primary px-5">Ajouter</button>
         </div>
         <div class="form-group row">
-                <label for="id" class="col-md-3 col-form-label font-weight-bold"></label>
+                <label for="id_atelier" class="col-md-3 col-form-label font-weight-bold"></label>
                 <div class="col-md-9">
-                    <input type="hidden" class="form-control" id="id" name="id">
+                    <input type="hidden" class="form-control" id="id_atelier" name="id_atelier">
                 </div>
             </div>
     </form>

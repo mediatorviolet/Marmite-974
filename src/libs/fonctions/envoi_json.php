@@ -12,6 +12,8 @@ function ajout_data()
 {    
         $data_file = 'src/libs/DB/utilisateur.json';
         $json_array = json_decode(file_get_contents($data_file), true);
+        $id = md5(uniqid(rand(), true));
+        $_POST["id_particulier"] = $id;
         array_push($json_array, $_POST);
         file_put_contents($data_file, json_encode($json_array));
 }
@@ -20,6 +22,8 @@ function ajout_data()
     {            
         $data_file = 'src/libs/DB/cuisinier.json';
         $json_array = json_decode(file_get_contents($data_file), true);
+        $id = md5(uniqid(rand(), true));
+        $_POST["id_cuisinier"] = $id;
         array_push($json_array, $_POST);
         file_put_contents($data_file, json_encode($json_array));
     }
@@ -29,13 +33,24 @@ function ajout_data()
     {                
         $data_file = 'src/libs/DB/atelier.json';
         $json_array = json_decode(file_get_contents($data_file), true);
+        $id = md5(uniqid(rand(), true));
+        $_POST["id_atelier"] = $id;
+        array_push($json_array, $_POST);
+        file_put_contents($data_file, json_encode($json_array));
+    }
+
+    elseif (isset($_POST['Modifier_Atelier']))
+    {                
+        $data_file = 'src/libs/DB/atelier.json';
+        $json_array = json_decode(file_get_contents($data_file), true);
+        $json_array = array();
         array_push($json_array, $_POST);
         file_put_contents($data_file, json_encode($json_array));
     }
         
 else
 {
-    echo "ca marche pas";
+    echo "ERROR";
 }
     }
 
