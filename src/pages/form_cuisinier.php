@@ -18,7 +18,7 @@
             <label for="Nom_Cuisinier" class="col-sm-2 col-form-label">Nom* : </label>
           
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="Nom_Cuisinier" name="Nom_Cuisinier" placeholder="NOM" required pattern="[A-Z]">
+                <input type="text" class="form-control" id="Nom_Cuisinier" name="Nom_Cuisinier" placeholder="NOM" required pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
             </div>
         </div>
 

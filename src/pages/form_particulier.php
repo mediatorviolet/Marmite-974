@@ -14,7 +14,7 @@
         <div class="row mb-3 ml-5">
             <label for="Nom_Particulier" class="col-sm-2 col-form-label">Nom* : </label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="Nom_Particulier" name="Nom_Particulier" placeholder="NOM" required pattern="[A-Z]">
+                <input type="text" class="form-control" id="Nom_Particulier" name="Nom_Particulier" placeholder="NOM" required pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
             </div>
         </div>
 
