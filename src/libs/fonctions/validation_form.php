@@ -77,6 +77,10 @@ $msg_alert = "";
 
 
 
+if(isset ($_POST['Inscrire_Cuisinier'])){
+
+};
+
 function validationForm_Cuisinier()
 {
     global $class_alert;
@@ -148,10 +152,10 @@ function Inscription_Cuisinier()
         
     );
     // A effacer plus tard. test si les post fonctionne
-    $Data_File_Cuisinier = 'src/libs/cuisinier.json';
-    $json_Array_Cuisinier = json_decode(file_get_contents($Data_File_Cuisinier), true);
+    $Data_File_Cuisinier = 'src/libs/DB/cuisinier.json';
+    $Json_Array_Cuisinier = json_decode(file_get_contents($Data_File_Cuisinier), true);
     array_unshift($Json_Array_Cuisinier, $Post_Array_Cuisinier);
-    file_put_contents($Data_File_Cuisinier, json_encode($json_Array_Cuisinier));
+    file_put_contents($Data_File_Cuisinier, json_encode($Json_Array_Cuisinier));
 }
 
 
@@ -173,7 +177,7 @@ function Inscription_Particulier()
         
     );
     // A effacer plus tard. test si les post fonctionne
-    $Data_File_Particulier = 'src/libs/utilisateur.json';
+    $Data_File_Particulier = 'src/libs/DB/utilisateur.json';
     $json_Array_Particulier = json_decode(file_get_contents($Data_File_Particulier), true);
     array_unshift($Json_Array_Particulier, $Post_Array_Particulier);
     file_put_contents($Data_File_Particulier, json_encode($json_Array_Particulier));
