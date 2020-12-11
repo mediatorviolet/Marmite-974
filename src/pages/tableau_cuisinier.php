@@ -1,4 +1,4 @@
-<div class="container-fluid px-0">
+<div class="container-fluid px-0 tableau-cuisinier">
   <h2 class="display-4 text-center p-lg-5 p-md-3 py-3">Tableau de bord</h2>
   <table class=" table px-0 table-responsive table-hover table-dark">
     <thead>

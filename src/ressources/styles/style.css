@@ -3,3 +3,13 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+html, body {
+    min-height: 100vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.form-cuisinier, .espace-perso, .form-ajout, .form-modif, .form-particulier, .homepage, .tableau-cuisinier {
+    flex: 1 !important;
+}

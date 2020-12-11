@@ -64,12 +64,12 @@
             <a href="index.php?page=tableau_cuisinier" class="nav-link text-dark mr-3">Tableau de bord</a>
             <a href="index.php?page=form_ajout" class="nav-link text-dark mr-3">Ajouter un atelier</a>
             <form action="<?= connection() ?>" method="POST" class="px-3">
-                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" name="deconnexion">Se déconnecter</button>
+                <button class="btn btn-primary my-2 my-sm-0" type="submit" name="deconnexion">Se déconnecter</button>
             </form>
         <?php } elseif ($_SESSION["particulier"] == true) { ?>
             <a href="index.php?page=espace_perso" class="nav-link text-dark mr-3">Espace personnel</a>
             <form action="<?= connection() ?>" method="POST" class="px-3">
-                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit" name="deconnexion">Se déconnecter</button>
+                <button class="btn btn-primary my-2 my-sm-0" type="submit" name="deconnexion">Se déconnecter</button>
             </form>
         <?php } ?>
         </div>

@@ -2,7 +2,7 @@
 
 
 <?php include "../include/header.php" ?>
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-5 form-modif">
     <h1 class="text-uppercase text-center">Modifier un atelier</h1>
     <form class="row g-3 col-md-9 mx-auto mt-5">
         <div class="col-12 form-floating mb-3">

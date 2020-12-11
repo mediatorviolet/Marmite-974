@@ -1,3 +1,4 @@
+
 <footer class="bg-light px-5 py-5">
     <div class="container-fluid d-flex justify-content-between align-items-center px-5 mx-5">
         <a href="#" class="link-dark">CGU/CGV</a>

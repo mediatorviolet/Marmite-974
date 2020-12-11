@@ -1,4 +1,4 @@
-<div class="container-fluid mt-5">
+<div class="container-fluid mt-5 form-ajout">
     <h1 class="text-uppercase text-center">Ajouter un atelier</h1>
     <form class="row g-3 col-9 mx-auto mt-5">
         <div class="col-12 form-floating mb-3">

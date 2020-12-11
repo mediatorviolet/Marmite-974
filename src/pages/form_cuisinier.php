@@ -22,7 +22,7 @@ global $msg_alert; ?>
 <!---DAV  1 les ID doivent bien etre dissocier de ceux du formulaire cuisinier pour eviter les doublons dans la récupération des données----->
 <!--debut securisation form coté html et sereur--->
 
-<div class="container col-8 pb-5 ">
+<div class="form-cuisinier container col-8 pb-5">
 
      <form method="POST" action="<?= validationForm_Cuisinier() ?>" class="form" id="Form_cuisinier">
 
