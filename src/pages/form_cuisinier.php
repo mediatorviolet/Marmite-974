@@ -1,6 +1,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
 <?php include '../include/header.php'?>
+<?php include '../libs/fonctions/validation_form.php'?>
 
 
 <div class="container d-flex justify-content-center mt-3  mb-3">
@@ -61,7 +62,7 @@
         </div>
 
         <div class="col-sm-10 offset-2">
-    <button type="submit" action="traitement.php" name="Inscrire_Cuisinier" class="btn btn-primary px-4" >S'inscrire</button>
+    <button type="submit" action="validation_form.php" name="Inscrire_Cuisinier" class="btn btn-primary px-4" >S'inscrire</button>
   </div>
         </form>
 
