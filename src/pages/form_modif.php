@@ -38,10 +38,11 @@
             <input type="file" class="form-control-lg" id="image" placeholder="" required>
         </div>
         <div class="col-12 d-flex justify-content-end">
-            <button type="submit" class="btn-lg btn-primary px-5">Modifier</button>
+            <button type="submit" name="Modifier_Atelier" class="btn-lg btn-primary px-5">Modifier</button>
         </div>
     </form>
 </div>
+
 
 <?php include "../include/footer.php" ?>
 
