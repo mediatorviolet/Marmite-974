@@ -5,7 +5,7 @@
 <!---DAV  2 les ID doivent bien etre dissocier de ceux du formulaire cuisinier pour eviter les doublons dans la récupération des données----->
 <!--les boutons doivent avoir leurs name  dissocier-->
 
-<div class="container col-8 pb-5 ">
+<div class="container col-8 pb-5 form-particulier">
 
      <form method="POST" action="" class="form" id="Form_Particulier">
 
