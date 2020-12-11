@@ -8,12 +8,14 @@ global $msg_alert; ?>
 
 <div class="container d-flex justify-content-center mt-3  mb-3">
     <h2>CUISINIER</h2>
-
-
-
-    <!---ne fonctionne pas --->
-    <div class="<?= $class_alert ?>"> <?= $msg_alert ?></div> 
 </div>
+
+   <!---ne fonctionne pas --->
+   <div class="<?= $class_alert ?> container d-flex justify-content-center mt-3  mb-3 alert-danger"> <?= $msg_alert ?>  
+</div> 
+
+
+
 
 
 
@@ -24,7 +26,7 @@ global $msg_alert; ?>
 
 <div class="form-cuisinier container col-8 pb-5">
 
-     <form method="POST" action="<?= validationForm_Cuisinier() ?>" class="form" id="Form_cuisinier">
+     <form method="POST" action="<?= validationForm_Cuisinier(); ?>" class="form" id="Form_cuisinier">
 
         <div class="row mb-3 ml-5">
             <label for="Nom_Cuisinier" class="col-sm-2 col-form-label">Nom* : </label>

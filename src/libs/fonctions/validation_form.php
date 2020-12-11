@@ -1,6 +1,9 @@
 <?php  
+
 global $class_alert;
 global $msg_alert; 
+$msg_alert="test";
+
 
 //require_once 'upload.php';
 
