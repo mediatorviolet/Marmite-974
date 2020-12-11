@@ -1,3 +1,4 @@
+<?php include 'src/libs/fonctions/envoi_json.php'?>
 <?php include 'src/libs/fonctions/validation_form.php';
 global $class_alert;
 global $msg_alert ;?>
@@ -68,8 +69,20 @@ global $msg_alert ;?>
         </div>
 
         <div class="col-sm-10 offset-2">
+<<<<<<< HEAD
+    <button type="submit" action="form_particulier.php" name="Inscrire_Particulier" class="btn btn-primary px-4" >S'inscrire</button>
+=======
     <button type="submit"  name="Inscrire_Particulier" class="btn btn-primary px-4" >S'inscrire</button>
+>>>>>>> 04b2c2e07b237a06a57017ea45625d5b5813f0f6
   </div>
+  <div class="form-group row">
+                <label for="id_particulier" class="col-md-3 col-form-label font-weight-bold"></label>
+                <div class="col-md-9">
+                    <input type="hidden" class="form-control" id="id_particulier" name="id_particulier">
+                </div>
+            </div>
+  
         </form>
         <div class="col-sm-8 offset-2"><p><i>(Les champs présentant le symbole * sont obligatoires.)</i></p></div>
 </div>
+
