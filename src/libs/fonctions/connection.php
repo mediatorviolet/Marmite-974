@@ -1,28 +1,38 @@
 <?php
-function searchEmail($email, $array) {
+
+function research($array, $something, $clef)
+{
     foreach ($array as $key => $val) {
-        if ($val["Email_Cuisinier"] == $email) {
+        if ($val[$clef] == $something) {
             return $key;
         }
     }
-    return null;
 }
 
-function connection() {
+
+function connection()
+{
     $data_cuisinier = "src/libs/DB/cuisinier.json";
     $array_cuisinier = json_decode(file_get_contents($data_cuisinier), true);
     if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["connexion"])) {
-        if ((searchEmail($_POST["email"], $array_cuisinier) != null) and $_POST["password"] == "test") {
-            $_SESSION["cuisinier"] = true;
-            header("Location: index.php?page=tableau_cuisinier");
+        $cle = research($array_cuisinier, $_POST["email"], "Email_Cuisinier");
+        if ($cle) {
+            if ($_POST["password"] == $array_cuisinier[$cle]["Password_Cuisinier"]) {
+                $_SESSION["cuisinier"] = $array_cuisinier[$cle];
+                header("Location: index.php?page=tableau_cuisinier");
+            }
         }
-
     }
 
+    $data_particulier = "src/libs/DB/utilisateur.json";
+    $array_particulier = json_decode(file_get_contents($data_particulier), true);
     if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["connexion"])) {
-        if ($_POST["email"] == "particulier@test.fr" and $_POST["password"] == "test") {
-            $_SESSION["particulier"] = true;
-            header("Location: index.php?page=espace_perso");
+        $cle = research($array_particulier, $_POST["email"], "Email_Particulier");
+        if ($cle) {
+            if ($_POST["password"] == $array_particulier[$cle]["Password_Particulier"]) {
+                $_SESSION["particulier"] = $array_particulier[$cle];
+                header("Location: index.php?page=espace_perso");
+            }
         }
     }
 
