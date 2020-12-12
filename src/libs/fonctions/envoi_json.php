@@ -41,6 +41,7 @@ function ajout_json()
             "Description" => $_POST["description"],
             "Date" => $_POST["date"],
             "Heure_debut" => $_POST["heure_debut"],
+            "Duree" => $_POST["duree"],
             "Effectif_max" => $_POST["effectif_max"],
             "Prix" => $_POST["prix"],
             "Etat" => "inactif",
