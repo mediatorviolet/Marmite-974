@@ -33,7 +33,7 @@ function ajout_json()
     {                
         $data_file = 'src/libs/DB/atelier.json';
         $json_array = json_decode(file_get_contents($data_file), true);
-        $id = md5(uniqid(rand(), true));
+        $id = "a_" . md5(uniqid(rand(), true));
         $_POST["id_atelier"] = $id;
         $atelier_post = array(
             "Id" => $_POST["id_atelier"],

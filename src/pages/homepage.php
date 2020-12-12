@@ -16,10 +16,10 @@ $json_array = json_decode(file_get_contents($data_file), true);
                     <p class="card-text"><?= substr($val["Description"], 0, 100) ?>...</p>
                     <div class="d-flex justify-content-between">
                         <!-- Trigger modal -->
-                        <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#a_<?= $val["Id"] ?>">En savoir plus</a>
+                        <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#<?= $val["Id"] ?>">En savoir plus</a>
 
                         <!-- Scrollable modal -->
-                        <div class="modal fade" id="a_<?= $val["Id"] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal fade" id="<?= $val["Id"] ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-dialog-scrollable">
                                 <div class="modal-content">
                                     <div class="modal-header">
