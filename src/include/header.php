@@ -68,7 +68,6 @@
                 <button class="btn btn-primary my-2 my-sm-0" type="submit" name="deconnexion">Se déconnecter</button>
             </form>
             <?php } elseif ($_SESSION["particulier"] == true) { ?>
-                <p><?= $_SESSION["particulier"]["Nom_Particulier"] ?></p>
             <a href="index.php?page=espace_perso" class="nav-link text-dark mr-3">Espace personnel</a>
             <form action="<?= connection() ?>" method="POST" class="px-3">
                 <button class="btn btn-primary my-2 my-sm-0" type="submit" name="deconnexion">Se déconnecter</button>

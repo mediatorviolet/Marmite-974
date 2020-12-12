@@ -18,7 +18,7 @@ function connection()
         $cle = research($array_cuisinier, $_POST["email"], "Email_Cuisinier");
         if ($cle) {
             if ($_POST["password"] == $array_cuisinier[$cle]["Password_Cuisinier"]) {
-                $_SESSION["cuisinier"] = $array_cuisinier[$cle];
+                $_SESSION["cuisinier"] = $array_cuisinier[$cle]; // Les infos du compte sont temporairement stockées dans $_SESSION
                 header("Location: index.php?page=tableau_cuisinier");
             }
         }
@@ -30,7 +30,7 @@ function connection()
         $cle = research($array_particulier, $_POST["email"], "Email_Particulier");
         if ($cle) {
             if ($_POST["password"] == $array_particulier[$cle]["Password_Particulier"]) {
-                $_SESSION["particulier"] = $array_particulier[$cle];
+                $_SESSION["particulier"] = $array_particulier[$cle]; // Les infos du compte sont temporairement stockées dans $_SESSION
                 header("Location: index.php?page=espace_perso");
             }
         }
