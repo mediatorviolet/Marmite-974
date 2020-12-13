@@ -49,7 +49,7 @@ function secure_form_cuisinier()
         $Confirmation_Pass_Cuisinier = sha1(htmlspecialchars($_POST['Confirmation_Pass_Cuisinier']));
         $Specialite_Cuisinier =  trim(stripslashes(htmlspecialchars($_POST['Specialite_Cuisinier'])));
 
-        //strlen compte le nombre de caratèere dans la varible saisie
+        //strlen compte le nombre de caratèere dans la variable saisie
         $Specialite_Cuisinier_Lenght = strlen($Specialite_Cuisinier);
         $patternEmail_Cuisinier = '#/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/igm#';
         $patternNom_Cuisinier = "#[A-Z]#";
@@ -64,7 +64,7 @@ function secure_form_cuisinier()
 
 
         if (empty($_POST['Nom_Cuisinier'])  || empty($_POST['Prenom_Cuisinier'])  || empty($_POST['Email_Cuisinier'])  || empty($_POST['Password_Cuisinier'])  || empty($_POST['Confirmation_Pass_Cuisinier'])  || empty($_POST['Specialite_Cuisinier'])) {
-            //(8)verifie CAS PAR CAS si vide alors on bloqué par erreu
+            //(8)verifie CAS PAR CAS si vide alors on bloqué par erreur
             if (empty($_POST["Nom_Cuisinier"])) {
                 $Nom_Cuisinier_Err = "Veuillez entrer votre NOM.";
             }
@@ -115,7 +115,11 @@ function secure_form_cuisinier()
                 } else {
                 }
 
+<<<<<<< HEAD
+                        //bug au test car empeche envoie. Enlever le mut pour test individuel
+=======
                 //bug au test car empeche envoie. Enlever le mut pour test individuele
+>>>>>>> 5de66b850a48f20bc1071abd84cc32f632d00ba5
 
                 // if (preg_match($patternSpecialite_Cuisinier, $Specialite_Cuisinier)) {
                 //     $erreur = "jeux de caractères interdit";

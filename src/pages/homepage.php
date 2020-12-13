@@ -2,12 +2,17 @@
 $data_file = 'src/libs/DB/atelier.json';
 $json_array = json_decode(file_get_contents($data_file), true);
 ?>
+
+<head>
+<!-- Bibliothèque CSS hover -->
+<link rel="stylesheet" href="node_modules/hover.css/css/hover-min.css">
+</head>
 <div class="container-fluid p-lg-5 p-md-3 homepage">
     <h2 class="display-4 text-center px-lg-5 py-lg-4 p-md-3 py-3 text-uppercase">Nos ateliers</h2>
 
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
         <?php foreach ($json_array as $key => $val) :?>
-        <div class="col">
+        <div class="col hvr-grow">
             <div class="card">
                 <img src="src/ressources/images/chinh-le-duc-vuDXJ60mJOA-unsplash.jpg" class="card-img-top" alt="Illustration atelier">
                 <div class="date bg-light p-3 position-absolute d-flex justify-content-center align-items-center fw-bold"><?= $val["Date"] ?></div>
