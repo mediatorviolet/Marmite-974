@@ -107,7 +107,7 @@ if($resultat)
 
 
 }else{ //S'il n'y a pas d'image alors on met une image par défaut
-$_POST['image_upload'] = "no_image.png";//L'image par défaut se nomme no_image.png
+$_POST['image'] = "no_image.png";//L'image par défaut se nomme no_image.png
 //Tout d'abord on attribue un id unique à l'enchere
 $idEnchere = md5(uniqid(rand(), true)); 
 $_POST['id'] = $idEnchere;
