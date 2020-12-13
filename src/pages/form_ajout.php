@@ -1,8 +1,9 @@
 <?php include "src/libs/fonctions/envoi_json.php" ?> 
-<?php include "src/libs/fonctions/secure_ajout.php" ?> 
+
 
 <!-- DAV liaison à secure_ajout -->
-<?php include "src/libs/fonctions/"?>
+<?php include "src/libs/fonctions/secure_ajout.php" ?> 
+
 
 <div class="container-fluid mt-5 form-ajout">
     <h1 class="text-uppercase text-center">Ajouter un atelier</h1>
