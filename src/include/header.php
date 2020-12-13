@@ -1,5 +1,10 @@
 <?php include "src/libs/fonctions/connection.php";
 ?>
+
+<head>
+<!-- Bibliothèque CSS hover -->
+<link rel="stylesheet" href="node_modules/hover.css/css/hover-min.css">
+</head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
     <div class="container-fluid">
         <img src="src/ressources/images/logo-marmite974.png" alt="logo" class="img-fluid" style="max-width:75px;">
@@ -11,7 +16,7 @@
             <div class="d-flex justify-content-end w-100 mt-md-0 mt-sm-3">
                 <?php if ($_SESSION["cuisinier"] == false and $_SESSION["particulier"] == false) { ?>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary me-3 px-4" data-bs-toggle="modal" data-bs-target="#choix_inscription">S'inscrire</button>
+                    <button type="button" class="btn btn-primary me-3 px-4 hvr-pulse-grow" data-bs-toggle="modal" data-bs-target="#choix_inscription">S'inscrire</button>
                     <!-- Modal -->
                     <div class="modal fade" id="choix_inscription" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
@@ -21,8 +26,8 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body d-flex justify-content-around py-5">
-                                    <a href="index.php?page=form_particulier" class="btn btn-primary text-uppercase px-4">Particulier</a>
-                                    <a href="index.php?page=form_cuisinier" class="btn btn-primary text-uppercase px-4">Cuisinier</a>
+                                    <a href="index.php?page=form_particulier" class="btn btn-primary text-uppercase px-4 hvr-grow">Particulier</a>
+                                    <a href="index.php?page=form_cuisinier" class="btn btn-primary text-uppercase px-4 hvr-grow">Cuisinier</a>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Fermer</button>
@@ -32,7 +37,7 @@
                     </div>
 
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary px-4" data-bs-toggle="modal" data-bs-target="#form_connexion">Connexion</button>
+                    <button type="button" class="btn btn-primary px-4 hvr-pulse-grow" data-bs-toggle="modal" data-bs-target="#form_connexion">Connexion</button>
                     <!-- Modal -->
                     <div class="modal fade" id="form_connexion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
