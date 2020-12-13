@@ -24,12 +24,13 @@ $email = "";
 
 
 $error = [];
+$Post_Array_Particulier = [];
 
 
 
 function secure_form_cuisinier()
 {
-
+    global $Post_Array_Particulier;
     global $erreur, $email,
         $patternPrenom_Cuisinier,   $patternSpecialite_Cuisinier, $Specialite_Cuisinier_Lenght;
 
@@ -115,7 +116,7 @@ function secure_form_cuisinier()
                 } else {
                 }
 
-                        //bug au test car empeche envoie. Enlever le mut pour test individuel
+                //bug au test car empeche envoie. Enlever le mut pour test individuel
                 //bug au test car empeche envoie. Enlever le mut pour test individuele
 
                 // if (preg_match($patternSpecialite_Cuisinier, $Specialite_Cuisinier)) {
@@ -129,8 +130,10 @@ function secure_form_cuisinier()
                 //         $Specialite_Cuisinier_Err = "<i><font color=red> Descriptif trop long. Saisir moin de 15 caractères.</font></i>";
                 //     }
                 // }
-         
 
+
+
+               
             }
         }
     }
