@@ -9,18 +9,17 @@
   
 </div>
 
-<?php
+<!-- <?php
 if (isset($erreur)) { ?> <div class="container col-4  alert-danger d-flex justify-content-center mt-3  mb-3">
         <?php echo $erreur; ?>
     </div>
 <?php
 }
-?>
+?> -->
     
 </div>
 <!---DAV 2 PARTICULIER FORMULAIRE INSCRIPTION---->
-<!---DAV  2 les ID doivent bien etre dissocier de ceux du formulaire cuisinier pour eviter les doublons dans la récupération des données----->
-<!--les boutons doivent avoir leurs name  dissocier-->
+
 
 <div class="container col-8 pb-5 form-particulier">
 
@@ -29,7 +28,7 @@ if (isset($erreur)) { ?> <div class="container col-4  alert-danger d-flex justif
         <div class="row mb-3 ml-5">
             <label for="Nom_Particulier" class="col-sm-2 col-form-label">Nom* : </label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="Nom_Particulier" name="Nom_Particulier" placeholder="NOM"   value="<?= $Nom_Particulier?>" >
+                <input type="text" class="form-control" id="Nom_Particulier" name="Nom_Particulier" placeholder="NOM"   value="<?= $Nom_Particulier?>" required pattern = "m[A-Z]ts">
                 <span><?= $Nom_Particulier_Err?></span>
                
             </div>

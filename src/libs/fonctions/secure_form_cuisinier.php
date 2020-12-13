@@ -23,6 +23,10 @@ $erreur = "";
 $email = "";
 
 
+$error = [];
+
+
+
 function secure_form_cuisinier()
 {
 
@@ -47,10 +51,10 @@ function secure_form_cuisinier()
 
         //strlen compte le nombre de caratèere dans la varible saisie
         $Specialite_Cuisinier_Lenght = strlen($Specialite_Cuisinier);
-        $patternEmail_Cuisinier = '~/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/igm~';
-        $patternNom_Cuisinier = "~[A-Z]~";
+        $patternEmail_Cuisinier = '#/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/igm#';
+        $patternNom_Cuisinier = "#[A-Z]#";
         $patternSpecialite_Cuisinier = "#([a-z]|[A-Z]|[0-9]){4,8}$#";
-        $patternPrenom_Cuisinier = "~[A-Z]~";
+        $patternPrenom_Cuisinier = "#[A-Z]#";
 
         $email = $Email_Cuisinier;
 
