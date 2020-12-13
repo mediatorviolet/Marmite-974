@@ -1,4 +1,5 @@
-<?php include "src/libs/fonctions/connection.php"; ?>
+<?php include "src/libs/fonctions/connection.php";
+?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light px-3">
     <div class="container-fluid">
         <img src="src/ressources/images/logo-marmite974.png" alt="logo" class="img-fluid" style="max-width:75px;">
@@ -66,7 +67,7 @@
             <form action="<?= connection() ?>" method="POST" class="px-3">
                 <button class="btn btn-primary my-2 my-sm-0" type="submit" name="deconnexion">Se déconnecter</button>
             </form>
-        <?php } elseif ($_SESSION["particulier"] == true) { ?>
+            <?php } elseif ($_SESSION["particulier"] == true) { ?>
             <a href="index.php?page=espace_perso" class="nav-link text-dark mr-3">Espace personnel</a>
             <form action="<?= connection() ?>" method="POST" class="px-3">
                 <button class="btn btn-primary my-2 my-sm-0" type="submit" name="deconnexion">Se déconnecter</button>

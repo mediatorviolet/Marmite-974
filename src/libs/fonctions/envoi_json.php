@@ -33,9 +33,22 @@ function ajout_json()
     {                
         $data_file = 'src/libs/DB/atelier.json';
         $json_array = json_decode(file_get_contents($data_file), true);
-        $id = md5(uniqid(rand(), true));
+        $id = "a_" . md5(uniqid(rand(), true));
         $_POST["id_atelier"] = $id;
-        array_push($json_array, $_POST);
+        $atelier_post = array(
+            "Id" => $_POST["id_atelier"],
+            "Titre" => $_POST["titre"],
+            "Description" => $_POST["description"],
+            "Date" => $_POST["date"],
+            "Heure_debut" => $_POST["heure_debut"],
+            "Duree" => $_POST["duree"],
+            "Effectif_max" => $_POST["effectif_max"],
+            "Prix" => $_POST["prix"],
+            "Etat" => "inactif",
+            "Auteur" => $_SESSION["cuisinier"]["id"],
+            "Participants" => array()
+        );
+        array_unshift($json_array, $atelier_post);
         file_put_contents($data_file, json_encode($json_array));
     }
 
@@ -49,10 +62,14 @@ function ajout_json()
     }
         
 
+else
+{
+    //echo "ERROR";
+}
     }
 
 
 
 
-ajout_json();
+//ajout_json();
 ?>

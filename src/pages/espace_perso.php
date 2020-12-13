@@ -1,5 +1,5 @@
 <div class="bg-dark p-5 mt-5">
-    <h2 class="display-4 text-light">Bienvenue Joseph</h2>
+    <h2 class="display-4 text-light">Bienvenue <?= $_SESSION["particulier"]["Prenom_Particulier"] ?></h2>
 </div>
 <div class="container-fluid p-lg-5 p-md-3 espace-perso">
     <h2 class="display-4 text-center p-lg-5 p-md-3 py-3">Vous êtes inscrit aux ateliers suivants :</h2>
