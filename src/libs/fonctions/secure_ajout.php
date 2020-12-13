@@ -51,16 +51,16 @@ if (isset($_POST['Inscire_Atelier'])){
     }else{
         // gestion ajout image
 
-        $fileName = $_FILES['image_upload']['name']; //On met dans une variable le nom de l'image pour vérifier si l'utilisateur a ajouté une
+        $fileName = $_FILES['image']['name']; //On met dans une variable le nom de l'image pour vérifier si l'utilisateur a ajouté une
             if($fileName !== ""){ //On verifie si cette variable n'est pas vide alors
                 $validExt = array('.jpg', '.jpeg', '.gif', '.png'); //On spécifie les extensions que l'on souhaite prendre
-                if($_FILES['image_upload']['error'] > 0)//On verifie dans la variable $_FILES s'il n'y a pas d'erreur interne
+                if($_FILES['image']['error'] > 0)//On verifie dans la variable $_FILES s'il n'y a pas d'erreur interne
                 {
                     echo '<div class="alert alert-danger">Erreur survenue lors du transfert de l\'image</div>'; //Si oui alors on arrete la fonction et on affiche qu'il y a eu une erreur lors du transfert
                     die;
                 }
                 $maxSize = 10000000; //On spécifie ici la taille maximale de l'image
-                $fileSize = $_FILES['image_upload']['size'];//On recupere via la $_FILES la taille de l'image ajoutée dans l'input
+                $fileSize = $_FILES['image']['size'];//On recupere via la $_FILES la taille de l'image ajoutée dans l'input
                 if($fileSize > $maxSize) //Taille de l'image doit être < à $maxSize
                 {
                     echo '<div class="alert alert-danger"> Le fichier est trop lourd !!</div>'; //Si trop lourd alors on envoie le message que le fichier est trop lourd
@@ -74,12 +74,15 @@ if (isset($_POST['Inscire_Atelier'])){
                 }
 
 //Arrive ici cela veut dire que nos vérifications on été validées alors on peut procéder à l'envoie de l'image dans son bon dossier
-$tmpName = $_FILES['image_upload']['tmp_name']; //On recupère le nom temporaire ajouté par le serveur pour la gestion de l'image
+$tmpName = $_FILES['image']['tmp_name']; //On recupère le nom temporaire ajouté par le serveur pour la gestion de l'image
 $idName = md5(uniqid(rand(), true)); //On attribue un id unique à l'image via la fonction md5 uniqid et random
 $fileDir = "ressources/img/" . $idName . "." . $fileExt; //On spécifie la direction d'enregistrement de l'image
-$_POST['image_upload'] = $idName . "." . $fileExt; //On attribue dans la superglobale $_POST le nom de l'image qui ira dans le tableau
+$_POST['image'] = $idName . "." . $fileExt; //On attribue dans la superglobale $_POST le nom de l'image qui ira dans le tableau
+
 $resultat = move_uploaded_file($tmpName, $fileDir);//On utilise la fonction de la superglobale pour transferer le nom temporaire attribué vers le dossier indiqué
 //Si le fichier a bien été déplacé alors on ajoute toutes les données dans le tableau et on ajoute les dernieres données necessaires pour une enchere
+
+
 if($resultat)
 {
     //Tout d'abord on attribue un id unique à l'enchere
@@ -91,6 +94,8 @@ if($resultat)
     $_POST['date_fin'] = null;
     //On ajoute le gain à 0
     $_POST['gain'] = 0;
+
+
     // On ajoute toutes les valeurs de $_POST dans le tableau de la variable session
     array_push($_SESSION['DUMMY_ARRAY'], $_POST);
     //On envoie le message de confirmation de l'envoie du formulaire et que tout s'est bien passé
@@ -99,6 +104,8 @@ if($resultat)
         <div class="alert alert-success">Le produit a bien été ajouté !</div>
     </div>';         
 }
+
+
 }else{ //S'il n'y a pas d'image alors on met une image par défaut
 $_POST['image_upload'] = "no_image.png";//L'image par défaut se nomme no_image.png
 //Tout d'abord on attribue un id unique à l'enchere

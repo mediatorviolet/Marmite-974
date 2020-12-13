@@ -21,8 +21,6 @@
 ?>
 
 
-
-
     <form method="POST" action="<?= ajout_json() ?>" class="row g-3 col-9 mx-auto mt-5">
         <div class="col-12 form-floating mb-3">
             <input type="text" class="form-control" name="titre" placeholder="" required pattern ="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
