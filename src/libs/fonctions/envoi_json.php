@@ -12,9 +12,19 @@ function ajout_json()
 {    
         $data_file = 'src/libs/DB/utilisateur.json';
         $json_array = json_decode(file_get_contents($data_file), true);
-        $id = md5(uniqid(rand(), true));
+        $id = "p_" . md5(uniqid(rand(), true));
         $_POST["id_particulier"] = $id;
-        array_push($json_array, $_POST);
+        $particulier_post = array(
+            "id" => $_POST["id_particulier"],
+            "nom" => $_POST["Nom_Particulier"],
+            "prenom" => $_POST["Prenom_Particulier"],
+            "email" => $_POST["Email_Particulier"],
+            "password" => $_POST["Password_Particulier"],
+            "telephone" => $_POST["Telephone_Particulier"],
+            "etat" => "actif",
+            "ateliers" => array()
+        );
+        array_unshift($json_array, $particulier_post);
         file_put_contents($data_file, json_encode($json_array));
 }
 
@@ -22,9 +32,19 @@ function ajout_json()
     {            
         $data_file = 'src/libs/DB/cuisinier.json';
         $json_array = json_decode(file_get_contents($data_file), true);
-        $id = md5(uniqid(rand(), true));
+        $id = "c_" . md5(uniqid(rand(), true));
         $_POST["id_cuisinier"] = $id;
-        array_push($json_array, $_POST);
+        $cuisinier_post = array(
+            "id" => $_POST["id_cuisinier"],
+            "nom" => $_POST["Nom_Cuisinier"],
+            "prenom" => $_POST["Prenom_Cuisinier"],
+            "email" => $_POST["Email_Cuisinier"],
+            "password" => $_POST["Password_Cuisinier"],
+            "specialite" => $_POST["Specialite_Cuisinier"],
+            "etat" => "actif",
+            "ateliers" => array()
+        );
+        array_unshift($json_array, $cuisinier_post);
         file_put_contents($data_file, json_encode($json_array));
     }
 

@@ -1,4 +1,4 @@
-<?php
+<?php include "src/libs/fonctions/envoi_json.php";
 // ****************************SECURISATION FORMULAIRE INSCPRIPTION PARTICULIER************************************************
 
 
@@ -88,48 +88,42 @@ function secure_form_particulier()
 
 
 
-            if (isset($_POST['Nom_Particulier'])  || isset($_POST['Prenom_Particulier'])  || isset($_POST['Email_Particulier']) || isset($_POST['Password_Particulier'])  || isset($_POST['Confirmation_Pass_Particulier'])  || isset($_POST['Telephone_Particulier'])) { {
+            if (isset($_POST['Nom_Particulier'])  || isset($_POST['Prenom_Particulier'])  || isset($_POST['Email_Particulier']) || isset($_POST['Password_Particulier'])  || isset($_POST['Confirmation_Pass_Particulier'])  || isset($_POST['Telephone_Particulier'])) {
 
 
 
-                    if (preg_match($patternNom_Particulier, $Nom_Particulier)) {
-                        $Nom_Particulier_Err = "<i><font color=green>Valid name &#10003;</font></i>";
-                    } else {
-                        $erreur = "Veuillez inscrire votre nom en majuscule.";
-                        $Nom_Particulier_Err = "<i><font color=red> Majuscule requis. </font></i>";
-                    }
-
-
-                    if (preg_match($patternPrenom_Particulier, $Prenom_Particulier)) {
-                        $Prenom_Particulier_Err = "<i><font color=green>Valid firstName &#10003;</font></i>";
-                    } else {
-                        $erreur = "Saisir un prenom valid";
-                        $Nom_Particulier_Err = "<i><font color=red> Prénom incorrect.</font></i>";
-                    }
-
-
-                    if (ValidEmail($email)) //verif pattern email coté serveur
-                    {
-                        $Email_Particulier_Err = " <i><font color=green> Email valid &#10003;</font></i>";
-                    } else {
-                        $Email_Particulier_Err = " <i><font color=red> Email invalid </font></i>";
-                    }
-
-                    if ($Password_Particulier == $Confirmation_Pass_Particulier) {
-                    } else {
-                        $Confirmation_Pass_Particulier_Err = "<i><font color=red> Ne correspondent pas</font></i>";
-                        $erreur = " Vos mots de passe ne sont pas identiques";
-                    }
-
-                
-
-                  
+                if (preg_match($patternNom_Particulier, $Nom_Particulier)) {
+                    $Nom_Particulier_Err = "<i><font color=green>Valid name &#10003;</font></i>";
+                } else {
+                    $erreur = "Veuillez inscrire votre nom en majuscule.";
+                    $Nom_Particulier_Err = "<i><font color=red> Majuscule requis. </font></i>";
                 }
-            }  if (preg_match($pattern_Telephone, $Telephone_Particulier)) {
-                
-            } else
-            
-            {
+
+
+                if (preg_match($patternPrenom_Particulier, $Prenom_Particulier)) {
+                    $Prenom_Particulier_Err = "<i><font color=green>Valid firstName &#10003;</font></i>";
+                } else {
+                    $erreur = "Saisir un prenom valid";
+                    $Nom_Particulier_Err = "<i><font color=red> Prénom incorrect.</font></i>";
+                }
+
+
+                if (ValidEmail($email)) //verif pattern email coté serveur
+                {
+                    $Email_Particulier_Err = " <i><font color=green> Email valid &#10003;</font></i>";
+                } else {
+                    $Email_Particulier_Err = " <i><font color=red> Email invalid </font></i>";
+                }
+
+                if ($Password_Particulier == $Confirmation_Pass_Particulier) {
+                } else {
+                    $Confirmation_Pass_Particulier_Err = "<i><font color=red> Ne correspondent pas</font></i>";
+                    $erreur = " Vos mots de passe ne sont pas identiques";
+                }
+                ajout_json();
+            }
+            if (preg_match($pattern_Telephone, $Telephone_Particulier)) {
+            } else {
 
                 $Telephone_Particulier_Err = "telephone non valide";
             }

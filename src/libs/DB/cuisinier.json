@@ -1,29 +1,32 @@
 [
     {
-        "id": "cuisinier_65c179b957ccf816f13a9fb3bebeb627",
-        "Nom_Cuisinier": "Hippine",
-        "Prenom_Cuisinier": "Phil",
-        "Email_Cuisinier": "fil@foo.bar",
-        "Password_Cuisinier": "foobar",
-        "Specialite_Cuisinier": "Aucun",
-        "etat": "inactif"
+        "id": "c_e80eb5355d7b0992ffe3845f72a41a6b",
+        "nom": "Emploi",
+        "prenom": "Paul",
+        "email": "paul.emploi@test.fr",
+        "password": "test",
+        "specialite": "",
+        "etat": "actif",
+        "ateliers": []
     },
     {
-        "id": "cuisinier_0a3bf7e9ab7bea4a51628dacd33655d9",
-        "Nom_Cuisinier": "sdc",
-        "Prenom_Cuisinier": "sd",
-        "Email_Cuisinier": "toto.idiot@gmail.com",
-        "Password_Cuisinier": "sqd",
-        "Specialite_Cuisinier": "sqd",
-        "etat": "inactif"
+        "id": "c_6e38d02bbf236a85091b41cec28b1cff",
+        "nom": "Hippine",
+        "prenom": "Phil",
+        "email": "fil@foo.bar",
+        "password": "test",
+        "specialite": "",
+        "etat": "actif",
+        "ateliers": []
     },
     {
-        "id": "cuisinier_08e48da93d168de076136c8d7676e61c",
-        "Nom_Cuisinier": "Bon",
-        "Prenom_Cuisinier": "Jean",
-        "Email_Cuisinier": "cuisinier@test.fr",
-        "Password_Cuisinier": "test",
-        "Specialite_Cuisinier": "Aucun",
-        "etat": "inactif"
+        "id": "c_b73a3526e109ad11a01f526a33a9aaca",
+        "nom": "Kiroule",
+        "prenom": "Pierre",
+        "email": "pierrekiroule@test.fr",
+        "password": "test",
+        "specialite": "",
+        "etat": "actif",
+        "ateliers": []
     }
 ]
