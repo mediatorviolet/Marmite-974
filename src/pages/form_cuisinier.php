@@ -7,7 +7,7 @@
 
 <?php secure_form_cuisinier() ?>
 <!-- < Inscription_Cuisinier() ?> -->
-<?php ajout_json() ?>
+
 
 <div class="container d-flex justify-content-center mt-3  mb-3">
     <h2>CUISINIER</h2>

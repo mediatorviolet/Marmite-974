@@ -3,6 +3,7 @@
 
 <?php secure_form_particulier() ?>
 
+
 <div class="container d-flex justify-content-center mt-3  mb-3">
 
     <h2>PARTICULIER</h2>
@@ -54,7 +55,7 @@ if (isset($erreur)) { ?> <div class="container col-4  alert-danger d-flex justif
         <div class="mb-3 row">
             <label for="Password_Particulier" class="col-sm-2 col-form-label">Mot de passe* : </label>
             <div class="col-sm-8">
-                <input   type="password" class="form-control" id="Password_Particulier" name="Password_Particulier" placeholder="Choisissez votre mot de passe" >
+                <input   type="password" class="form-control" id="Password_Particulier" name="Password_Particulier" placeholder="Choisissez votre mot de passe" value = "<?= $Password_Particulier ?>" >
                 </input>
                 <span><?= $Password_Particulier_Err?></span>
             </div>
@@ -63,7 +64,7 @@ if (isset($erreur)) { ?> <div class="container col-4  alert-danger d-flex justif
         <div class="mb-3 row">
             <label for="Confirmation_Pass_Particulier" class="col-sm-2 col-form-label">Confirmation* : </label>
             <div class="col-sm-8">
-                <input type="password" class="form-control" id="Confirmation_Pass_Particulier" name="Confirmation_Pass_Particulier" placeholder="Confirmez votre mot de passe" >
+                <input type="password" class="form-control" id="Confirmation_Pass_Particulier" name="Confirmation_Pass_Particulier" placeholder="Confirmez votre mot de passe" value = "<?= $Password_Particulier ?>"  >
                 <span><?= $Confirmation_Pass_Particulier_Err?></span>
             </div>
         </div>

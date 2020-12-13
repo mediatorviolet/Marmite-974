@@ -1,3 +1,6 @@
+
+
+
 <?php include "src/libs/fonctions/envoi_json.php";
 // **************************SECURISATION FORMULAIRE INSCRIPTION CUISINIER
 
@@ -24,13 +27,13 @@ $email = "";
 
 
 $error = [];
-$Post_Array_Particulier = [];
+
 
 
 
 function secure_form_cuisinier()
 {
-    global $Post_Array_Particulier;
+   
     global $erreur, $email,
         $patternPrenom_Cuisinier,   $patternSpecialite_Cuisinier, $Specialite_Cuisinier_Lenght;
 
@@ -114,6 +117,7 @@ function secure_form_cuisinier()
                     $Confirmation_Pass_Cuisinier_Err = "<i><font color=red>Ne correspond pas</font>";
                     $erreur = " Vos mots de passe ne sont pas identiques";
                 } else {
+                    ajout_json();
                 }
 
                 //bug au test car empeche envoie. Enlever le mut pour test individuel

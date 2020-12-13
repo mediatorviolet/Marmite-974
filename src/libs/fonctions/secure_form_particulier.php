@@ -1,3 +1,7 @@
+
+
+
+
 <?php include "src/libs/fonctions/envoi_json.php";
 // ****************************SECURISATION FORMULAIRE INSCPRIPTION PARTICULIER************************************************
 
@@ -22,6 +26,7 @@ $Nom_Particulier_Err = $Prenom_Particulier_Err = $Email_Particulier_Err = $Passw
 
 $erreur = "";
 $email = "";
+
 
 
 function secure_form_particulier()
@@ -79,9 +84,7 @@ function secure_form_particulier()
                 $Confirmation_Pass_Particulier_Err = "<i><font color = red >Confirmez le mot de passe.</font></i>";
             }
             //assignation numérique par defauts pour respecter le pattern et evité bus d envoi
-            if (empty($_POST["Telephone_Partiulier"])) {
-                $Telephone_Particulier = "00 00 00 00 00 ";
-            }
+
             //fin condition 2
 
 
@@ -91,6 +94,12 @@ function secure_form_particulier()
             if (isset($_POST['Nom_Particulier'])  || isset($_POST['Prenom_Particulier'])  || isset($_POST['Email_Particulier']) || isset($_POST['Password_Particulier'])  || isset($_POST['Confirmation_Pass_Particulier'])  || isset($_POST['Telephone_Particulier'])) {
 
 
+                if (preg_match($pattern_Telephone, $Telephone_Particulier)) {
+                } else {
+
+                    $Telephone_Particulier_Err = "telephone non valide";
+                    $erreur="";
+                }
 
                 if (preg_match($patternNom_Particulier, $Nom_Particulier)) {
                     $Nom_Particulier_Err = "<i><font color=green>Valid name &#10003;</font></i>";
@@ -111,22 +120,16 @@ function secure_form_particulier()
                 if (ValidEmail($email)) //verif pattern email coté serveur
                 {
                     $Email_Particulier_Err = " <i><font color=green> Email valid &#10003;</font></i>";
-                } else {
-                    $Email_Particulier_Err = " <i><font color=red> Email invalid </font></i>";
                 }
-
-                if ($Password_Particulier == $Confirmation_Pass_Particulier) {
-                } else {
-                    $Confirmation_Pass_Particulier_Err = "<i><font color=red> Ne correspondent pas</font></i>";
-                    $erreur = " Vos mots de passe ne sont pas identiques";
-                }
-                ajout_json();
-            }
-            if (preg_match($pattern_Telephone, $Telephone_Particulier)) {
             } else {
-
-                $Telephone_Particulier_Err = "telephone non valide";
+                $Email_Particulier_Err = " <i><font color=red> Email invalid </font></i>";
             }
-        }
+
+            if ($Password_Particulier == $Confirmation_Pass_Particulier) {
+                
+            } else {$Confirmation_Pass_Particulier_Err = "<i><font color=red> Ne correspondent pas</font></i>";
+                $erreur = " Vos mots de passe ne sont pas identiques";
+            }
+        }ajout_json();
     }
 };
