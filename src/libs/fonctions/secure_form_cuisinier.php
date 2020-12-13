@@ -115,11 +115,8 @@ function secure_form_cuisinier()
                 } else {
                 }
 
-<<<<<<< HEAD
                         //bug au test car empeche envoie. Enlever le mut pour test individuel
-=======
                 //bug au test car empeche envoie. Enlever le mut pour test individuele
->>>>>>> 5de66b850a48f20bc1071abd84cc32f632d00ba5
 
                 // if (preg_match($patternSpecialite_Cuisinier, $Specialite_Cuisinier)) {
                 //     $erreur = "jeux de caractères interdit";

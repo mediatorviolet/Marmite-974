@@ -13,3 +13,8 @@ html, body {
 .form-cuisinier, .espace-perso, .form-ajout, .form-modif, .form-particulier, .homepage, .tableau-cuisinier {
     flex: 1 !important;
 }
+
+.h2{
+    color:#d05c62  ;
+}
+
