@@ -12,18 +12,18 @@
 </div>
 
 
-
-<!-- Indication géréral de message d'erreur ou de confirmation d'envoi de l'inscription -->
-<?php
+<!-- 
+Indication géréral de message d'erreur ou de confirmation d'envoi de l'inscription --> -->
+<!-- <?php
 if (isset($erreur)) { ?> <div class="container col-4  alert-danger d-flex justify-content-center mt-3  mb-3">
         <?php echo $erreur; ?>
     </div>
-<?php
+<?php 
 }
 ?>
 
 
-<!-- VALUE sert a recupe les post traiter en amont et les reafficher dans le champs. Evite à l'utilisateur de tout re ecrire 
+<!VALUE sert a recupe les post traiter en amont et les reafficher dans le champs. Evite à l'utilisateur de tout re ecrire 
 par sécurité on preferera que l'utilisateur retape son mot de passe à chaque fois pour la confirma-->
 <div class="form-cuisinier container col-8 pb-5">
 
@@ -33,8 +33,10 @@ par sécurité on preferera que l'utilisateur retape son mot de passe à chaque 
             <label for="Nom_Cuisinier" class="col-sm-2 col-form-label">Nom* : </label>
 
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="Nom_Cuisinier" name="Nom_Cuisinier" placeholder="NOM" value="<?= $Nom_Cuisinier ?>">
+                <input type="text" class="form-control" id="Nom_Cuisinier" name="Nom_Cuisinier" placeholder="NOM" value="<?= $Nom_Cuisinier ?>" required pattern="[A-Z]|[A-Z]">
                 <span ><?= $Nom_Cuisinier_Err ?></span>
+
+                <span ><?= $erreur?></span>
             </div>
         </div>
 
