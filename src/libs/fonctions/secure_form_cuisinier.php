@@ -21,7 +21,10 @@ $Nom_Cuisinier_Err = $Prenom_Cuisinier_Err = $Email_Cuisinier_Err = $Password_Cu
 
 $erreur = "";
 $email = "";
+
+
 $error = [];
+
 
 
 function secure_form_cuisinier()
@@ -29,6 +32,7 @@ function secure_form_cuisinier()
 
     global $erreur, $email,
         $patternPrenom_Cuisinier,   $patternSpecialite_Cuisinier, $Specialite_Cuisinier_Lenght;
+
 
     global  $Email_Cuisinier, $Nom_Cuisinier, $Prenom_Cuisinier, $Password_Cuisinier, $Confirmation_Pass_Cuisinier, $Specialite_Cuisinier;
 
