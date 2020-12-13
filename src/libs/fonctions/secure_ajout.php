@@ -17,6 +17,7 @@ function validationAjout ()
 {
 
     global $erreurAjout;
+    $fileName="";
   
 
     if(isset($_POST['Inscrire_Atelier']))
@@ -24,7 +25,7 @@ function validationAjout ()
 
     
     {//On verifie que chaque input soient bien completes sauf pour l'image pour laquelle on peut ne pas mettre
-    $inputsRequired = ["titre", "description", "date", "heure_debut", "duree","effectif_max","prix","image"];
+    $inputsRequired = ["titre", "description", "date", "heure_debut", "duree","effectif_max","prix"];
     //pr image sera apres
 
      
