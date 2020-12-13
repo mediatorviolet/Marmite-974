@@ -52,9 +52,9 @@ function secure_form_cuisinier()
         //strlen compte le nombre de caratèere dans la variable saisie
         $Specialite_Cuisinier_Lenght = strlen($Specialite_Cuisinier);
         $patternEmail_Cuisinier = '#/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/igm#';
-        $patternNom_Cuisinier = "#[A-Z]#";
+        $patternNom_Cuisinier = "#[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#";
         $patternSpecialite_Cuisinier = "#([a-z]|[A-Z]|[0-9]){4,8}$#";
-        $patternPrenom_Cuisinier = "#[A-Z]#";
+        $patternPrenom_Cuisinier = "#[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï])?$#";
 
         $email = $Email_Cuisinier;
 
@@ -66,10 +66,10 @@ function secure_form_cuisinier()
         if (empty($_POST['Nom_Cuisinier'])  || empty($_POST['Prenom_Cuisinier'])  || empty($_POST['Email_Cuisinier'])  || empty($_POST['Password_Cuisinier'])  || empty($_POST['Confirmation_Pass_Cuisinier'])  || empty($_POST['Specialite_Cuisinier'])) {
             //(8)verifie CAS PAR CAS si vide alors on bloqué par erreur
             if (empty($_POST["Nom_Cuisinier"])) {
-                $Nom_Cuisinier_Err = "Veuillez entrer votre NOM.";
+                $Nom_Cuisinier_Err = "Veuillez entrer votre Nom.";
             }
             if (empty($_POST["Prenom_Cuisinier"])) {
-                $Prenom_Cuisinier_Err = "Veuillez entrer votre prénom.";
+                $Prenom_Cuisinier_Err = "Veuillez entrer votre Prénom.";
             }
             if (empty($_POST["Email_Cuisinier"])) {
                 $Email_Cuisinier_Err = "Veuillez entrer une adresse email valide.";
@@ -89,21 +89,21 @@ function secure_form_cuisinier()
             if (isset($_POST['Nom_Cuisinier'])  && isset($_POST['Prenom_Cuisinier'])  && isset($_POST['Email_Cuisinier'])  && isset($_POST['Password_Cuisinier'])  && isset($_POST['Confirmation_Pass_Cuisinier'])  && isset($_POST['Specialite_Cuisinier'])) {
 
                 if (preg_match($patternNom_Cuisinier, $Nom_Cuisinier)) {
-                    $Nom_Cuisinier_Err = "<i><font color=green> Valid Name &#10003; </font></i>";
+                    $Nom_Cuisinier_Err = "<i><font color=green> Nom Valide &#10003; </font></i>";
                 } else {
-                    $erreur = "Veuillez inscrire votre NOM en en majuscule.";
-                    $Nom_Cuisinier_Err = "<i><font color=red> Majuscule requis.</font></i>";
+                    $erreur = "Veuillez inscrire votre Nom.";
+                    $Nom_Cuisinier_Err = "<i><font color=red> Mauvaise syntaxe</font></i>";
                 }
 
                 if (preg_match($patternPrenom_Cuisinier, $Prenom_Cuisinier)) {
                     $Prenom_Cuisinier_Err = "<i><font color=green> Valid Name &#10003; </font></i>";
                 } else {
                     $erreur = "Syntaxe undéfinie";
-                    $Prenom_Cuisinier_Err = "<i><font color=red> Ressaisir votre prénom </font></i>";
+                    $Prenom_Cuisinier_Err = "<i><font color=red> Ressaisir votre Prénom </font></i>";
                 }
 
                 if (ValidEmail($email)) {
-                    $Email_Cuisinier_Err = "<i><font color=green >Valid email &#10003;</font></i>";
+                    $Email_Cuisinier_Err = "<i><font color=green >Email valide &#10003;</font></i>";
                 } else {
 
                     $Email_Cuisinier_Err = "<i><font color=red >Adresse Email non valide ou de format non reconnue  </font></i>";
@@ -129,8 +129,7 @@ function secure_form_cuisinier()
                 //         $Specialite_Cuisinier_Err = "<i><font color=red> Descriptif trop long. Saisir moin de 15 caractères.</font></i>";
                 //     }
                 // }
-                ajout_json();
-
+         
 
             }
         }

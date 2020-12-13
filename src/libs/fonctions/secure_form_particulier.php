@@ -48,9 +48,9 @@ function secure_form_particulier()
         //strlen compte le nombre de caratèere dans la varible saisie
         //$Telephone_Particulier_Lenght = strlen($Specialite_Cuisinier);
         $patternEmail_Particulier = '~/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/igm~';
-        $patternNom_Particulier = "~[A-Z]~";
+        $patternNom_Particulier = "#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#";
         $email = $Email_Particulier;
-        $patternPrenom_Particulier = "~[A-Z]~";
+        $patternPrenom_Particulier = "#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#";
         $pattern_Telephone = "#0[1-68][0-9]{8}#";
 
         $color = "";
@@ -64,10 +64,10 @@ function secure_form_particulier()
         if (empty($_POST['Nom_Particulier'])  || empty($_POST['Prenom_Particulier'])  || empty($_POST['Email_Particulier'])  || empty($_POST['Password_Particulier'])  || empty($_POST['Confirmation_Pass_Particulier'])  || empty($_POST['Telephone_Particulier'])) {
             //(8)verifie CAS PAR CAS si vide alors on bloqué par erreu
             if (empty($_POST["Nom_Particulier"])) {
-                $Nom_Particulier_Err = "<i><font color=red >Veuillez entrer votre nom en majuscule.</font></i>";
+                $Nom_Particulier_Err = "<i><font color=red >Veuillez entrer votre Nom.</font></i>";
             }
             if (empty($_POST["Prenom_Particulier"])) {
-                $Prenom_Particulier_Err = "<i><font color = red>Veuillez entrer votre prénom.</font></i>";
+                $Prenom_Particulier_Err = "<i><font color = red>Veuillez entrer votre Prénom.</font></i>";
             }
             if (empty($_POST["Email_Particulier"])) {
                 $Email_Particulier_Err = "Veuillez entrer une adresse email valide.";
@@ -95,15 +95,15 @@ function secure_form_particulier()
                 if (preg_match($patternNom_Particulier, $Nom_Particulier)) {
                     $Nom_Particulier_Err = "<i><font color=green>Valid name &#10003;</font></i>";
                 } else {
-                    $erreur = "Veuillez inscrire votre nom en majuscule.";
-                    $Nom_Particulier_Err = "<i><font color=red> Majuscule requis. </font></i>";
+                    $erreur = "Veuillez inscrire votre Nom.";
+                    $Nom_Particulier_Err = "<i><font color=red> Mauvaise syntaxe. </font></i>";
                 }
 
 
                 if (preg_match($patternPrenom_Particulier, $Prenom_Particulier)) {
                     $Prenom_Particulier_Err = "<i><font color=green>Valid firstName &#10003;</font></i>";
                 } else {
-                    $erreur = "Saisir un prenom valid";
+                    $erreur = "Saisir un Prénom valide";
                     $Nom_Particulier_Err = "<i><font color=red> Prénom incorrect.</font></i>";
                 }
 

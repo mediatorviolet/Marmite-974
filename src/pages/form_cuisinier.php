@@ -33,7 +33,7 @@ par sécurité on preferera que l'utilisateur retape son mot de passe à chaque 
             <label for="Nom_Cuisinier" class="col-sm-2 col-form-label">Nom* : </label>
 
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="Nom_Cuisinier" name="Nom_Cuisinier" placeholder="NOM" value="<?= $Nom_Cuisinier ?>" required pattern="[A-Z]|[A-Z]">
+                <input type="text" class="form-control" id="Nom_Cuisinier" name="Nom_Cuisinier" placeholder="Nom" value="<?= $Nom_Cuisinier ?>" pattern ="[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
                 <span ><?= $Nom_Cuisinier_Err ?></span>
 
                 <span ><?= $erreur?></span>
@@ -42,7 +42,7 @@ par sécurité on preferera que l'utilisateur retape son mot de passe à chaque 
 
         <div class="mb-3 row">
             <label for="Prenom_Cuisinier" class="col-sm-2 col-form-label">Prénom* :</label>
-            <div class="col-sm-8"> <input type="text" class="form-control" id="Prenom_Cuisinier" name="Prenom_Cuisinier" placeholder="Prénom"  value="<?= $Prenom_Cuisinier ?>">
+            <div class="col-sm-8"> <input type="text" class="form-control" id="Prenom_Cuisinier" name="Prenom_Cuisinier" placeholder="Prénom"  value="<?= $Prenom_Cuisinier ?>" required pattern ="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
                 </input>
                 <span ><?= $Prenom_Cuisinier_Err ?></span>
             </div>
@@ -52,7 +52,7 @@ par sécurité on preferera que l'utilisateur retape son mot de passe à chaque 
         <div class="mb-3 row">
             <label for="Email_Cuisinier" class="col-sm-2 col-form-label">E-mail* : </label>
             <div class="col-sm-8">
-                <input type="email" class="form-control" id="Email_Cuisinier" name="Email_Cuisinier" placeholder="Ex : Pierre-Giraud@gmail.com" value="<?= $Email_Cuisinier ?>">
+                <input type="email" class="form-control" id="Email_Cuisinier" name="Email_Cuisinier" placeholder="Ex : Pierre-Giraud@gmail.com" value="<?= $Email_Cuisinier ?>" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                 </input>
                 <span ><?= $Email_Cuisinier_Err ?></span>
 

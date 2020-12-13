@@ -28,7 +28,7 @@ if (isset($erreur)) { ?> <div class="container col-4  alert-danger d-flex justif
         <div class="row mb-3 ml-5">
             <label for="Nom_Particulier" class="col-sm-2 col-form-label">Nom* : </label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="Nom_Particulier" name="Nom_Particulier" placeholder="NOM"   value="<?= $Nom_Particulier?>" required pattern = "m[A-Z]ts">
+                <input type="text" class="form-control" id="Nom_Particulier" name="Nom_Particulier" placeholder="Nom"   value="<?= $Nom_Particulier?>" required pattern ="[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
                 <span><?= $Nom_Particulier_Err?></span>
                
             </div>
@@ -36,7 +36,7 @@ if (isset($erreur)) { ?> <div class="container col-4  alert-danger d-flex justif
 
         <div class="mb-3 row">
             <label for="Prenom_Particulier" class="col-sm-2 col-form-label">Prénom* :</label>
-            <div class="col-sm-8"> <input  type="text" class="form-control" id="Prenom_Particulier" name="Prenom_Particulier" placeholder="Prénom" value = "<?= $Prenom_Particulier ?>">
+            <div class="col-sm-8"> <input  type="text" class="form-control" id="Prenom_Particulier" name="Prenom_Particulier" placeholder="Prénom" value = "<?= $Prenom_Particulier ?>" required pattern ="[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
                 </input>
                 <span ><?= $Prenom_Particulier_Err?></span>
               
@@ -45,7 +45,7 @@ if (isset($erreur)) { ?> <div class="container col-4  alert-danger d-flex justif
         <div class="mb-3 row">
             <label for="Email_Particulier" class="col-sm-2 col-form-label">E-mail* : </label>
             <div class="col-sm-8">
-                <input  type="email" class="form-control" id="Email_Particulier" name="Email_Particulier" placeholder="Ex : Pierre-Giraud@gmail.com"  value = "<?= $Email_Particulier ?>">
+                <input  type="email" class="form-control" id="Email_Particulier" name="Email_Particulier" placeholder="Ex : Pierre-Giraud@gmail.com"  value = "<?= $Email_Particulier ?>" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                 </input>
                 <span ><?= $Email_Particulier_Err?></span>
             </div>
