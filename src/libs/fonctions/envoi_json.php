@@ -48,10 +48,7 @@ function ajout_json()
         file_put_contents($data_file, json_encode($json_array));
     }
         
-else
-{
-    echo "ERROR";
-}
+
     }
 
 

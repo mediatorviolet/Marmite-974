@@ -1,13 +1,21 @@
-<?php include 'src/libs/fonctions/envoi_json.php'?>
-<?php include 'src/libs/fonctions/validation_form.php';
-global $class_alert;
-global $msg_alert ;?>
+
+<?php include 'src/libs/fonctions/secure_form_particulier.php';?>
+
+<?php secure_form_particulier() ?>
 
 <div class="container d-flex justify-content-center mt-3  mb-3">
 
     <h2>PARTICULIER</h2>
-    <div class="<?= $class_alert ?>"> <?= $msg_alert ?></div> 
+  
 </div>
+
+<?php
+if (isset($erreur)) { ?> <div class="container col-4  alert-danger d-flex justify-content-center mt-3  mb-3">
+        <?php echo $erreur; ?>
+    </div>
+<?php
+}
+?>
     
 </div>
 <!---DAV 2 PARTICULIER FORMULAIRE INSCRIPTION---->
@@ -16,30 +24,31 @@ global $msg_alert ;?>
 
 <div class="container col-8 pb-5 form-particulier">
 
-     <form method="POST" action="<?= validationForm_Particulier() ?>" class="form" id="Form_Particulier">
+     <form method="POST" action="" class="form" id="Form_Particulier">
 
         <div class="row mb-3 ml-5">
             <label for="Nom_Particulier" class="col-sm-2 col-form-label">Nom* : </label>
             <div class="col-sm-8">
-                <input type="text" class="form-control" id="Nom_Particulier" name="Nom_Particulier" placeholder="NOM"  pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
+                <input type="text" class="form-control" id="Nom_Particulier" name="Nom_Particulier" placeholder="NOM"   value="<?= $Nom_Particulier?>" >
                 <span><?= $Nom_Particulier_Err?></span>
+               
             </div>
         </div>
 
         <div class="mb-3 row">
             <label for="Prenom_Particulier" class="col-sm-2 col-form-label">Prénom* :</label>
-            <div class="col-sm-8"> <input  type="text" class="form-control" id="Prenom_Particulier" name="Prenom_Particulier" placeholder="Prénom" pattern="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
+            <div class="col-sm-8"> <input  type="text" class="form-control" id="Prenom_Particulier" name="Prenom_Particulier" placeholder="Prénom" value = "<?= $Prenom_Particulier ?>">
                 </input>
-                <span><?= $Prenom_Particulier_Err?></span>
+                <span ><?= $Prenom_Particulier_Err?></span>
+              
             </div>
         </div>
-
         <div class="mb-3 row">
             <label for="Email_Particulier" class="col-sm-2 col-form-label">E-mail* : </label>
             <div class="col-sm-8">
-                <input  type="email" class="form-control" id="Email_Particulier" name="Email_Particulier" placeholder="Ex : Pierre-Giraud@gmail.com"  pattern = "^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([_\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})?$">
+                <input  type="email" class="form-control" id="Email_Particulier" name="Email_Particulier" placeholder="Ex : Pierre-Giraud@gmail.com"  value = "<?= $Email_Particulier ?>">
                 </input>
-                <span><?= $Email_Particulier_Err?></span>
+                <span ><?= $Email_Particulier_Err?></span>
             </div>
         </div>
 
@@ -63,7 +72,7 @@ global $msg_alert ;?>
         <div class="mb-3 row">
             <label for="Telephone_Particulier" class="col-sm-2 col-form-label">Téléphone : </label>
             <div class="col-sm-8">
-                <input  type="tel" class="form-control" id="Telephone_Particulier" name="Telephone_Particulier" placeholder="06 92 00 00 00" pattern="^((((\(\d{3}\))|(\d{3}-))\d{3}-\d{4})|(\+?\d{2}((-| )\d{1,8}){1,5}))(( x| ext)\d{1,5}){0,1}$" >
+                <input  type="tel" class="form-control" id="Telephone_Particulier" name="Telephone_Particulier" placeholder="06 92 00 00 00" value = "<?= $Telephone_Particulier ?>" >
                
             </div>
         </div>

@@ -2,21 +2,23 @@
 
 global $class_alert;
 global $msg_alert; 
-$msg_alert="test";
 
 
-//require_once 'upload.php';
 
-//initialisation err pour les chamsp inscription CUISINIER
+
+
 $Nom_Cuisinier_Err = $Prenom_Cuisinier_Err = $Email_Cuisinier_Err = $Password_Cuisinier_Err = $Confirmation_Pass_Cuisinier_Err = $Specialite_Cuisinier_Err = "";
-//initialisation err pour les chamsp inscription PARTICULIER
 $Nom_Particulier_Err = $Prenom_Particulier_Err = $Email_Particulier_Err = $Password_Particulier_Err = $Confirmation_Pass_Particulier_Err 
 = $Telephone_Particulier_Err = "";
 
+
+
 // DAV ( 1 )POUR CUISINIER Vérification des champs vides afin d'éviter les envoie coté serveur meme si les champs sont vides
+
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["Nom_Cuisinier"])) {
-        $Nom_Cuisinier_Err = "Veuillez entrer votre nom.";
+        $Nom_Cuisinier_Err = "Veuillez entrer votre NOM.";
     }
     if (empty($_POST["Prenom_Cuisinier"])) {
         $Prenom_Cuisinier_Err = "Veuillez entrer votre prénom.";
@@ -32,14 +34,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     if (empty($_POST["Specialite_Cuisinier"])) {
         $_POST["Specialite_Cuisinier"] = "Aucun";
-        
     }
+
 }
+
+
+  
+      
+    
+
+
+
+
+
+
+
+
+
+
+
 
 // DAV ( 2 )POUR PARTICULIER Vérification des champs vides afin d'éviter les envoie coté serveur meme si les champs sont vides
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["Nom_Particulier"])) {
-        $Nom_Particulier_Err = "Veuillez entrer votre nom.";
+        $Nom_Particulier_Err = "Veuillez entrer votre .";
     }
     if (empty($_POST["Prenom_Particulier"])) {
         $Prenom_Particulier_Err = "Veuillez entrer votre prénom.";
@@ -182,21 +200,4 @@ function Inscription_Particulier()
 //  ************************************LES FONCTIONS AJOUT ATELIER***************************************************************************************************************************************************************************** */
 
 
-
-function change_state() {
-    global $data_file;
-    $id = $_POST["indice"];
-    $json_array = json_decode(file_get_contents($data_file), true);
-    if ($json_array[$id]["etat"] == "actif") {
-        $json_array[$id]["etat"] = "inactif";
-        file_put_contents($data_file, json_encode($json_array));
-        header("Location:  admin.php?page=dashboard#" . $json_array[$id]["id"]);
-    } else if ($json_array[$id]["etat"] == "inactif") {
-        $json_array[$id]["etat"] = "actif";
-        file_put_contents($data_file, json_encode($json_array));
-        header("Location:  admin.php?page=dashboard#" . $json_array[$id]["id"]);
-    }
-    /*if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["state"])) {
-    }*/
-}
 ?>
