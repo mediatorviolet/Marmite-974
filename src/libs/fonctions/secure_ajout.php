@@ -4,14 +4,30 @@
 <?php 
 
 
+$erreurAjout = "";
+
+
+
+
+
+
+
+//  servira egelment pour form_modif si possible
 function validationAjout () 
 {
 
+    global $erreurAjout;
+  
+
     if(isset($_POST['Inscrire_Atelier']))
+
+
     
     {//On verifie que chaque input soient bien completes sauf pour l'image pour laquelle on peut ne pas mettre
     $inputsRequired = ["titre", "description", "date", "heure_debut", "duree","effectif_max","prix","image"];
     //pr image sera apres
+
+     
 
     foreach($inputsRequired as $input){ //Pour chaque elements du tableau on verifie via le $_POSt et le nom de l'input si c'est vide
         if($_POST["$input"] == ""){
@@ -22,6 +38,9 @@ function validationAjout ()
       }
     }
 
+if (isset($_POST['Inscire_Atelier'])){
+    $erreurAjout = "test";
+}
 
     //Ici on poursuit si le formulaire est incomplet alors on envoie un message d'erreur et on stop la fonction
     if($validationForms === false){
