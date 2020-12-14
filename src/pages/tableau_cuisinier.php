@@ -70,7 +70,7 @@
           </form>
           </td>
           <td class="align-middle text-center">
-            <form action="<?= "index.php?page=modification_atelier.php" ?>" method="post">
+            <form action="src\pages\modification_atelier.php" method="post">
               <input type="hidden" name="id" value="<?= $key ?>">
               <button type="submit" name="modif" class="btn btn-outline-light">Modifier</button>
             </form>

@@ -1,17 +1,18 @@
 <?php
-// require_once "src/libs/fonctions/modification.php";
-// validation_modif();
-// img_upload();
+// lien absolu ne fonctionne pas, test avec lien relatif
+require_once "../libs/fonctions/modification.php";
+validation_modif();
+img_upload();
 
-// $json_array = json_decode(file_get_contents("src\libs\DB\atelier.json"), true);
-// $id = $_POST["id"];
+$json_array = json_decode(file_get_contents("../libs/DB/atelier.json"), true);
+$id = $_POST["id"];
 
 ?>
 
 <div class="container-fluid p-lg-5 p-md-3">
   <h2 class="display-4 text-center p-lg-5 p-md-3 py-3">Modifier un Atelier</h2>
   <div class="col-3 text-center mx-auto alert alert-<?= $class_alert ?>"><?= $msg_alert ?></div>
-  <form action="<?= "index.php?page=tableau_cuisinier" ?>" method="POST" enctype="multipart/form-data">
+  <form action="tableau_cuisinier.php" method="POST" enctype="multipart/form-data">
     <div class="form-group">
       <label class="lead" for="titre">Titre de l'atelier</label>
       <input type="text" class="form-control" id="titre" name="titre_maj" value="<?= $json_array[$id]["titre"] ?>">
