@@ -7,7 +7,7 @@
 </head>
 <nav class="navbar navbar-expand-lg navbar-light  px-3" style="background-color:#f3671f">
     <div class="container-fluid">
-        <img src="src/ressources/images/logo-marmite974.png" alt="logo" class="img-fluid" style="max-width:75px;">
+        <img src="src/ressources/images/logo-marmite974.png" alt="logo" class="img-fluid" style="max-width:75px; border-radius:40px;">
         <a class="navbar-brand text-uppercase ms-3" href="index.php">Marmite 974</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
