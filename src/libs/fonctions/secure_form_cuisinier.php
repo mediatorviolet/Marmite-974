@@ -34,9 +34,12 @@ $email = "";
 function secure_form_cuisinier()
 {
     $validate = NULL;
+    $inscrire_ok="";
+$inscrire_no="";
 
 
-    global $erreur, $email, $validate,
+
+    global $erreur, $email, $validate, $inscrire_no, $inscrire_ok,
         $patternPrenom_Cuisinier,   $patternSpecialite_Cuisinier, $Specialite_Cuisinier_Lenght;
 
 
@@ -67,8 +70,7 @@ function secure_form_cuisinier()
         // ****************POUR UN OU POUR TOUT CHAMPS VIDE ON BLOQUE L'ENVOI*****************************************************/
         //1 condition (TOUT -> operateur ET : &&) champs vide alors bloqué par erreur
 
-
-
+       
         if (empty($_POST['Nom_Cuisinier'])  || empty($_POST['Prenom_Cuisinier'])  || empty($_POST['Email_Cuisinier'])  || empty($_POST['Password_Cuisinier'])  || empty($_POST['Confirmation_Pass_Cuisinier'])  || empty($_POST['Specialite_Cuisinier'])) {
             //(8)verifie CAS PAR CAS si vide alors on bloqué par erreur
             if (empty($_POST["Nom_Cuisinier"])) {
@@ -89,11 +91,13 @@ function secure_form_cuisinier()
             }
             if (empty($_POST["Confirmation_Pass_Cuisinier"])) {
                 $Confirmation_Pass_Cuisinier_Err = "<i><font color=red >Confirmer un mot de passe.</font></i>";
-                $validate = false;
+                $validate =true;
+        
+             
             }
-            if (empty($_POST["Specialite_Cuisinier"])) {
-                $Specialite_Cuisinier = "";
-            }
+
+           
+           
             //fin condition 2
 
 
@@ -134,34 +138,21 @@ function secure_form_cuisinier()
 
                 if (preg_match($patternSpecialite_Cuisinier, $Specialite_Cuisinier)) {
                     $validate = true;
-
-                }
-                  
-                else 
-                    {
-                        $erreur = "jeux de caractères interdit";
-                        $Specialite_Cuisinier_Err = "<i><font color=red> Syntaxe non autorisée. </font></i>";
-                        $validate = false;
-                    }
-                   
-                
-
-                if ($Specialite_Cuisinier_Lenght  <= 15) {
-                    $validate = true;
                 } 
-                
-                else {
-                    $erreur = "Entrez moins de 15 caractères pour votre spécialité";
-                    $Specialite_Cuisinier_Err = "<i><font color=red> Descriptif trop long. Saisir moins de 15 caractères.</font></i>";
-                    $validate = false; //toujours true car n'est pas obligatoire mais doit quand meme pouvoir envoyer l'inscription
 
-                }
+
             }
 
             if ($validate === true) {
                 ajout_json();
+                $inscrire_ok="Votre compte cuisinier a bien été creer.";
+                
             }
 
+            else {
+                $inscrire_no="Inscription non aboutie.";
+                
+            }
             //bug au test car empeche envoie. Enlever le mut pour test individuel
             //bug au test car empeche envoie. Enlever le mut pour test individuele
 
@@ -170,7 +161,6 @@ function secure_form_cuisinier()
 
 
         }
-        
     }
 };
 
