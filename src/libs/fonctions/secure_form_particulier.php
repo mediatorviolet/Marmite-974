@@ -31,10 +31,10 @@ $email = "";
 
 function secure_form_particulier()
 {
-    $inscrire_ok="";
-    $inscrire_no="";
+    $inscrire_ok = "";
+    $inscrire_no = "";
 
-    $validate = NULL;
+
     global $erreur, $email, $color, $validate,  $inscrire_no, $inscrire_ok;
 
 
@@ -51,7 +51,7 @@ function secure_form_particulier()
         $Email_Particulier = trim(stripslashes(htmlspecialchars($_POST['Email_Particulier'])));
         $Password_Particulier = sha1(htmlspecialchars($_POST['Password_Particulier']));
         $Confirmation_Pass_Particulier = sha1(htmlspecialchars($_POST['Confirmation_Pass_Particulier']));
-        $Telephone_Particulier =  (stripslashes(htmlspecialchars($_POST['Telephone_Particulier'])));
+        $Telephone_Particulier =  (htmlspecialchars($_POST['Telephone_Particulier']));
 
         //strlen compte le nombre de caratèere dans la varible saisie
         //$Telephone_Particulier_Lenght = strlen($Specialite_Cuisinier);
@@ -59,7 +59,7 @@ function secure_form_particulier()
         $patternNom_Particulier = "#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#";
         $email = $Email_Particulier;
         $patternPrenom_Particulier = "#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#";
-        $pattern_Telephone = "#0[1-68][0-9]{8}#";
+        // $pattern_Telephone = "#0[1-68][0-9]{8}#";
 
         $color = "";
 
@@ -93,30 +93,13 @@ function secure_form_particulier()
                 $validate = false;
             }
 
-            if (empty($_POST["Telephone_Cuisinier"])) {
-                $Confirmation_Pass_Particulier_Err = "<i><font color = red >Confirmez le mot de passe.</font></i>";
-                $validate = false;
-                $Telephone_Particulier="00 00 00 00 00 ";
-            }
-            //assignation numérique par defauts pour respecter le pattern et evité bus d envoi
+            // assignation numérique par defauts pour respecter le pattern et evité bus d envoi
 
-            //fin condition 2
+            // fin condition 2
+
+            if (isset($_POST['Nom_Particulier'])  || isset($_POST['Prenom_Particulier'])  || isset($_POST['Email_Particulier']) || isset($_POST['Password_Particulier'])  || isset($_POST['Confirmation_Pass_Particulier'])) {
 
 
-
-
-
-            if (isset($_POST['Nom_Particulier'])  || isset($_POST['Prenom_Particulier'])  || isset($_POST['Email_Particulier']) || isset($_POST['Password_Particulier'])  || isset($_POST['Confirmation_Pass_Particulier'])  || isset($_POST['Telephone_Particulier'])) {
-
-
-                if (preg_match($pattern_Telephone, $Telephone_Particulier)) {
-                    $validate = true;
-                } else {
-
-                    $Telephone_Particulier_Err = "Numéro non valide";
-                    $erreur = "Numéron non valide";
-                    $validate = false;
-                }
 
                 if (preg_match($patternNom_Particulier, $Nom_Particulier)) {
                     $Nom_Particulier_Err = "<i><font color=green>Valid name &#10003;</font></i>";
@@ -137,14 +120,14 @@ function secure_form_particulier()
                     $validate = false;
                 }
 
-                if(preg_match($pattern_Telephone, $Telephone_Particulier))
-                {
-                    $validate = true;
-                }
-                else
-                {
-                    $validate = false;
-                }
+                // if(preg_match($pattern_Telephone, $Telephone_Particulier))
+                // {
+                //     $validate = true;
+                // }
+                // else
+                // {
+                //     $validate = false;
+                // }
 
 
                 if (ValidEmail($email)) //verif pattern email coté serveur
@@ -170,20 +153,14 @@ function secure_form_particulier()
                     $erreur = " Vos mots de passe ne sont pas identiques";
                     $validate = false;
                 }
-
-                
-            
-
-
-         
             }
-            if ($validate === true  ) {
+
+            return $validate;
+
+            if ($validate === true) {
                 ajout_json();
                 $inscrire_ok="Votre compte particulier a bien été créé.";
             }
-            else {
-                $inscrire_no="Inscription non aboutie.";
-                }
         }
     }
 };
