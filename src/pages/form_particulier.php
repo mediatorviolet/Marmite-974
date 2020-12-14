@@ -10,7 +10,7 @@
   
 </div>
 
-<<!-- <?php
+<!-- <?php
 if (isset($inscrire_ok)) { ?> <div class="container col-4  alert-danger d-flex justify-content-center mt-3  mb-3">
     <?php echo $incrire_ok; ?>
 </div>

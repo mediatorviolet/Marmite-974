@@ -1,4 +1,4 @@
-// gestion de l'image
+<? // gestion de l'image
         $fileName = $_FILES['image']['name']; //On met dans une variable le nom de l'image pour vérifier si l'utilisateur a ajouté une
             if($fileName !== ""){ //On verifie si cette variable n'est pas vide alors
                 $validExt = array('.jpg', '.jpeg', '.gif', '.png'); //On spécifie les extensions que l'on souhaite prendre
@@ -55,7 +55,7 @@ if($resultat)
 
 
 }else{ //S'il n'y a pas d'image alors on met une image par défaut
-$_POST['image'] = "<?php echo NO IMAGE ?>";//L'image par défaut se nomme no_image.png
+$_POST['image'] = $a;//L'image par défaut se nomme no_image.png
 //Tout d'abord on attribue un id unique à l'enchere
 $idEnchere = md5(uniqid(rand(), true)); 
 $_POST['id'] = $idEnchere;
@@ -75,11 +75,11 @@ echo '
 
 
 
-            }
-
-
-        }
-
 }
 
-// fin de if isset
+
+        
+        
+
+?>
+
