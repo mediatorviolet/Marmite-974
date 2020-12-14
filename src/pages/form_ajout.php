@@ -1,9 +1,13 @@
-<?php include "src/libs/fonctions/envoi_json.php" ?> 
+
 
 
 <!-- DAV liaison à secure_ajout -->
-<?php include "src/libs/fonctions/secure_ajout.php" ?> 
-<?php validationAjout() ?>
+<?php include "src/libs/fonctions/secure_ajout.php";
+include "src/libs/fonctions/upload_img.php" ;
+if (isset($_POST['Inscrire_Atelier']))
+{ validationAjout();
+    img_upload();}
+?>
 
 
 <div class="container-fluid mt-5 form-ajout">
@@ -14,14 +18,13 @@
 
 <?php
 ?> <div class="container-fluid  alert-danger d-flex justify-content-center mt-3  mb-3">
-        <?php echo $erreurAjout; ?>
-    </div>
+            </div>
 <?php
 
 ?>
 
 
-    <form method="POST" action="<?= ajout_json() ?>" enctype="multipart/form-data" class="row g-3 col-9 mx-auto mt-5">
+    <form method="POST" action="" enctype="multipart/form-data" class="row g-3 col-9 mx-auto mt-5">
         <div class="col-12 form-floating mb-3">
             <input type="text" class="form-control" name="titre" placeholder="" required pattern ="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
             <label for="titre" class="form-label">Titre de l'atelier</label>
@@ -52,7 +55,7 @@
         </div>
         <div class="col-md-6 d-flex align-items-center mb-3">
             <label for="image" class="form-label me-3">Image</label>
-            <input type="file" class="form-control-lg" id="image" name=image value = "<?php $_POST['image']?>" placeholder=""required >
+            <input type="file" class="form-control-lg" id="image" name="image" placeholder=""required >
         </div>
         <div class="col-12 d-flex justify-content-end">
             <button type="submit" name="Inscrire_Atelier" class="btn-lg btn-primary px-5">Ajouter</button>
