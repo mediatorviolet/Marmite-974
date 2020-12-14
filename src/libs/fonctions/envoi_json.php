@@ -64,6 +64,7 @@ function ajout_json()
             "Duree" => $_POST["duree"],
             "Effectif_max" => $_POST["effectif_max"],
             "Prix" => $_POST["prix"],
+            "Image" => "src/ressources/images/uploads/" . basename($_FILES["image"]["name"]),
             "Etat" => "inactif",
             "Auteur" => $_SESSION["cuisinier"]["id"],
             "Participants" => array()

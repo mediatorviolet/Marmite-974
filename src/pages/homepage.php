@@ -17,7 +17,7 @@ reservation();
         <?php foreach ($json_array as $key => $val) :?>
         <div class="col">
             <div class="card">
-                <img src="src/ressources/images/chinh-le-duc-vuDXJ60mJOA-unsplash.jpg" class="card-img-top" alt="Illustration atelier">
+                <img src="<?= $val["Image"]?>"   class="card-img-top" alt="Illustration atelier">
                 <div class="date bg-light p-3 position-absolute d-flex justify-content-center align-items-center fw-bold"><?= $val["Date"] ?></div>
                 <div class="card-body">
                     <h5 class="card-title"><?= $val["Titre"] ?></h5>

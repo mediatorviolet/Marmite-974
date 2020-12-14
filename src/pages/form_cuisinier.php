@@ -17,9 +17,17 @@
 <!-- 
 Indication géréral de message d'erreur ou de confirmation d'envoi de l'inscription --> -->
 <!-- <?php
-if (isset($erreur)) { ?> <div class="container col-4  alert-danger d-flex justify-content-center mt-3  mb-3">
-        <?php echo $erreur; ?>
+if (isset($inscrire_ok)) { ?> <div class="container col-4  alert-danger d-flex justify-content-center mt-3  mb-3">
+        <?php echo $incrire_ok; ?>
     </div>
+<?php 
+}
+?>
+
+<?php
+if (isset($inscrire_no)) { ?> <div class="container col-4  alert-danger d-flex justify-content-center mt-3  mb-3">
+    <?php echo $incrire_no; ?>
+</div>
 <?php 
 }
 ?>
@@ -75,7 +83,7 @@ par sécurité on preferera que l'utilisateur retape son mot de passe à chaque 
         <div class="mb-3 row">
             <label for="Confirmation_Pass_Cuisinier" class="col-sm-2 col-form-label">Confirmation* : </label>
             <div class="col-sm-8">
-                <input type="password" class="form-control" id="Confirmation_Pass_Cuisinier" name="Confirmation_Pass_Cuisinier" placeholder="Confirmez votre mot de passe" value ="">
+                <input type="password" class="form-control" id="Confirmation_Pass_Cuisinier" name="Confirmation_Pass_Cuisinier" placeholder="Confirmez votre mot de passe" ">
                 <span ><?= $Confirmation_Pass_Cuisinier_Err ?></span>
             </div>
         </div>

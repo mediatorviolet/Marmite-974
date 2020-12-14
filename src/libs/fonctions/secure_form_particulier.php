@@ -31,8 +31,11 @@ $email = "";
 
 function secure_form_particulier()
 {
+    $inscrire_ok="";
+    $inscrire_no="";
 
-    global $erreur, $email, $color;
+    $validate = NULL;
+    global $erreur, $email, $color, $validate,  $inscrire_no, $inscrire_ok;
 
 
     global  $Email_Particulier, $Nom_Particulier, $Prenom_Particulier, $Password_Particulier, $Confirmation_Pass_Particulier, $Telephone_Particulier;
@@ -48,7 +51,7 @@ function secure_form_particulier()
         $Email_Particulier = trim(stripslashes(htmlspecialchars($_POST['Email_Particulier'])));
         $Password_Particulier = sha1(htmlspecialchars($_POST['Password_Particulier']));
         $Confirmation_Pass_Particulier = sha1(htmlspecialchars($_POST['Confirmation_Pass_Particulier']));
-        $Telephone_Particulier =  trim(stripslashes(htmlspecialchars($_POST['Telephone_Particulier'])));
+        $Telephone_Particulier =  (stripslashes(htmlspecialchars($_POST['Telephone_Particulier'])));
 
         //strlen compte le nombre de caratèere dans la varible saisie
         //$Telephone_Particulier_Lenght = strlen($Specialite_Cuisinier);
@@ -68,20 +71,32 @@ function secure_form_particulier()
 
         if (empty($_POST['Nom_Particulier'])  || empty($_POST['Prenom_Particulier'])  || empty($_POST['Email_Particulier'])  || empty($_POST['Password_Particulier'])  || empty($_POST['Confirmation_Pass_Particulier'])  || empty($_POST['Telephone_Particulier'])) {
             //(8)verifie CAS PAR CAS si vide alors on bloqué par erreu
+          
             if (empty($_POST["Nom_Particulier"])) {
                 $Nom_Particulier_Err = "<i><font color=red >Veuillez entrer votre Nom.</font></i>";
+                $validate = false;
             }
             if (empty($_POST["Prenom_Particulier"])) {
                 $Prenom_Particulier_Err = "<i><font color = red>Veuillez entrer votre Prénom.</font></i>";
+                $validate = false;
             }
             if (empty($_POST["Email_Particulier"])) {
                 $Email_Particulier_Err = "Veuillez entrer une adresse email valide.";
+                $validate = false;
             }
             if (empty($_POST["Password_Partiulier"])) {
                 $Password_Particulier_Err = "<i><font color = red >Indiquez un mot de passe.</font></i>";
+                $validate = false;
             }
             if (empty($_POST["Confirmation_Pass_Partiulier"])) {
                 $Confirmation_Pass_Particulier_Err = "<i><font color = red >Confirmez le mot de passe.</font></i>";
+                $validate = false;
+            }
+
+            if (empty($_POST["Telephone_Cuisinier"])) {
+                $Confirmation_Pass_Particulier_Err = "<i><font color = red >Confirmez le mot de passe.</font></i>";
+                $validate = false;
+                $Telephone_Particulier="00 00 00 00 00 ";
             }
             //assignation numérique par defauts pour respecter le pattern et evité bus d envoi
 
@@ -95,41 +110,75 @@ function secure_form_particulier()
 
 
                 if (preg_match($pattern_Telephone, $Telephone_Particulier)) {
+                    $validate = true;
                 } else {
 
-                    $Telephone_Particulier_Err = "telephone non valide";
-                    $erreur="";
+                    $Telephone_Particulier_Err = "Numéro non valide";
+                    $erreur = "Numéron non valide";
+                    $validate = false;
                 }
 
                 if (preg_match($patternNom_Particulier, $Nom_Particulier)) {
                     $Nom_Particulier_Err = "<i><font color=green>Valid name &#10003;</font></i>";
+                    $validate = true;
                 } else {
                     $erreur = "Veuillez inscrire votre Nom.";
                     $Nom_Particulier_Err = "<i><font color=red> Mauvaise syntaxe. </font></i>";
+                    $validate = false;
                 }
 
 
                 if (preg_match($patternPrenom_Particulier, $Prenom_Particulier)) {
                     $Prenom_Particulier_Err = "<i><font color=green>Valid firstName &#10003;</font></i>";
+                    $validate = true;
                 } else {
                     $erreur = "Saisir un Prénom valide";
                     $Nom_Particulier_Err = "<i><font color=red> Prénom incorrect.</font></i>";
+                    $validate = false;
+                }
+
+                if(preg_match($pattern_Telephone, $Telephone_Particulier))
+                {
+                    $validate = true;
+                }
+                else
+                {
+                    $validate = false;
                 }
 
 
                 if (ValidEmail($email)) //verif pattern email coté serveur
                 {
                     $Email_Particulier_Err = " <i><font color=green> Email valid &#10003;</font></i>";
+                    $validate = true;
+                } else {
+                    $erreur = "Saisir un email valid";
+                    $Nom_Particulier_Err = "<i><font color=red> Email incorrect.</font></i>";
+                    $validate = false;
                 }
-            } else {
-                $Email_Particulier_Err = " <i><font color=red> Email invalid </font></i>";
-            }
 
-            if ($Password_Particulier == $Confirmation_Pass_Particulier) {
+
+                if ($Password_Particulier == $Confirmation_Pass_Particulier) {
+                    $validate = true;
+                } else {
+                    $Confirmation_Pass_Particulier_Err = "<i><font color=red> Ne correspondent pas</font></i>";
+                    $erreur = " Vos mots de passe ne sont pas identiques";
+                    $validate = false;
+                }
+
                 
-            } else {$Confirmation_Pass_Particulier_Err = "<i><font color=red> Ne correspondent pas</font></i>";
-                $erreur = " Vos mots de passe ne sont pas identiques";
+            
+
+
+         
             }
-        }ajout_json();
+            if ($validate === true  ) {
+                ajout_json();
+                $inscrire_ok="Votre compte particulier a bien été creer.";
+            }
+            else {
+                $inscrire_no="Inscription non aboutie.";
+                }
+        }
     }
 };

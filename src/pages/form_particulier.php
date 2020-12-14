@@ -10,14 +10,22 @@
   
 </div>
 
-<!-- <?php
-if (isset($erreur)) { ?> <div class="container col-4  alert-danger d-flex justify-content-center mt-3  mb-3">
-        <?php echo $erreur; ?>
-    </div>
-<?php
+<<!-- <?php
+if (isset($inscrire_ok)) { ?> <div class="container col-4  alert-danger d-flex justify-content-center mt-3  mb-3">
+    <?php echo $incrire_ok; ?>
+</div>
+<?php 
 }
-?> -->
-    
+?>
+
+  <?php
+if (isset($inscrire_no)) { ?> <div class="container col-4  alert-danger d-flex justify-content-center mt-3  mb-3">
+<?php echo $incrire_no; ?>
+</div>
+<?php 
+}
+?>
+     -->
 </div>
 <!---DAV 2 PARTICULIER FORMULAIRE INSCRIPTION---->
 
@@ -64,7 +72,7 @@ if (isset($erreur)) { ?> <div class="container col-4  alert-danger d-flex justif
         <div class="mb-3 row">
             <label for="Confirmation_Pass_Particulier" class="col-sm-2 col-form-label">Confirmation* : </label>
             <div class="col-sm-8">
-                <input type="password" class="form-control" id="Confirmation_Pass_Particulier" name="Confirmation_Pass_Particulier" placeholder="Confirmez votre mot de passe" value = "<?= $Password_Particulier ?>"  >
+                <input type="password" class="form-control" id="Confirmation_Pass_Particulier" name="Confirmation_Pass_Particulier" placeholder="Confirmez votre mot de passe" value = ""  >
                 <span><?= $Confirmation_Pass_Particulier_Err?></span>
             </div>
         </div>
@@ -72,7 +80,7 @@ if (isset($erreur)) { ?> <div class="container col-4  alert-danger d-flex justif
         <div class="mb-3 row">
             <label for="Telephone_Particulier" class="col-sm-2 col-form-label">Téléphone : </label>
             <div class="col-sm-8">
-                <input  type="tel" class="form-control" id="Telephone_Particulier" name="Telephone_Particulier" placeholder="06 92 00 00 00" value = "<?= $Telephone_Particulier ?>" >
+                <input  type="tel" class="form-control" id="Telephone_Particulier" name="Telephone_Particulier" placeholder="06 92 00 00 00" value = "00 00 00 00 00 " >
                
             </div>
         </div>
