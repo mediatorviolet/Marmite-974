@@ -1,8 +1,9 @@
 
 
+<!-- SECURISATION FORMULAIRE INSCRIPTION CUISINIER -->
+
 
 <?php include "src/libs/fonctions/envoi_json.php";
-// **************************SECURISATION FORMULAIRE INSCRIPTION CUISINIER
 
 
 function ValidEmail($email)
@@ -14,10 +15,7 @@ function ValidEmail($email)
     }
 }
 
-
-//*****************INITIALISATION DES VARS ERREUR ET PATTERN ET TABLEAUX DE VALEUR POUR ANALYSE***************** */
-// *************************************************************************************************************/
-//********************************************************************************************************** */
+//INITIALISATION DES VARS ERREUR ET PATTERN ET TABLEAUX DE VALEUR 
 $Nom_Cuisinier = $Prenom_Cuisinier = $Email_Cuisinier = $Password_Cuisinier = $Confirmation_Pass_Cuisinier = $Specialite_Cuisinier = "";
 
 $Nom_Cuisinier_Err = $Prenom_Cuisinier_Err = $Email_Cuisinier_Err = $Password_Cuisinier_Err = $Confirmation_Pass_Cuisinier_Err = $Specialite_Cuisinier_Err = "";
@@ -26,16 +24,11 @@ $erreur = "";
 $email = "";
 
 
-
-
-
-
-
 function secure_form_cuisinier()
 {
-    $validate = NULL;
+    
     $inscrire_ok="";
-$inscrire_no="";
+    $inscrire_no="";
 
 
 
@@ -62,7 +55,7 @@ $inscrire_no="";
         $Specialite_Cuisinier_Lenght = strlen($Specialite_Cuisinier);
         $patternEmail_Cuisinier = '#/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/igm#';
         $patternNom_Cuisinier = "#[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#";
-        $patternSpecialite_Cuisinier = "#([a-z]|[A-Z]|[0-9]){4,8}$#";
+        $patternSpecialite_Cuisinier = "#[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#";
         $patternPrenom_Cuisinier = "#[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï])?$#";
 
         $email = $Email_Cuisinier;
@@ -71,7 +64,7 @@ $inscrire_no="";
         //1 condition (TOUT -> operateur ET : &&) champs vide alors bloqué par erreur
 
        
-        if (empty($_POST['Nom_Cuisinier'])  || empty($_POST['Prenom_Cuisinier'])  || empty($_POST['Email_Cuisinier'])  || empty($_POST['Password_Cuisinier'])  || empty($_POST['Confirmation_Pass_Cuisinier'])  || empty($_POST['Specialite_Cuisinier'])) {
+        if (empty($_POST['Nom_Cuisinier'])  || empty($_POST['Prenom_Cuisinier'])  || empty($_POST['Email_Cuisinier'])  || empty($_POST['Password_Cuisinier'])  || empty($_POST['Confirmation_Pass_Cuisinier'])  ) {
             //(8)verifie CAS PAR CAS si vide alors on bloqué par erreur
             if (empty($_POST["Nom_Cuisinier"])) {
                 $Nom_Cuisinier_Err = "Veuillez entrer votre Nom.";
@@ -100,7 +93,7 @@ $inscrire_no="";
             //fin condition 2
 
 
-            if (isset($_POST['Nom_Cuisinier'])  && isset($_POST['Prenom_Cuisinier'])  && isset($_POST['Email_Cuisinier'])  && isset($_POST['Password_Cuisinier'])  && isset($_POST['Confirmation_Pass_Cuisinier'])  && isset($_POST['Specialite_Cuisinier'])) {
+            if (isset($_POST['Nom_Cuisinier'])  && isset($_POST['Prenom_Cuisinier'])  && isset($_POST['Email_Cuisinier'])  && isset($_POST['Password_Cuisinier'])  && isset($_POST['Confirmation_Pass_Cuisinier'])  ) {
 
                 if (preg_match($patternNom_Cuisinier, $Nom_Cuisinier)) {
                     $Nom_Cuisinier_Err = "<i><font color=green>&#10003; </font></i>";
@@ -145,32 +138,22 @@ $inscrire_no="";
                 }
 
 
-                if (preg_match($patternSpecialite_Cuisinier, $Specialite_Cuisinier)) {
-                    $validate = true;
-                } 
-
+            //     if (preg_match($patternSpecialite_Cuisinier, $Specialite_Cuisinier)) {
+            //         $validate = true;
+            //     } 
+            //     else
+            //     {
+            //         $validate = false;
+            //     }
 
             }
+
+            return $validate;
 
             if ($validate === true) {
                 ajout_json();
                 $inscrire_ok="Votre compte cuisinier a bien été créé.";
-                
             }
-
-            else {
-                $inscrire_no="Inscription non aboutie.";
-                
-            }
-            //bug au test car empeche envoie. Enlever le mut pour test individuel
-
-
-
-
-
-
-
-
         }
     }
 };

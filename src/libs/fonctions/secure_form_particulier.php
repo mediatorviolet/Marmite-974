@@ -59,7 +59,7 @@ function secure_form_particulier()
         $patternNom_Particulier = "#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#";
         $email = $Email_Particulier;
         $patternPrenom_Particulier = "#^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#";
-        // $pattern_Telephone = "#0[1-68][0-9]{8}#";
+        $pattern_Telephone = "#[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}#";
 
         $color = "";
 
@@ -120,14 +120,14 @@ function secure_form_particulier()
                     $validate = false;
                 }
 
-                // if(preg_match($pattern_Telephone, $Telephone_Particulier))
-                // {
-                //     $validate = true;
-                // }
-                // else
-                // {
-                //     $validate = false;
-                // }
+                if(preg_match($pattern_Telephone, $Telephone_Particulier))
+                {
+                    $validate = true;
+                }
+                else
+                {
+                    $validate = false;
+                }
 
 
                 if (ValidEmail($email)) //verif pattern email coté serveur
@@ -138,7 +138,7 @@ function secure_form_particulier()
                     {$validate = true;}
                     else
                     {$validate = false;
-                    $Email_Cuisinier_Err = "<i><font color=red >Email déjà utilisé</font></i>";
+                    $Email_Particulier_Err = "<i><font color=red >Email déjà utilisé</font></i>";
                 }} else {
                     $erreur = "Saisir un email valide";
                     $Nom_Particulier_Err = "<i><font color=red> Email incorrect.</font></i>";
@@ -152,6 +152,7 @@ function secure_form_particulier()
                     $Confirmation_Pass_Particulier_Err = "<i><font color=red> Ne correspondent pas</font></i>";
                     $erreur = " Vos mots de passe ne sont pas identiques";
                     $validate = false;
+                    
                 }
             }
 

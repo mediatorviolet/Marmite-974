@@ -3,6 +3,9 @@
 
 <?php secure_form_particulier() ?>
 <?php ajout_json() ?>
+<?php doublonEmail() ?>
+
+
 
 
 

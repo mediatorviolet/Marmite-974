@@ -5,7 +5,8 @@
 <!-- connecté au test.php -->
 <?php include 'src/libs/fonctions/secure_form_cuisinier.php'; ?>
 
-<?php secure_form_cuisinier();?>
+<?php secure_form_cuisinier()?>
+<?php ajout_json() ?>
 <!-- < Inscription_Cuisinier() ?> -->
 
 
