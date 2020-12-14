@@ -4,6 +4,15 @@
 <!-- DAV liaison à secure_ajout -->
 <?php include "src/libs/fonctions/secure_ajout.php";
 include "src/libs/fonctions/upload_img.php" ;
+
+
+
+
+
+
+
+
+
 if (isset($_POST['Inscrire_Atelier']))
 { validationAjout();
     img_upload();}

@@ -5,13 +5,6 @@
 include 'src\libs\fonctions\envoi_json.php';
 
 
-
-
-
-
-
-
-
 $class_alert = "";
 $msg_alert = "";
 function validationAjout()
