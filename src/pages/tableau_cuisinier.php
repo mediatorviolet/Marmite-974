@@ -54,9 +54,9 @@
           
           <td class="align-middle text-center"><?= $json_array_atelier[$cleAtl]["Date"] ?></td>
           <td  class="align-middle text-center"><?= $json_array_atelier[$cleAtl]["Heure_debut"] ?></td>
-          <td class="align-middle text-center"><?= $json_array_atelier[$cleAtl]["Duree"] ?></td>
-          <td class="align-middle text-center"><?= $json_array_atelier[$cleAtl]["Effectif_max"] ?></td>
-          <td class="align-middle text-center"><?= $json_array_atelier[$cleAtl]["Prix"] ?></td>
+          <td class="align-middle text-center"><?= $json_array_atelier[$cleAtl]["Duree"] ?>h</td>
+          <td class="align-middle text-center"><?= $json_array_atelier[$cleAtl]["Effectif_max"] ?>pers</td>
+          <td class="align-middle text-center"><?= $json_array_atelier[$cleAtl]["Prix"] ?>€</td>
           <td class="align-middle text-center text-uppercase font-weight-bold <?= $json_array_atelier[$cleAtl]["Etat"] == "actif" ? "text-success" : "text-danger" ?>"><?= $json_array_atelier[$cleAtl]["Etat"] ?></td>
           <td class="align-middle text-center">
           <form action="<?= "admin.php?page=dashboard" ?>" method="post" id="<?= $value["id"] ?>">
@@ -70,7 +70,7 @@
           </form>
           </td>
           <td class="align-middle text-center">
-            <form action="<?= "admin.php?page=formModif" ?>" method="post">
+            <form action="<?= "index.php?page=modification_atelier.php" ?>" method="post">
               <input type="hidden" name="id" value="<?= $key ?>">
               <button type="submit" name="modif" class="btn btn-outline-light">Modifier</button>
             </form>
