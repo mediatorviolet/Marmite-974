@@ -23,7 +23,7 @@ function ajout_json()
             "etat" => "actif",
             "ateliers" => array()
         );
-        array_unshift($json_array, $particulier_post);
+        array_push($json_array, $particulier_post);
         file_put_contents($data_file, json_encode($json_array));
     } elseif (isset($_POST['Inscrire_Cuisinier'])) {
         $data_file = 'src/libs/DB/cuisinier.json';
@@ -41,7 +41,7 @@ function ajout_json()
             // repere
             "ateliers" => array()
         );
-        array_unshift($json_array, $cuisinier_post);
+        array_push($json_array, $cuisinier_post);
         file_put_contents($data_file, json_encode($json_array));
     } elseif (isset($_POST['Inscrire_Atelier'])) {
         $data_file = 'src/libs/DB/atelier.json';
