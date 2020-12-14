@@ -29,8 +29,20 @@
         "etat": "actif",
         "ateliers": [
             "a_9592643c72af38b5259950a67ff41eb8",
-            "a_20e96c5d21b5691f3b681658304ce94f",
-            "a_6ea642336557555e551ee0172105ea32"
+            "a_20e96c5d21b5691f3b681658304ce94f"
+        ]
+    },
+    {
+        "id": "p_c8a5d7c63b5e361cda62d9a74fb1a37d",
+        "nom": "Lochet",
+        "prenom": "Bruno",
+        "email": "bruno.lochet@test.fr",
+        "password": "test",
+        "telephone": "",
+        "etat": "actif",
+        "ateliers": [
+            "a_9592643c72af38b5259950a67ff41eb8",
+            "a_20e96c5d21b5691f3b681658304ce94f"
         ]
     }
 ]

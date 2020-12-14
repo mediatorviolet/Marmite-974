@@ -96,7 +96,7 @@ function secure_form_particulier()
             if (empty($_POST["Telephone_Cuisinier"])) {
                 $Confirmation_Pass_Particulier_Err = "<i><font color = red >Confirmez le mot de passe.</font></i>";
                 $validate = false;
-                $Telephone_Particulier="00 00 00 00 00 ";
+                //$Telephone_Particulier="00 00 00 00 00 ";
             }
             //assignation numérique par defauts pour respecter le pattern et evité bus d envoi
 

@@ -1,12 +1,4 @@
 <?php
-/*function research($array, $something, $clef)
-{
-    foreach ($array as $key => $val) {
-        if ($val[$clef] == $something) {
-            return $key;
-        }
-    }
-}*/
 
 function reservation() {
     if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["reservation"])) {

@@ -24,5 +24,17 @@
             "a_609fcce16880c52472444f9d056b37b3",
             "a_5f956b871b538e6059136fe0c88fb848"
         ]
+    },
+    {
+        "id": "c_79f2977cfcc0590d7a540baa4292b22a",
+        "nom": "Emploi",
+        "prenom": "Paul",
+        "email": "paul.emploi@test.fr",
+        "password": "test",
+        "specialite": "",
+        "etat": "actif",
+        "ateliers": [
+            "a_ea70870ba11c154e29e8e5b10e98b14e"
+        ]
     }
 ]
