@@ -7,9 +7,8 @@ function ajout_json()
 
     // d'abord verifier si la validation du formulaire est ok ( en attendant verif avec isset sur un bouton du formulaire d'ajout utilisateur )
 
-//envoi des données des formulaires vers les fichiers json appropriés
-    if (isset($_POST['Inscrire_Particulier']))
-{    
+    //envoi des données des formulaires vers les fichiers json appropriés
+    if (isset($_POST['Inscrire_Particulier'])) {
         $data_file = 'src/libs/DB/utilisateur.json';
         $json_array = json_decode(file_get_contents($data_file), true);
         $id = "p_" . md5(uniqid(rand(), true));
@@ -26,10 +25,7 @@ function ajout_json()
         );
         array_unshift($json_array, $particulier_post);
         file_put_contents($data_file, json_encode($json_array));
-}
-
-    elseif (isset($_POST['Inscrire_Cuisinier']))
-    {            
+    } elseif (isset($_POST['Inscrire_Cuisinier'])) {
         $data_file = 'src/libs/DB/cuisinier.json';
         $json_array = json_decode(file_get_contents($data_file), true);
         $id = "c_" . md5(uniqid(rand(), true));
@@ -42,15 +38,12 @@ function ajout_json()
             "password" => $_POST["Password_Cuisinier"],
             "specialite" => $_POST["Specialite_Cuisinier"],
             "etat" => "actif",
+            // repere
             "ateliers" => array()
         );
         array_unshift($json_array, $cuisinier_post);
         file_put_contents($data_file, json_encode($json_array));
-    }
-
-
-    elseif (isset($_POST['Inscrire_Atelier']))
-    {                
+    } elseif (isset($_POST['Inscrire_Atelier'])) {
         $data_file = 'src/libs/DB/atelier.json';
         $json_array = json_decode(file_get_contents($data_file), true);
         $id = "a_" . md5(uniqid(rand(), true));
@@ -71,26 +64,33 @@ function ajout_json()
         );
         array_unshift($json_array, $atelier_post);
         file_put_contents($data_file, json_encode($json_array));
-    }
 
-    elseif (isset($_POST['Modifier_Atelier']))
-    {                
+
+        
+   
+        // Affecter les atelier (id) dans l'élément ateliers des cuisiniers. Avec SESSION car post servait pour les formulaires. DEt session récupère les POST deja faites et qui sont stocké durant la session.
+        $data_file_cuisinier = 'src/libs/DB/cuisinier.json';
+        $json_array_cuisinier = json_decode(file_get_contents($data_file_cuisinier), true);
+
+
+        //ici on stosck dans cle l id du cuisinier recherché dans cuisinier.json en fonction de session
+        $cle = research($json_array_cuisinier, $_SESSION['cuisinier']['id'],"id");
+        //Renvoie la valeur dans 'atelier=[]
+        //aray_push (destination  , elemement a pushé)
+        array_push( $json_array_cuisinier[$cle]['ateliers'] ,  $_POST["id_atelier"]  );
+        file_put_contents($data_file_cuisinier, json_encode($json_array_cuisinier));
+       
+ 
+    
+    } elseif (isset($_POST['Modifier_Atelier'])) {
         $data_file = 'src/libs/DB/atelier.json';
         $json_array = json_decode(file_get_contents($data_file), true);
         $json_array = array();
         array_push($json_array, $_POST);
         file_put_contents($data_file, json_encode($json_array));
+    } else {
+        //echo "ERROR";
     }
-        
-
-else
-{
-    //echo "ERROR";
 }
-    }
-
-
-
 
 //ajout_json();
-?>

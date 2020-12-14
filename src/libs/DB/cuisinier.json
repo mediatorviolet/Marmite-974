@@ -1,1 +1,28 @@
-[]
+[
+    {
+        "id": "c_94ab35278a72877db96479085c698125",
+        "nom": "Cuisto",
+        "prenom": "Cuisto",
+        "email": "cuisqsdqsinier.test@gmail.com",
+        "password": "teqsdst",
+        "specialite": "",
+        "etat": "actif",
+        "ateliers": [
+            "a_38b8418677e872ac65ff9d511aa2cc92",
+            "a_178553e3e9f439aca460b2b749715497"
+        ]
+    },
+    {
+        "id": "c_94ab35278a72877db56479085c698125",
+        "nom": "Cuisto",
+        "prenom": "Cuisto",
+        "email": "cuisinier.test@gmail.com",
+        "password": "test",
+        "specialite": "",
+        "etat": "actif",
+        "ateliers": [
+            "a_609fcce16880c52472444f9d056b37b3",
+            "a_5f956b871b538e6059136fe0c88fb848"
+        ]
+    }
+]
