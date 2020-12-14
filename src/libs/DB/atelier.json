@@ -8,6 +8,7 @@
         "Duree": "3",
         "Effectif_max": "20",
         "Prix": "50",
+        "Image": "src\/ressources\/images\/uploads\/chinh-le-duc-vuDXJ60mJOA-unsplash.jpg",
         "Etat": "inactif",
         "Auteur": "cuisinier_08e48da93d168de076136c8d7676e61c",
         "Participants": []
@@ -21,6 +22,7 @@
         "Duree": "3",
         "Effectif_max": "20",
         "Prix": "50",
+        "Image": "src\/ressources\/images\/uploads\/clem-onojeghuo-r8lDTtSWGUc-unsplash.jpg",
         "Etat": "inactif",
         "Auteur": "cuisinier_08e48da93d168de076136c8d7676e61c",
         "Participants": [
@@ -36,6 +38,7 @@
         "Duree": "3",
         "Effectif_max": "25",
         "Prix": "60",
+        "Image": "src\/ressources\/images\/uploads\/epicurrence-ITxG2yay1ak-unsplash.jpg",
         "Etat": "inactif",
         "Auteur": "cuisinier_08e48da93d168de076136c8d7676e61c",
         "Participants": []

@@ -10,7 +10,6 @@ reservation();
 </head>
 <div class="container-fluid p-lg-5 p-md-3 homepage">
 <h2 class="display-4 text-center px-lg-5 py-lg-4 p-md-3 py-3 text-uppercase">Nos ateliers</h2>
-<?= $_SESSION["particulier"]["id"] ?>
     
 
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
