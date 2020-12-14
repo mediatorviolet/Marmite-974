@@ -5,7 +5,7 @@
 <!-- connecté au test.php -->
 <?php include 'src/libs/fonctions/secure_form_cuisinier.php'; ?>
 
-<?php secure_form_cuisinier() ?>
+<?php secure_form_cuisinier();?>
 <!-- < Inscription_Cuisinier() ?> -->
 
 
@@ -15,7 +15,7 @@
 
 
 <!-- 
-Indication géréral de message d'erreur ou de confirmation d'envoi de l'inscription --> -->
+Indication géréral de message d'erreur ou de confirmation d'envoi de l'inscription -->
 <!-- <?php
 if (isset($inscrire_ok)) { ?> <div class="container col-4  alert-danger d-flex justify-content-center mt-3  mb-3">
         <?php echo $incrire_ok; ?>

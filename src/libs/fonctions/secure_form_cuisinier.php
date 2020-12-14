@@ -53,12 +53,12 @@ $inscrire_no="";
         //traitements des POST et stockage dans des variables à utiliser.
         $Nom_Cuisinier = trim(stripslashes(htmlspecialchars($_POST['Nom_Cuisinier'])));
         $Prenom_Cuisinier = trim(stripslashes(htmlspecialchars($_POST['Prenom_Cuisinier'])));
-        $Email_Cuisinier = trim(stripslashes(htmlspecialchars($_POST['Email_Cuisinier'])));
+        $Email_Cuisinier = trim(strtolower(stripslashes(htmlspecialchars($_POST['Email_Cuisinier']))));
         $Password_Cuisinier = sha1(htmlspecialchars($_POST['Password_Cuisinier']));
         $Confirmation_Pass_Cuisinier = sha1(htmlspecialchars($_POST['Confirmation_Pass_Cuisinier']));
         $Specialite_Cuisinier =  trim(stripslashes(htmlspecialchars($_POST['Specialite_Cuisinier'])));
 
-        //strlen compte le nombre de caratèere dans la variable saisie
+        //strlen compte le nombre de caractères dans la variable saisie
         $Specialite_Cuisinier_Lenght = strlen($Specialite_Cuisinier);
         $patternEmail_Cuisinier = '#/[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+.[a-zA-Z]{2,4}/igm#';
         $patternNom_Cuisinier = "#[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$#";
@@ -85,6 +85,7 @@ $inscrire_no="";
                 $Email_Cuisinier_Err = "Veuillez entrer une adresse email valide.";
                 $validate = false;
             }
+
             if (empty($_POST["Password_Cuisinier"])) {
                 $Password_Cuisinier_Err = "<i><font color=red >Veuillez inscrire un mot de passe.</font></i>";
                 $validate = false;
@@ -96,34 +97,42 @@ $inscrire_no="";
              
             }
 
-           
-           
             //fin condition 2
 
 
             if (isset($_POST['Nom_Cuisinier'])  && isset($_POST['Prenom_Cuisinier'])  && isset($_POST['Email_Cuisinier'])  && isset($_POST['Password_Cuisinier'])  && isset($_POST['Confirmation_Pass_Cuisinier'])  && isset($_POST['Specialite_Cuisinier'])) {
 
                 if (preg_match($patternNom_Cuisinier, $Nom_Cuisinier)) {
-                    $Nom_Cuisinier_Err = "<i><font color=green> Nom Valide &#10003; </font></i>";
+                    $Nom_Cuisinier_Err = "<i><font color=green>&#10003; </font></i>";
                     $validate = true;
                 } else {
                     $erreur = "Veuillez inscrire votre Nom.";
-                    $Nom_Cuisinier_Err = "<i><font color=red> Mauvaise syntaxe</font></i>";
+                    $Nom_Cuisinier_Err = "<i><font color=red>Merci de bien vouloir saisir votre nom</font></i>";
                     $validate = false;
                 }
 
                 if (preg_match($patternPrenom_Cuisinier, $Prenom_Cuisinier)) {
-                    $Prenom_Cuisinier_Err = "<i><font color=green> Valid Name &#10003; </font></i>";
+                    $Prenom_Cuisinier_Err = "<i><font color=green>&#10003; </font></i>";
                     $validate = true;
                 } else {
-                    $erreur = "Syntaxe undéfinie";
-                    $Prenom_Cuisinier_Err = "<i><font color=red> Ressaisir votre Prénom </font></i>";
+                    $erreur = "Syntaxe indéfinie";
+                    $Prenom_Cuisinier_Err = "<i><font color=red>Merci de bien vouloir saisir votre prénom</font></i>";
                     $validate = false;
                 }
+                
+                $json_data =  file_get_contents('src\libs\DB\cuisinier.json');
+                $json_tab = json_decode($json_data, true);
 
                 if (ValidEmail($email)) {
-                    $Email_Cuisinier_Err = "<i><font color=green >Email valide &#10003;</font></i>";
+                    $Email_Cuisinier_Err = "<i><font color=green >&#10003;</font></i>";
                     $validate = true;
+                    if(doublonEmail() == true)
+                    {$validate = true;}
+                    else
+                    {$validate = false;
+                    $Email_Cuisinier_Err = "<i><font color=red >Email déjà utilisé</font></i>";
+                }
+                    
                 } else {
                     $erreur = "mail invalide";
                     $Email_Cuisinier_Err = "<i><font color=red >Adresse Email non valide ou de format non reconnue  </font></i>";
@@ -131,7 +140,7 @@ $inscrire_no="";
                 }
 
                 if ($Password_Cuisinier != $Confirmation_Pass_Cuisinier) {
-                    $Confirmation_Pass_Cuisinier_Err = "<i><font color=red>Ne correspond pas</font>";
+                    $Confirmation_Pass_Cuisinier_Err = "<i><font color=red>Mot de passe incorrect</font>";
                     $erreur = " Vos mots de passe ne sont pas identiques";
                 }
 
@@ -145,7 +154,7 @@ $inscrire_no="";
 
             if ($validate === true) {
                 ajout_json();
-                $inscrire_ok="Votre compte cuisinier a bien été creer.";
+                $inscrire_ok="Votre compte cuisinier a bien été créé.";
                 
             }
 
@@ -154,7 +163,9 @@ $inscrire_no="";
                 
             }
             //bug au test car empeche envoie. Enlever le mut pour test individuel
-            //bug au test car empeche envoie. Enlever le mut pour test individuele
+
+
+
 
 
 
@@ -163,6 +174,30 @@ $inscrire_no="";
         }
     }
 };
+
+
+// fonction verification doublon email
+function doublonEmail()
+{
+    $json_data =  file_get_contents('src\libs\DB\cuisinier.json');
+    $json_tab = json_decode($json_data, true);
+    
+    foreach($json_tab as $value)
+    {
+        if  ( $_POST['Email_Cuisinier'] == $value['email'] )  {
+
+           
+           return false;
+        }
+        else
+        {
+            
+            return true;
+        }
+    }
+}
+
+
 
 
 

@@ -1,0 +1,22 @@
+[
+    {
+        "id": "c_76ba2a6042d5d3ea937334aa2612373a",
+        "nom": "testabc",
+        "prenom": "testabc",
+        "email": "cuisinier2@test.fr",
+        "password": "test",
+        "specialite": "",
+        "etat": "actif",
+        "ateliers": []
+    },
+    {
+        "id": "c_7b892b4f83a8bc512084adc77faf1a72",
+        "nom": "test",
+        "prenom": "test",
+        "email": "cuisinier@test.fr",
+        "password": "test",
+        "specialite": "",
+        "etat": "actif",
+        "ateliers": []
+    }
+]
