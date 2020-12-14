@@ -59,7 +59,7 @@ if (isset($_POST['Inscrire_Atelier']))
             <label for="effectif_max" class="form-label">Effectif maximum</label>
         </div>
         <div class="col-md-6 form-floating mb-3">
-            <input type="number" class="form-control" name="prix" placeholder="" required pattern = "[0-10000]" min="0" max="10000" step="0.01">
+            <input type="number" class="form-control" name="prix" placeholder="" required pattern = "[0-10000]" min="0" max="10000" step="1">
             <label for="prix" class="form-label">Prix</label>
         </div>
         <div class="col-md-6 d-flex align-items-center mb-3">
