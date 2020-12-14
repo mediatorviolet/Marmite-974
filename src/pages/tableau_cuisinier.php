@@ -1,8 +1,32 @@
+
+<?php 
+$data_file_cuisinier = 'src/libs/DB/cuisinier.json';
+$json_array_cuisinier = json_decode(file_get_contents($data_file_cuisinier), true);
+
+$data_file_particulier = 'src/libs/DB/utilisateur.json';
+$json_array_particulier = json_decode(file_get_contents($data_file_particulier), true);
+
+
+
+?>
+
+
+
+
+
 <div class="container-fluid px-0 tableau-cuisinier">
   <h2 class="display-4 text-center p-lg-5 p-md-3 py-3">Tableau de bord</h2>
   <table class=" table px-0 table-responsive table-hover table-dark">
+
     <thead>
-      <tr>
+
+    <?php foreach ($json_array_cuisinier as $key => $val) :?>
+      <tr> 
+
+
+  
+
+
         <th class="align-middle text-center" scope="col">#</th>
         <th class="align-middle text-center" scope="col">Titre</th>
         <th class="align-middle text-center" scope="col">Date</th>
@@ -13,7 +37,15 @@
         <th class="align-middle text-center" scope="col">Etat</th>
         <th class="align-middle text-center" scope="col">Activer / Désactiver</th>
         <th class="align-middle text-center" scope="col">Modifier</th>
+
+
+     
+
+
+
+
       </tr>
+      <?php endforeach ?>
     </thead>
     <tbody>
     </table>
