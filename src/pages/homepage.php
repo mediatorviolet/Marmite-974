@@ -1,6 +1,7 @@
-<?php 
+<?php include "src/libs/fonctions/reservation.php";
 $data_file = 'src/libs/DB/atelier.json';
 $json_array = json_decode(file_get_contents($data_file), true);
+reservation();
 ?>
 
 <head>
@@ -9,11 +10,12 @@ $json_array = json_decode(file_get_contents($data_file), true);
 </head>
 <div class="container-fluid p-lg-5 p-md-3 homepage">
 <h2 class="display-4 text-center px-lg-5 py-lg-4 p-md-3 py-3 text-uppercase">Nos ateliers</h2>
+<?= $_SESSION["particulier"]["id"] ?>
     
 
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
         <?php foreach ($json_array as $key => $val) :?>
-        <div class="col hvr-grow">
+        <div class="col">
             <div class="card">
                 <img src="src/ressources/images/chinh-le-duc-vuDXJ60mJOA-unsplash.jpg" class="card-img-top" alt="Illustration atelier">
                 <div class="date bg-light p-3 position-absolute d-flex justify-content-center align-items-center fw-bold"><?= $val["Date"] ?></div>
@@ -21,7 +23,7 @@ $json_array = json_decode(file_get_contents($data_file), true);
                     <h5 class="card-title"><?= $val["Titre"] ?></h5>
                     <p class="card-text"><?= substr($val["Description"], 0, 100) ?>...</p>
                     <div class="d-flex justify-content-between">
-                        <form action="" method="POST">
+                        <form action="" method="POST" class="w-100 d-flex justify-content-between">
                             <!-- Trigger modal -->
                             <a href="#" class="card-link" data-bs-toggle="modal" data-bs-target="#<?= $val["Id"] ?>">En savoir plus</a>
     
@@ -48,7 +50,8 @@ $json_array = json_decode(file_get_contents($data_file), true);
                                     </div>
                                 </div>
                             </div>
-    
+
+                            <input type="hidden" name="id" value="<?= $key ?>">
                             <button type="submit" name="reservation" class="btn btn-primary px-4">S'inscrire</button>
                         </form>
                     </div>

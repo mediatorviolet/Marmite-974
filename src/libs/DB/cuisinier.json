@@ -1,1 +1,12 @@
-[{"id":"c_35b3b49d4c69626e55fac0837b8a20aa","nom":"Ss","prenom":"Ss","email":"toto.idiot@gmail.com","password":"","specialite":"","etat":"actif","ateliers":[]}]
+[
+    {
+        "id": "c_35b3b49d4c69626e55fac0837b8a20aa",
+        "nom": "Ss",
+        "prenom": "Ss",
+        "email": "toto.idiot@gmail.com",
+        "password": "",
+        "specialite": "",
+        "etat": "actif",
+        "ateliers": []
+    }
+]
