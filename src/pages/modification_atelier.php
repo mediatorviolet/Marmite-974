@@ -49,7 +49,7 @@
     <div class="form-group">
       <label class="lead" for="heure_debut">heure_debut</label>
       <input type="time" class="form-control" id="heure_debut" name="debut_maj">
-      <span class="alert-danger"><?php echo $augmentationDuree_maj; ?></span>
+      <span class="alert-danger"><?php echo $heure_maj_err; ?></span>
     </div>
     <input type="hidden" name="id" value="<?= $id ?>">
     <button type="submit" name="modifier" class="btn btn-dark">Modifier l'atelier</button>
