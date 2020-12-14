@@ -85,8 +85,8 @@ if (isset($inscrire_no)) { ?> <div class="container col-4  alert-danger d-flex j
         <div class="mb-3 row">
             <label for="Telephone_Particulier" class="col-sm-2 col-form-label">Téléphone : </label>
             <div class="col-sm-8">
-                <input  type="tel" class="form-control" id="Telephone_Particulier" name="Telephone_Particulier" placeholder="06 92 00 00 00" 
-               pattern = "/[0-9]{2}[ -][0-9]{2}[ -][0-9]{2}[ -][0-9]{2}[ -][0-9]{2}/$" >
+                <input  type="tel" class="form-control" id="Telephone_Particulier" name="Telephone_Particulier" placeholder="Exemple: 06 92 00 00 00" 
+                pattern="[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}" >
                
             </div>
         </div>
