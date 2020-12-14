@@ -35,7 +35,7 @@ function secure_form_cuisinier()
 {
     $validate = NULL;
 
-    
+
     global $erreur, $email, $validate,
         $patternPrenom_Cuisinier,   $patternSpecialite_Cuisinier, $Specialite_Cuisinier_Lenght;
 
@@ -78,22 +78,18 @@ function secure_form_cuisinier()
             if (empty($_POST["Prenom_Cuisinier"])) {
                 $Prenom_Cuisinier_Err = "Veuillez entrer votre Prénom.";
                 $validate = false;
-
             }
             if (empty($_POST["Email_Cuisinier"])) {
                 $Email_Cuisinier_Err = "Veuillez entrer une adresse email valide.";
                 $validate = false;
-
             }
             if (empty($_POST["Password_Cuisinier"])) {
                 $Password_Cuisinier_Err = "<i><font color=red >Veuillez inscrire un mot de passe.</font></i>";
                 $validate = false;
-
             }
             if (empty($_POST["Confirmation_Pass_Cuisinier"])) {
                 $Confirmation_Pass_Cuisinier_Err = "<i><font color=red >Confirmer un mot de passe.</font></i>";
                 $validate = false;
-
             }
             if (empty($_POST["Specialite_Cuisinier"])) {
                 $Specialite_Cuisinier = "";
@@ -106,12 +102,10 @@ function secure_form_cuisinier()
                 if (preg_match($patternNom_Cuisinier, $Nom_Cuisinier)) {
                     $Nom_Cuisinier_Err = "<i><font color=green> Nom Valide &#10003; </font></i>";
                     $validate = true;
-
                 } else {
                     $erreur = "Veuillez inscrire votre Nom.";
                     $Nom_Cuisinier_Err = "<i><font color=red> Mauvaise syntaxe</font></i>";
                     $validate = false;
-                    
                 }
 
                 if (preg_match($patternPrenom_Cuisinier, $Prenom_Cuisinier)) {
@@ -121,7 +115,6 @@ function secure_form_cuisinier()
                     $erreur = "Syntaxe undéfinie";
                     $Prenom_Cuisinier_Err = "<i><font color=red> Ressaisir votre Prénom </font></i>";
                     $validate = false;
-
                 }
 
                 if (ValidEmail($email)) {
@@ -136,33 +129,48 @@ function secure_form_cuisinier()
                 if ($Password_Cuisinier != $Confirmation_Pass_Cuisinier) {
                     $Confirmation_Pass_Cuisinier_Err = "<i><font color=red>Ne correspond pas</font>";
                     $erreur = " Vos mots de passe ne sont pas identiques";
-                } 
-
-
-                elseif ($validate === true ){
-                    ajout_json();
                 }
 
-                //bug au test car empeche envoie. Enlever le mut pour test individuel
-                //bug au test car empeche envoie. Enlever le mut pour test individuele
 
-                // if (preg_match($patternSpecialite_Cuisinier, $Specialite_Cuisinier)) {
-                //     $erreur = "jeux de caractères interdit";
-                //     $Specialite_Cuisinier_Err = "<i><font color=red> Syntaxe non autorisée. </font></i>";
-                // } else {
+                if (preg_match($patternSpecialite_Cuisinier, $Specialite_Cuisinier)) {
+                    $validate = true;
 
-                //     if ($Specialite_Cuisinier_Lenght  <= 15) {
-                //     } else {
-                //         $erreur = "Entrez moins de 15 caractères pour votre spécialité";
-                //         $Specialite_Cuisinier_Err = "<i><font color=red> Descriptif trop long. Saisir moin de 15 caractères.</font></i>";
-                //     }
-                // }
+                }
+                  
+                else 
+                    {
+                        $erreur = "jeux de caractères interdit";
+                        $Specialite_Cuisinier_Err = "<i><font color=red> Syntaxe non autorisée. </font></i>";
+                        $validate = false;
+                    }
+                   
+                
 
+                if ($Specialite_Cuisinier_Lenght  <= 15) {
+                    $validate = true;
+                } 
+                
+                else {
+                    $erreur = "Entrez moins de 15 caractères pour votre spécialité";
+                    $Specialite_Cuisinier_Err = "<i><font color=red> Descriptif trop long. Saisir moins de 15 caractères.</font></i>";
+                    $validate = false; //toujours true car n'est pas obligatoire mais doit quand meme pouvoir envoyer l'inscription
 
-
-
+                }
             }
+
+            if ($validate === true) {
+                ajout_json();
+            }
+
+            //bug au test car empeche envoie. Enlever le mut pour test individuel
+            //bug au test car empeche envoie. Enlever le mut pour test individuele
+
+
+
+
+
         }
+        
     }
 };
 
