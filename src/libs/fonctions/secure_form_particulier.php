@@ -67,9 +67,11 @@ function secure_form_particulier()
         // ****************POUR UN OU POUR TOUT CHAMPS VIDE ON BLOQUE L'ENVOI*****************************************************/
         //1 condition (TOUT -> operateur ET : &&) champs vide alors bloqué par erreur
 
-        if (empty($_POST['Nom_Particulier'])  || empty($_POST['Prenom_Particulier'])  || empty($_POST['Email_Particulier'])  || empty($_POST['Password_Particulier'])  || empty($_POST['Confirmation_Pass_Particulier'])) {
-            //(8)verifie CAS PAR CAS si vide alors on bloqué par erreu
 
+
+        if (empty($_POST['Nom_Particulier'])  || empty($_POST['Prenom_Particulier'])  || empty($_POST['Email_Particulier'])  || empty($_POST['Password_Particulier'])  || empty($_POST['Confirmation_Pass_Particulier'])  || empty($_POST['Telephone_Particulier'])) {
+            //(8)verifie CAS PAR CAS si vide alors on bloqué par erreur
+          
             if (empty($_POST["Nom_Particulier"])) {
                 $Nom_Particulier_Err = "<i><font color=red >Veuillez entrer votre Nom.</font></i>";
                 $validate = false;
@@ -132,8 +134,13 @@ function secure_form_particulier()
                 {
                     $Email_Particulier_Err = " <i><font color=green> Email valid &#10003;</font></i>";
                     $validate = true;
-                } else {
-                    $erreur = "Saisir un email valid";
+                    if(doublonEmail() == true)
+                    {$validate = true;}
+                    else
+                    {$validate = false;
+                    $Email_Cuisinier_Err = "<i><font color=red >Email déjà utilisé</font></i>";
+                }} else {
+                    $erreur = "Saisir un email valide";
                     $Nom_Particulier_Err = "<i><font color=red> Email incorrect.</font></i>";
                     $validate = false;
                 }
@@ -152,10 +159,29 @@ function secure_form_particulier()
 
             if ($validate === true) {
                 ajout_json();
-                $inscrire_ok = "Votre compte particulier a bien été creer.";
-            } else {
-                $inscrire_no = "Inscription non aboutie.";
+                $inscrire_ok="Votre compte particulier a bien été créé.";
             }
         }
     }
 };
+
+// fonction verification doublon email
+function doublonEmail()
+{
+    $json_data =  file_get_contents('src\libs\DB\cuisinier.json');
+    $json_tab = json_decode($json_data, true);
+    
+    foreach($json_tab as $value)
+    {
+        if  ( $_POST['Email_Particulier'] == $value['email'] )  {
+
+           
+           return false;
+        }
+        else
+        {
+            
+            return true;
+        }
+    }
+}
