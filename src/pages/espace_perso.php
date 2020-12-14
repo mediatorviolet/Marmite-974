@@ -32,7 +32,9 @@ $cle = research($utilisateur_array, $_SESSION["particulier"]["id"], "id"); // On
                     <p>Prix : <strong><?= $atelier_array[$key]["Prix"] ?>€</strong></p>
                     <p style="text-align: justify;"><?= $atelier_array[$key]["Description"] ?></p>
                     <div class="text-end">
-                        <button class="btn btn-primary px-4">Se désinscrire</button>
+                        <form action="" method="post">
+                            <button type="submit" name="desinscritpion" class="btn btn-primary px-4">Se désinscrire</button>
+                        </form>
                     </div>
                 </div>
             </div>
