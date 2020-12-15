@@ -20,5 +20,15 @@
         "ateliers": [
             "a_9e4b5101fe40ef28c8637d4e132b47a1"
         ]
+    },
+    {
+        "id": "c_00edb17d51c9c2ed20aaad68051b0f50",
+        "nom": "Lapin",
+        "prenom": "Pierre",
+        "email": "pierrelapin@test.fr",
+        "password": "test",
+        "specialite": "Lapin \u00e0 la moutarde",
+        "etat": "actif",
+        "ateliers": []
     }
 ]
