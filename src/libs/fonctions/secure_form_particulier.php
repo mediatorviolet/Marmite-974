@@ -16,6 +16,30 @@ function ValidEmail($email)
     }
 }
 
+// fonction verification doublon email
+function doublonEmail()
+{
+    if (isset($_POST["Inscrire_Particulier"])) {
+
+        $json_data =  file_get_contents('src\libs\DB\cuisinier.json');
+        $json_tab = json_decode($json_data, true);
+        
+        foreach($json_tab as $value)
+        {
+            if  ( $_POST['Email_Particulier'] == $value['email'] )  {
+    
+               
+               return false;
+            }
+            else
+            {
+                
+                return true;
+            }
+        }
+    }
+}
+
 
 //*****************INITIALISATION DES VARS ERREUR ET PATTERN ET TABLEAUX DE VALEUR POUR ANALYSE***************** */
 // *************************************************************************************************************/
@@ -166,23 +190,3 @@ function secure_form_particulier()
     }
 };
 
-// fonction verification doublon email
-function doublonEmail()
-{
-    $json_data =  file_get_contents('src\libs\DB\cuisinier.json');
-    $json_tab = json_decode($json_data, true);
-    
-    foreach($json_tab as $value)
-    {
-        if  ( $_POST['Email_Particulier'] == $value['email'] )  {
-
-           
-           return false;
-        }
-        else
-        {
-            
-            return true;
-        }
-    }
-}
