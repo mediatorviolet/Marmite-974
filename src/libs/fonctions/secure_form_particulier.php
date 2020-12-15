@@ -21,19 +21,13 @@ function doublonEmail()
 {
     if (isset($_POST["Inscrire_Particulier"])) {
 
-        $json_data =  file_get_contents('src\libs\DB\cuisinier.json');
-        $json_tab = json_decode($json_data, true);
-        
-        foreach($json_tab as $value)
-        {
-            if  ( $_POST['Email_Particulier'] == $value['email'] )  {
-    
-               
-               return false;
-            }
-            else
-            {
-                
+        $json_data = 'src\libs\DB\utilisateur.json';
+        $json_tab = json_decode(file_get_contents($json_data), true);
+
+        foreach ($json_tab as $key => $value) {
+            if ($_POST['Email_Particulier'] == $value['email']) {
+                return false;
+            } else {
                 return true;
             }
         }
@@ -73,8 +67,8 @@ function secure_form_particulier()
         $Nom_Particulier = trim(stripslashes(htmlspecialchars($_POST['Nom_Particulier'])));
         $Prenom_Particulier = trim(stripslashes(htmlspecialchars($_POST['Prenom_Particulier'])));
         $Email_Particulier = trim(stripslashes(htmlspecialchars($_POST['Email_Particulier'])));
-        $Password_Particulier = sha1(htmlspecialchars($_POST['Password_Particulier']));
-        $Confirmation_Pass_Particulier = sha1(htmlspecialchars($_POST['Confirmation_Pass_Particulier']));
+        $Password_Particulier = (htmlspecialchars($_POST['Password_Particulier']));
+        $Confirmation_Pass_Particulier = (htmlspecialchars($_POST['Confirmation_Pass_Particulier']));
         $Telephone_Particulier =  (htmlspecialchars($_POST['Telephone_Particulier']));
 
         //strlen compte le nombre de caratèere dans la varible saisie
@@ -95,7 +89,7 @@ function secure_form_particulier()
 
         if (empty($_POST['Nom_Particulier'])  || empty($_POST['Prenom_Particulier'])  || empty($_POST['Email_Particulier'])  || empty($_POST['Password_Particulier'])  || empty($_POST['Confirmation_Pass_Particulier'])  || empty($_POST['Telephone_Particulier'])) {
             //(8)verifie CAS PAR CAS si vide alors on bloqué par erreur
-          
+
             if (empty($_POST["Nom_Particulier"])) {
                 $Nom_Particulier_Err = "<i><font color=red >Veuillez entrer votre Nom.</font></i>";
                 $validate = false;
@@ -144,26 +138,24 @@ function secure_form_particulier()
                     $validate = false;
                 }
 
-                if(preg_match($pattern_Telephone, $Telephone_Particulier))
-                {
+                if (preg_match($pattern_Telephone, $Telephone_Particulier)) {
                     $validate = true;
-                }
-                else
-                {
+                } else {
                     $validate = false;
                 }
 
 
                 if (ValidEmail($email)) //verif pattern email coté serveur
                 {
-                    $Email_Particulier_Err = " <i><font color=green> Email valid &#10003;</font></i>";
+                    $Email_Particulier_Err = " <i><font color=green> Email valide &#10003;</font></i>";
                     $validate = true;
-                    if(doublonEmail() == true)
-                    {$validate = true;}
-                    else
-                    {$validate = false;
-                    $Email_Particulier_Err = "<i><font color=red >Email déjà utilisé</font></i>";
-                }} else {
+                    if (doublonEmail() == true) {
+                        $validate = true;
+                    } else {
+                        $validate = false;
+                        $Email_Particulier_Err = "<i><font color=red >Email déjà utilisé</font></i>";
+                    }
+                } else {
                     $erreur = "Saisir un email valide";
                     $Nom_Particulier_Err = "<i><font color=red> Email incorrect.</font></i>";
                     $validate = false;
@@ -173,20 +165,20 @@ function secure_form_particulier()
                 if ($Password_Particulier == $Confirmation_Pass_Particulier) {
                     $validate = true;
                 } else {
-                    $Confirmation_Pass_Particulier_Err = "<i><font color=red> Ne correspondent pas</font></i>";
+                    $Confirmation_Pass_Particulier_Err = "<i><font color=red> Les mots de passes ne correspondent pas</font></i>";
                     $erreur = " Vos mots de passe ne sont pas identiques";
                     $validate = false;
-                    
                 }
             }
 
-            return $validate;
+            //return $validate;
 
-            if ($validate === true) {
+            if ($validate == true) {
                 ajout_json();
-                $inscrire_ok="Votre compte particulier a bien été créé.";
+                $inscrire_ok = "Votre compte particulier a bien été créé.";
+            } else {
+                $inscrire_no = "Un problème est survenu.";
             }
         }
     }
 };
-

@@ -1,9 +1,17 @@
 
-<?php include 'src/libs/fonctions/secure_form_particulier.php';?>
+<?php 
+include 'src/libs/fonctions/secure_form_particulier.php';
+global $validate;
+global $inscrire_ok;
+global $inscrire_no;
+if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["Inscrire_Particulier"])) {
+    secure_form_particulier();
+}
+?>
 
-<?php secure_form_particulier() ?>
-<?php ajout_json() ?>
-<?php doublonEmail() ?>
+<?php //secure_form_particulier() ?>
+<?php //ajout_json() ?>
+<?php //doublonEmail() ?>
 
 
 
@@ -17,24 +25,11 @@
     <h2>PARTICULIER</h2>
   
 </div>
+<?php if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["Inscrire_Particulier"])) :?>
+<?= $validate == true ? "<div class=\"container col-4  alert-success d-flex justify-content-center mt-3  mb-3\">" . $inscrire_ok . "</div"
+: "<div class=\"container col-4  alert-danger d-flex justify-content-center mt-3  mb-3\">" . $inscrire_no . "</div>"; ?>
+<?php endif ?>
 
-<!-- <?php
-if (isset($inscrire_ok)) { ?> <div class="container col-4  alert-danger d-flex justify-content-center mt-3  mb-3">
-    <?php echo $incrire_ok; ?>
-</div>
-<?php 
-}
-?>
-
-  <?php
-if (isset($inscrire_no)) { ?> <div class="container col-4  alert-danger d-flex justify-content-center mt-3  mb-3">
-<?php echo $incrire_no; ?>
-</div>
-<?php 
-}
-?>
-     -->
-</div>
 <!---DAV 2 PARTICULIER FORMULAIRE INSCRIPTION---->
 
 
