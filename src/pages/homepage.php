@@ -45,14 +45,14 @@ reservation();
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Fermer</button>
-                                                    <button type="submit" name="reservation" class="btn btn-primary px-4">S'inscrire</button>
+                                                    <button type="submit" name="reservation" class="btn btn-primary px-4" <?= $val["Effectif_max"] <= 0 ? "disabled" : "" ?>>S'inscrire</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <input type="hidden" name="id" value="<?= $key ?>">
-                                    <button type="submit" name="reservation" class="btn btn-primary px-4">S'inscrire</button>
+                                    <button type="submit" name="reservation" class="btn btn-primary px-4" <?= $val["Effectif_max"] <= 0 ? "disabled" : "" ?>>S'inscrire</button>
                                 </form>
                             </div>
                         </div>
