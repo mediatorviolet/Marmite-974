@@ -1,5 +1,5 @@
 <?php
-    $titre_maj_err = $description_maj_err = $duree_maj_err = $effectif_maj_err = $prix_maj_err = $heure_maj_err = "";
+    $titre_maj_err = $description_maj_err = $duree_maj_err = $effectif_maj_err = $prix_maj_err = $heure_maj_err = $date_maj_err = "";
     $required_input = ["titre_maj", "description_maj", "duree_maj", "effectif_maj","date_maj", "prix_maj", "heure_maj"];
     $class_alert = "";
     $msg_alert = "";
