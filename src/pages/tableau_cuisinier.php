@@ -1,9 +1,9 @@
 <!-- <?php
-      $data_file_atelier = 'src/libs/DB/atelier.json';
-      $json_array_atelier = json_decode(file_get_contents($data_file_atelier), true);
+      // $data_file_atelier = 'src/libs/DB/atelier.json';
+      // $json_array_atelier = json_decode(file_get_contents($data_file_atelier), true);
 
-      $data_file_particulier = 'src/libs/DB/utilisateur.json';
-      $json_array_particulier = json_decode(file_get_contents($data_file_particulier), true);
+      // $data_file_particulier = 'src/libs/DB/utilisateur.json';
+      // $json_array_particulier = json_decode(file_get_contents($data_file_particulier), true);
 
 
 
@@ -70,7 +70,7 @@
           </form>
           </td>
           <td class="align-middle text-center">
-            <form action="src\pages\modification_atelier.php" method="post">
+            <form action="<?= "index.php?page=modification_atelier" ?>" method="post">
               <input type="hidden" name="id" value="<?= $key ?>">
               <button type="submit" name="modif" class="btn btn-outline-light">Modifier</button>
             </form>

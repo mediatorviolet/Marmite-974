@@ -20,7 +20,7 @@
                 $duree_maj_err = "Veuillez entrer une durée";
             }
             if (empty($_POST["date_maj"])) {
-                $duree_maj_err = "Veuillez entrer une date";
+                $date_maj_err = "Veuillez entrer une date";
             }
             if (empty($_POST["effectif_maj"])) {
                 $effectif_maj_err = "Veuillez entrer un effectif";
@@ -56,7 +56,7 @@
         $id = $_POST["id"];
         
         $json_array[$id]["titre"] = $_POST["nom_maj"];
-        $json_array[$id]["description"] = (int) $_POST["description_maj"];
+        $json_array[$id]["description"] =  $_POST["description_maj"];
         $json_array[$id]["date"] = (int) $_POST["date_maj"];
         $json_array[$id]["duree"] = (int) $_POST["duree_maj"];
         $json_array[$id]["effectif_max"] = (int) $_POST["effectif_maj"];
@@ -69,7 +69,7 @@
     
     function img_upload() {
         if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["modifier"])) {
-            $json_array = json_decode(file_get_contents("src/libs/data.json"), true);
+            $json_array = json_decode(file_get_contents("src/libs/DB/data.json"), true);
             $id = $_POST["id"];
             $json_array[$id]["image"] = "src/ressources/images/uploads/" . basename($_FILES["image"]["name"]);
             file_put_contents("src/libs/DB/atelier.json", json_encode($json_array));
