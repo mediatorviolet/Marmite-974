@@ -30,7 +30,8 @@
         "form_ajout" => "form_ajout.php",
         "espace_perso" => "espace_perso.php",
         "form_particulier" => "form_particulier.php",
-        "form_cuisinier" => "form_cuisinier.php"
+        "form_cuisinier" => "form_cuisinier.php",
+        "modification_atelier" => "modification_atelier.php"
     );
     if (isset($_GET["page"]) and isset($page_ok[$_GET["page"]])) {
         $page = $_GET["page"];

@@ -1,68 +1,51 @@
 [
     {
-        "id": "p_c6d313235b365b7c32afbbe0bdecddf3",
-        "nom": "dummy",
-        "prenom": "dummy",
-        "email": "dummy@dummy.fr",
+        "id": "p_9af5dc27486092f761c89f28dbccfea8",
+        "nom": "abc",
+        "prenom": "dec",
+        "email": "cuisinier23@test.fr",
         "password": "test",
-        "telephone": "",
+        "telephone": "06 69 69 69 69",
         "etat": "actif",
         "ateliers": []
     },
     {
-        "id": "p_50de958ae860d2a688379c8e5273eee4",
-        "nom": "Bon",
-        "prenom": "Jean",
-        "email": "jeanbon@test.fr",
+        "id": "p_e35e636385ae11f26147fe2ef51227d3",
+        "nom": "abc",
+        "prenom": "dec",
+        "email": "cuisinier2333@test.fr",
         "password": "test",
-        "telephone": "",
+        "telephone": "06 69 69 69 69",
         "etat": "actif",
         "ateliers": []
     },
     {
-        "id": "p_535586c40bb36fb6b3708ebe82699e7b",
-        "nom": "Gazeuse",
-        "prenom": "Aude",
-        "email": "audegazeuse@test.fr",
+        "id": "p_8bbf5d9b6def44a6e9c463ed55c1a158",
+        "nom": "abc",
+        "prenom": "dec",
+        "email": "cuisinier2333@test.fr",
         "password": "test",
-        "telephone": "",
-        "etat": "actif",
-        "ateliers": [
-            "a_9592643c72af38b5259950a67ff41eb8",
-            "a_20e96c5d21b5691f3b681658304ce94f"
-        ]
-    },
-    {
-        "id": "p_c8a5d7c63b5e361cda62d9a74fb1a37d",
-        "nom": "Lochet",
-        "prenom": "Bruno",
-        "email": "bruno.lochet@test.fr",
-        "password": "test",
-        "telephone": "",
-        "etat": "actif",
-        "ateliers": [
-            "a_9592643c72af38b5259950a67ff41eb8",
-            "a_20e96c5d21b5691f3b681658304ce94f",
-            "a_ea70870ba11c154e29e8e5b10e98b14e"
-        ]
-    },
-    {
-        "id": "p_a5ae6d39659005c40de2770a80eda8b2",
-        "nom": "Jean",
-        "prenom": "Pierre",
-        "email": "jeanbon@test.fr",
-        "password": "test",
-        "telephone": "",
+        "telephone": "06 69 69 69 69",
         "etat": "actif",
         "ateliers": []
     },
     {
-        "id": "p_6f98f3c4d7918436d1f4201bbe0706c0",
-        "nom": "Pierre",
-        "prenom": "Lapin",
-        "email": "particulier@test.fr",
+        "id": "p_562c234cbdceba8e6f1a7bad5ba6548d",
+        "nom": "abc",
+        "prenom": "de",
+        "email": "cuisinier@test.fr",
         "password": "test",
-        "telephone": "00 00 00 00 00",
+        "telephone": "06 69 69 69 69",
+        "etat": "actif",
+        "ateliers": []
+    },
+    {
+        "id": "p_853e00552b27928172c69731f7f1bd0b",
+        "nom": "abcc",
+        "prenom": "dece",
+        "email": "cuisinier2324234@test.fr",
+        "password": "test",
+        "telephone": "06 69 69 69 69",
         "etat": "actif",
         "ateliers": []
     }

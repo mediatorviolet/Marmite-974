@@ -1,5 +1,5 @@
 <?php
-    $titre_maj_err = $description_maj_err = $duree_maj_err = $effectif_maj_err = $prix_maj_err = $heure_maj_err = "";
+    $titre_maj_err = $description_maj_err = $duree_maj_err = $effectif_maj_err = $prix_maj_err = $heure_maj_err = $date_maj_err = "";
     $required_input = ["titre_maj", "description_maj", "duree_maj", "effectif_maj","date_maj", "prix_maj", "heure_maj"];
     $class_alert = "";
     $msg_alert = "";
@@ -20,7 +20,7 @@
                 $duree_maj_err = "Veuillez entrer une durée";
             }
             if (empty($_POST["date_maj"])) {
-                $duree_maj_err = "Veuillez entrer une date";
+                $date_maj_err = "Veuillez entrer une date";
             }
             if (empty($_POST["effectif_maj"])) {
                 $effectif_maj_err = "Veuillez entrer un effectif";
@@ -55,23 +55,23 @@
         $json_array = json_decode(file_get_contents("src/libs/DB/atelier.json"), true);
         $id = $_POST["id"];
         
-        $json_array[$id]["titre"] = $_POST["nom_maj"];
-        $json_array[$id]["description"] = (int) $_POST["description_maj"];
-        $json_array[$id]["date"] = (int) $_POST["date_maj"];
-        $json_array[$id]["duree"] = (int) $_POST["duree_maj"];
-        $json_array[$id]["effectif_max"] = (int) $_POST["effectif_maj"];
-        $json_array[$id]["prix"] = (int) $_POST["prix_maj"];
-        $json_array[$id]["heure"] = (int) $_POST["heure_maj"];
+        $json_array[$id]["Titre"] = $_POST["titre_maj"];
+        $json_array[$id]["Description"] =  $_POST["description_maj"];
+        $json_array[$id]["Date"] = $_POST["date_maj"];
+        $json_array[$id]["Duree"] = $_POST["duree_maj"];
+        $json_array[$id]["Effectif_max"] = $_POST["effectif_maj"];
+        $json_array[$id]["Prix"] = $_POST["prix_maj"];
+        $json_array[$id]["Heure_debut"] = $_POST["heure_maj"];
         
         file_put_contents("src/libs/DB/atelier.json", json_encode($json_array));
-        header("Location: src/pages/tableau_cuisinier.php");
+        header("Location: index.php?page=tableau_cuisinier");
     }
     
     function img_upload() {
         if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["modifier"])) {
-            $json_array = json_decode(file_get_contents("src/libs/data.json"), true);
+            $json_array = json_decode(file_get_contents("src/libs/DB/atelier.json"), true);
             $id = $_POST["id"];
-            $json_array[$id]["image"] = "src/ressources/images/uploads/" . basename($_FILES["image"]["name"]);
+            $json_array[$id]["Image"] = "src/ressources/images/uploads/" . basename($_FILES["image"]["name"]);
             file_put_contents("src/libs/DB/atelier.json", json_encode($json_array));
         }    
     }
