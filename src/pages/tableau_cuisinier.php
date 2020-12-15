@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["state"])) {
             </form>
           </td>
           <td class="align-middle text-center">
-            <form action="src\pages\modification_atelier.php" method="post">
+            <form action="<?= "index.php?page=modification_atelier" ?>" method="post">
               <input type="hidden" name="id" value="<?= $cleAtl ?>">
               <button type="submit" name="modif" class="btn btn-outline-light">Modifier</button>
             </form>

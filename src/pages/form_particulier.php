@@ -1,9 +1,11 @@
 
-<?php include 'src/libs/fonctions/secure_form_particulier.php';?>
+<?php include 'src/libs/fonctions/secure_form_particulier.php';
 
-<?php secure_form_particulier() ?>
-<?php ajout_json() ?>
-<?php doublonEmail() ?>
+ secure_form_particulier();
+// if (isset($_POST['Inscrire_Particulier']))
+// {header("location : index.php");};
+ ajout_json();
+doublonEmail() ?>
 
 
 
@@ -95,7 +97,7 @@ if (isset($inscrire_no)) { ?> <div class="container col-4  alert-danger d-flex j
         </div>
 
         <div class="col-sm-10 offset-2">
-    <button type="submit" action="form_particulier.php" name="Inscrire_Particulier" class="btn btn-primary px-4" >S'inscrire</button>
+    <button type="submit"  name="Inscrire_Particulier" class="btn btn-primary px-4" >S'inscrire</button>
   </div>
   <div class="form-group row">
                 <label for="id_particulier" class="col-md-3 col-form-label font-weight-bold"></label>

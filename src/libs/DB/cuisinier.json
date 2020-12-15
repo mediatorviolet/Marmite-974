@@ -1,22 +1,25 @@
 [
-        {
-                "id": "c_8ce99ad0adc131dfa085eae5a212b641",
-                "nom": "abcde",
-                "prenom": "decc",
-                "email": "cuisinier@test.fr",
-                "password": "test",
-                "specialite": "",
-                "etat": "actif",
-                "ateliers": []
-        },
-        {
-                "id": "c_da901323d9f3774975f88316804c854a",
-                "nom": "abcde",
-                "prenom": "decc",
-                "email": "cuisinier2@test.fr",
-                "password": "test",
-                "specialite": "",
-                "etat": "actif",
-                "ateliers": []
-        }
+    {
+        "id": "c_8ce99ad0adc131dfa085eae5a212b641",
+        "nom": "abcde",
+        "prenom": "decc",
+        "email": "cuisinier@test.fr",
+        "password": "test",
+        "specialite": "",
+        "etat": "actif",
+        "ateliers": []
+    },
+    {
+        "id": "c_da901323d9f3774975f88316804c854a",
+        "nom": "abcde",
+        "prenom": "decc",
+        "email": "cuisinier2@test.fr",
+        "password": "test",
+        "specialite": "",
+        "etat": "actif",
+        "ateliers": [
+            "a_806fc19c6b686e91ed3d3b366e35d206",
+            "a_9e4b5101fe40ef28c8637d4e132b47a1"
+        ]
+    }
 ]

@@ -1,8 +1,13 @@
 <?php
 // lien ne fonctionne pas
 require_once "src/libs/fonctions/modification.php";
-validation_modif();
-img_upload();
+
+
+if (isset($_POST['modifier']))
+{
+  validation_modif();
+  img_upload();
+}
 
 $json_array = json_decode(file_get_contents("src/libs/DB/atelier.json"), true);
 $id = $_POST["id"];
@@ -12,10 +17,10 @@ $id = $_POST["id"];
 <div class="container-fluid p-lg-5 p-md-3">
   <h2 class="display-4 text-center p-lg-5 p-md-3 py-3">Modifier un Atelier</h2>
   <div class="col-3 text-center mx-auto alert alert-<?= $class_alert ?>"><?= $msg_alert ?></div>
-  <form method="POST" action="<?= "index.php?page=tableau_cuisinier" ?>" enctype="multipart/form-data">
+  <form method="POST" enctype="multipart/form-data">
     <div class="form-group">
       <label class="lead" for="titre">Titre de l'atelier</label>
-      <input type="text" class="form-control" id="titre" name="titre_maj" value="<?= $json_array['id']["Titre"] ?>">
+      <input type="text" class="form-control" id="titre" name="titre_maj" value="<?= $json_array[$id]["Titre"] ?>">
       <span class="alert-danger"><?php echo $titre_maj_err; ?></span>
     </div>
     <div class="form-group">
@@ -49,7 +54,7 @@ $id = $_POST["id"];
     </div>
     <div class="form-group">
       <label class="lead" for="heure_debut">heure_debut</label>
-      <input type="time" class="form-control" id="heure_debut" name="debut_maj">
+      <input type="time" class="form-control" id="heure_debut" name="heure_maj">
       <span class="alert-danger"><?php echo $heure_maj_err; ?></span>
     </div>
     <input type="hidden" name="id" value="<?= $id ?>">
