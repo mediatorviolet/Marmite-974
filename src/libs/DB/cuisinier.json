@@ -20,5 +20,15 @@
         "ateliers": [
             "a_9e4b5101fe40ef28c8637d4e132b47a1"
         ]
+    },
+    {
+        "id": "c_4d0f11c58f795b8eee8f25a8d3340a9a",
+        "nom": "abc",
+        "prenom": "dec",
+        "email": "cuisinier@test.fr",
+        "password": "test",
+        "specialite": "",
+        "etat": "actif",
+        "ateliers": []
     }
 ]

@@ -1,13 +1,14 @@
 <!-- ____________________________ESPACE INSCRIPTION CUISINIER BY DAV_______________________________________________________________________ -->
 
-
-
-<!-- connecté au test.php -->
-<?php include 'src/libs/fonctions/secure_form_cuisinier.php'; ?>
-
-<?php secure_form_cuisinier()?>
-<?php ajout_json() ?>
-<!-- < Inscription_Cuisinier() ?> -->
+<?php 
+include 'src/libs/fonctions/secure_form_cuisinier.php';
+global $validate;
+global $inscrire_ok;
+global $inscrire_no;
+if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["Inscrire_Cuisinier"])) {
+    secure_form_cuisinier();
+}
+?>
 
 
 <div class="container d-flex justify-content-center mt-3  mb-3">
@@ -15,27 +16,13 @@
 </div>
 
 
-<!-- 
-Indication géréral de message d'erreur ou de confirmation d'envoi de l'inscription -->
-<!-- <?php
-if (isset($inscrire_ok)) { ?> <div class="container col-4  alert-danger d-flex justify-content-center mt-3  mb-3">
-        <?php echo $incrire_ok; ?>
-    </div>
-<?php 
-}
-?>
+<?php if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["Inscrire_Cuisinier"])) :?>
+<?= $validate == true ? "<div class=\"container col-4  alert-success d-flex justify-content-center mt-3  mb-3\">" . $inscrire_ok . "</div"
+: "<div class=\"container col-4  alert-danger d-flex justify-content-center mt-3  mb-3\">" . $inscrire_no . "</div>"; ?>
+<?php endif ?>
 
-<?php
-if (isset($inscrire_no)) { ?> <div class="container col-4  alert-danger d-flex justify-content-center mt-3  mb-3">
-    <?php echo $incrire_no; ?>
-</div>
-<?php 
-}
-?>
-
-
-<!VALUE sert a recupe les post traiter en amont et les reafficher dans le champs. Evite à l'utilisateur de tout re ecrire 
-par sécurité on preferera que l'utilisateur retape son mot de passe à chaque fois pour la confirma-->
+<!-- VALUE sert a recuperer les post traiter en amont et les reafficher dans le champs. Evite à l'utilisateur de tout re ecrire 
+par sécurité on preferera que l'utilisateur retape son mot de passe à chaque fois pour la confirmation -->
 <div class="form-cuisinier container col-8 pb-5">
 
     <form method="POST" action="" class="form" id="Form_cuisinier">
@@ -84,7 +71,7 @@ par sécurité on preferera que l'utilisateur retape son mot de passe à chaque 
         <div class="mb-3 row">
             <label for="Confirmation_Pass_Cuisinier" class="col-sm-2 col-form-label">Confirmation* : </label>
             <div class="col-sm-8">
-                <input type="password" class="form-control" id="Confirmation_Pass_Cuisinier" name="Confirmation_Pass_Cuisinier" placeholder="Confirmez votre mot de passe" ">
+                <input type="password" class="form-control" id="Confirmation_Pass_Cuisinier" name="Confirmation_Pass_Cuisinier" placeholder="Confirmez votre mot de passe">
                 <span ><?= $Confirmation_Pass_Cuisinier_Err ?></span>
             </div>
         </div>
@@ -101,7 +88,7 @@ par sécurité on preferera que l'utilisateur retape son mot de passe à chaque 
         </div>
 
         <div class="col-sm-10 offset-2">
-            <button type="submit" name="Inscrire_Cuisinier" class="btn btn-light px-4">S'inscrire</button>
+            <button type="submit" name="Inscrire_Cuisinier" class="btn btn-warning px-4">S'inscrire</button>
         </div>
         <div class="form-group row">
             <label for="id_cuisinier" class="col-md-3 col-form-label font-weight-bold"></label>
