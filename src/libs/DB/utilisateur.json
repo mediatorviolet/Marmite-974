@@ -48,5 +48,25 @@
         "telephone": "06 69 69 69 69",
         "etat": "actif",
         "ateliers": []
+    },
+    {
+        "id": "p_96510732ed6917c11b343d2c0da46bfa",
+        "nom": "test",
+        "prenom": "test",
+        "email": "test@test.fr",
+        "password": "test",
+        "telephone": "",
+        "etat": "actif",
+        "ateliers": []
+    },
+    {
+        "id": "p_18532f370b760637ce4d5efcf4981717",
+        "nom": "testu",
+        "prenom": "testu",
+        "email": "particulier@test.fr",
+        "password": "test",
+        "telephone": "",
+        "etat": "actif",
+        "ateliers": []
     }
 ]

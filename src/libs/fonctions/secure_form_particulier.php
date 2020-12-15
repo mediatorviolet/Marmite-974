@@ -181,4 +181,4 @@ function secure_form_particulier()
             }
         }
     }
-};
+}
