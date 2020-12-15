@@ -67,7 +67,7 @@ if (isset($_POST['Inscrire_Atelier']))
             <input type="file" class="form-control-lg" id="image" name="image" placeholder=""required >
         </div>
         <div class="col-12 d-flex justify-content-end">
-            <button type="submit" name="Inscrire_Atelier" class="btn-lg btn-primary px-5">Ajouter</button>
+            <button type="submit" name="Inscrire_Atelier" class="btn-lg btn-warning px-5">Ajouter</button>
         </div>
         <div class="form-group row">
                 <label for="id_atelier" class="col-md-3 col-form-label font-weight-bold"></label>

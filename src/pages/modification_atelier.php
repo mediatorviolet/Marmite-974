@@ -68,7 +68,7 @@ $id = $_POST["id"];
         </div>
         <div class="col-12 d-flex justify-content-end">
         <input type="hidden" name="id" value="<?= $id ?>">
-        <button type="submit" name="modifier" class="btn btn-dark">Modifier l'atelier</button>
+        <button type="submit" name="modifier" class="btn-lg btn-warning px-5">Modifier</button>
         </div>
         <div class="form-group row">
                 <label for="id_atelier" class="col-md-3 col-form-label font-weight-bold"></label>

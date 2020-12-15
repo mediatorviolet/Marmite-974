@@ -90,7 +90,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["Inscrire_Particulier"
         </div>
 
         <div class="col-sm-10 offset-2">
-    <button type="submit"  name="Inscrire_Particulier" class="btn btn-primary px-4" >S'inscrire</button>
+    <button type="submit"  name="Inscrire_Particulier" class="btn btn-light px-4" >S'inscrire</button>
   </div>
   <div class="form-group row">
                 <label for="id_particulier" class="col-md-3 col-form-label font-weight-bold"></label>
