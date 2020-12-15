@@ -1,17 +1,9 @@
-<!-- <?php
-      $data_file_atelier = 'src/libs/DB/atelier.json';
-      $json_array_atelier = json_decode(file_get_contents($data_file_atelier), true);
-
-      $data_file_particulier = 'src/libs/DB/utilisateur.json';
-      $json_array_particulier = json_decode(file_get_contents($data_file_particulier), true);
-
-
-
-      ?> -->
-
-
-
-
+<?php
+include "src/libs/fonctions/change_state.php";
+if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["state"])) {
+  change_state();
+}
+?>
 
 <div class="container-fluid px-0 tableau-cuisinier">
   <h2 class="display-4 text-center p-lg-5 p-md-3 py-3">Tableau de bord</h2>
@@ -27,10 +19,10 @@
 
       //On cherche id du cuisinier donc quel cimpote a creer les atelier
       $cle = research($json_array_cuisinier, $_SESSION['cuisinier']['id'], "id");
-      ?>  
+      ?>
 
       <tr>
-     
+
         <th class="align-middle text-center" scope="col">Titre</th>
         <th class="align-middle text-center" scope="col">Date</th>
         <th class="align-middle text-center" scope="col">Horaires</th>
@@ -43,40 +35,37 @@
       </tr>
     </thead>
     <tbody>
-    <?php foreach ($json_array_cuisinier[$cle]['ateliers'] as $val) {
-        $cleAtl = research( $json_array_atelier, $val, 'Id');
-    
+      <?php foreach ($json_array_cuisinier[$cle]['ateliers'] as $val) {
+        $cleAtl = research($json_array_atelier, $val, 'Id');
+
       ?>
 
-    <tr>
-        
+        <tr>
           <td class="align-middle text-center"><?= $json_array_atelier[$cleAtl]["Titre"] ?></td>
-          
           <td class="align-middle text-center"><?= $json_array_atelier[$cleAtl]["Date"] ?></td>
-          <td  class="align-middle text-center"><?= $json_array_atelier[$cleAtl]["Heure_debut"] ?></td>
+          <td class="align-middle text-center"><?= $json_array_atelier[$cleAtl]["Heure_debut"] ?></td>
           <td class="align-middle text-center"><?= $json_array_atelier[$cleAtl]["Duree"] ?>h</td>
           <td class="align-middle text-center"><?= $json_array_atelier[$cleAtl]["Effectif_max"] ?>pers</td>
           <td class="align-middle text-center"><?= $json_array_atelier[$cleAtl]["Prix"] ?>€</td>
           <td class="align-middle text-center text-uppercase font-weight-bold <?= $json_array_atelier[$cleAtl]["Etat"] == "actif" ? "text-success" : "text-danger" ?>"><?= $json_array_atelier[$cleAtl]["Etat"] ?></td>
           <td class="align-middle text-center">
-          <form action="<?= "admin.php?page=dashboard" ?>" method="post" id="<?= $value["id"] ?>">
-            <div class="custom-control custom-switch">
-              <input type="hidden" name="state" value="<?= $value["etat"] ?>">
-              <input type="checkbox" class="custom-control-input" id="<?= $key ?>" name="state" onchange="this.form.submit()" 
-              value="<?= $value["etat"] ?>" <?= $value["etat"] == "actif" ? "checked" :  "" ?>>
-              <label class="custom-control-label" for="<?= $key ?>"></label>
-            </div>
-            <input type="hidden" name="indice" value="<?= $key ?>">
-          </form>
+            <form action="" method="post" id="<?= $json_array_atelier[$cleAtl]["id"] ?>">
+              <div class="form-check form-switch d-flex justify-content-center">
+                <input type="hidden" name="state" value="<?= $json_array_atelier[$cleAtl]["etat"] ?>">
+                <input class="form-check-input" type="checkbox" id="<?= $cleAtl ?>" name="state" onchange="this.form.submit()" value="<?= $json_array_atelier[$cleAtl]["Etat"] ?>" <?= $json_array_atelier[$cleAtl]["Etat"] == "actif" ? "checked" :  "" ?>>
+                <label class="form-check-label" for="<?= $cleAtl ?>"></label>
+              </div>
+              <input type="hidden" name="indice" value="<?= $cleAtl ?>">
+            </form>
           </td>
           <td class="align-middle text-center">
             <form action="src\pages\modification_atelier.php" method="post">
-              <input type="hidden" name="id" value="<?= $key ?>">
+              <input type="hidden" name="id" value="<?= $cleAtl ?>">
               <button type="submit" name="modif" class="btn btn-outline-light">Modifier</button>
             </form>
           </td>
         </tr>
-        <?php   } ?>
+      <?php   } ?>
     </tbody>
   </table>
 </div>
