@@ -148,11 +148,13 @@ function secure_form_cuisinier()
 
             }
 
-            return $validate;
+            // return $validate;
 
-            if ($validate === true) {
+            if ($validate == true) {
                 ajout_json();
-                $inscrire_ok="Votre compte cuisinier a bien été créé.";
+                $inscrire_ok = "Votre compte particulier a bien été créé.";
+            } else {
+                $inscrire_no = "Un problème est survenu.";
             }
         }
     }
