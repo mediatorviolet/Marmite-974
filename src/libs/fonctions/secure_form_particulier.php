@@ -110,6 +110,7 @@ function secure_form_particulier()
                 $Confirmation_Pass_Particulier_Err = "<i><font color = red >Confirmez le mot de passe.</font></i>";
                 $validate = false;
             }
+            
 
             // assignation numérique par defauts pour respecter le pattern et evité bus d envoi
 
@@ -132,15 +133,19 @@ function secure_form_particulier()
                 if (preg_match($patternPrenom_Particulier, $Prenom_Particulier)) {
                     $Prenom_Particulier_Err = "<i><font color=green>Valid firstName &#10003;</font></i>";
                     $validate = true;
-                } else {
+                } 
+                else 
+                {
                     $erreur = "Saisir un Prénom valide";
                     $Nom_Particulier_Err = "<i><font color=red> Prénom incorrect.</font></i>";
                     $validate = false;
                 }
 
-                if (preg_match($pattern_Telephone, $Telephone_Particulier)) {
+                if (preg_match($pattern_Telephone, $Telephone_Particulier)) 
+                {
                     $validate = true;
-                } else {
+                } else 
+                {
                     $validate = false;
                 }
 
@@ -149,22 +154,30 @@ function secure_form_particulier()
                 {
                     $Email_Particulier_Err = " <i><font color=green> Email valide &#10003;</font></i>";
                     $validate = true;
-                    if (doublonEmail() == true) {
+                    if (doublonEmail() == true)
+                     {
                         $validate = true;
-                    } else {
+                    } 
+                    else 
+                    {
                         $validate = false;
                         $Email_Particulier_Err = "<i><font color=red >Email déjà utilisé</font></i>";
                     }
-                } else {
+                }
+                 else 
+                {
                     $erreur = "Saisir un email valide";
                     $Nom_Particulier_Err = "<i><font color=red> Email incorrect.</font></i>";
                     $validate = false;
                 }
 
 
-                if ($Password_Particulier == $Confirmation_Pass_Particulier) {
+                if ($Password_Particulier == $Confirmation_Pass_Particulier) 
+                {
                     $validate = true;
-                } else {
+                } 
+                else 
+                {
                     $Confirmation_Pass_Particulier_Err = "<i><font color=red> Les mots de passes ne correspondent pas</font></i>";
                     $erreur = " Vos mots de passe ne sont pas identiques";
                     $validate = false;
@@ -181,4 +194,4 @@ function secure_form_particulier()
             }
         }
     }
-}
+};
