@@ -1,1 +1,26 @@
-[{"id":"p_9af5dc27486092f761c89f28dbccfea8","nom":"abc","prenom":"dec","email":"cuisinier23@test.fr","password":"test","telephone":"06 69 69 69 69","etat":"actif","ateliers":[]},{"id":"p_c760e048e0957cdd721e374e3d01d94a","nom":"Lapin","prenom":"Pierre","email":"pierrelapin@test.fr","password":"test","telephone":"","etat":"actif","ateliers":["a_18d9250b53cd4bd6016796f40b066929","a_8c68d109c6e06e41d1d89d812d33241a","a_6d622ce31fb2948aa65f4c2b4fda6848"]}]
+[
+    {
+        "id": "p_9af5dc27486092f761c89f28dbccfea8",
+        "nom": "abc",
+        "prenom": "dec",
+        "email": "cuisinier23@test.fr",
+        "password": "test",
+        "telephone": "06 69 69 69 69",
+        "etat": "actif",
+        "ateliers": []
+    },
+    {
+        "id": "p_c760e048e0957cdd721e374e3d01d94a",
+        "nom": "Lapin",
+        "prenom": "Pierre",
+        "email": "pierrelapin@test.fr",
+        "password": "test",
+        "telephone": "",
+        "etat": "actif",
+        "ateliers": [
+            "a_18d9250b53cd4bd6016796f40b066929",
+            "a_8c68d109c6e06e41d1d89d812d33241a",
+            "a_6d622ce31fb2948aa65f4c2b4fda6848"
+        ]
+    }
+]
