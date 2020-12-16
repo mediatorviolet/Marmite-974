@@ -1,9 +1,5 @@
 <?php include "src/libs/fonctions/connection.php"; ?>
 
-<head>
-<!-- Bibliothèque CSS hover -->
-<link rel="stylesheet" href="node_modules/hover.css/css/hover-min.css">
-</head>
 <nav class="navbar navbar-expand-lg navbar-light  px-3" style="background-color:#f3671f;">
     <div class="container-fluid">
         <img src="src/ressources/images/logo-marmite974.png" alt="logo" class="img-fluid" style="max-width:75px; border-radius:40px;">
