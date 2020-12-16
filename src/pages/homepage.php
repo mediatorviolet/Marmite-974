@@ -8,9 +8,10 @@ reservation();
     <!-- Bibliothèque CSS hover -->
     <link rel="stylesheet" href="node_modules/hover.css/css/hover-min.css">
 </head>
+<!-- Homepage -->
 <div class="container-fluid p-lg-5 p-md-3 homepage">
     <h2 class="display-4 text-center px-lg-5 py-lg-4 p-md-3 py-3" style="font-family:Roboto;" >NOS ATELIERS</h2>
-
+<!-- On balaye le fichier atelier.json et on affiche la liste des ateliers actifs -->
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
         <?php foreach ($json_array as $key => $val) : ?>
             <?php if ($val["Etat"] == "actif") : ?>
