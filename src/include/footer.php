@@ -1,5 +1,5 @@
 
-<footer class="px-5 py-5" style="background-color:#d05c62 ">
+<footer class="px-5 py-5 mt-4" style="background-color:#d05c62 ">
     <div class="container-fluid d-flex justify-content-between align-items-center px-5 mx-5">
         <a href="#" class="link-dark">CGU/CGV</a>
         <div class="d-flex flex-column">

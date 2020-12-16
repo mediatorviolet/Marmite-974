@@ -19,10 +19,8 @@ if (isset($_POST['Inscrire_Atelier']))
 ?>
 
 
-<div class="container-fluid mt-5 form-ajout">
-    <h1 class="text-uppercase text-center">Ajouter un atelier</h1>
-
-
+<div class="container-fluid  form-ajout">
+<h2 class="display-4 text-center p-lg-5 p-md-3 py-3" style="font-family:Robotto;">AJOUTER UN ATELIER</h2>
 
 
 <?php
@@ -33,7 +31,7 @@ if (isset($_POST['Inscrire_Atelier']))
 ?>
 
 
-    <form method="POST" action="" enctype="multipart/form-data" class="row g-3 col-9 mx-auto mt-5">
+    <form method="POST" action="" enctype="multipart/form-data" class="row g-3 col-9 mx-auto mb-5">
         <div class="col-12 form-floating mb-3">
             <input type="text" class="form-control" name="titre" placeholder="" required pattern ="^[a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+([-'\s][a-zA-ZéèîïÉÈÎÏ][a-zéèêàçîï]+)?$">
             <label for="titre" class="form-label">Titre de l'atelier</label>

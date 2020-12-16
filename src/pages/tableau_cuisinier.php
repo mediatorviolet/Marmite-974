@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["state"])) {
 ?>
 
 <div class="container-fluid px-0 tableau-cuisinier">
-  <h2 class="display-4 text-center p-lg-5 p-md-3 py-3">Tableau de bord</h2>
+  <h2 class="display-4 text-center p-lg-5 p-md-3 py-3" style="font-family:Robotto;">TABLEAU DE BORD</h2>
   <table class=" table px-0 table-responsive table-hover table-dark">
 
     <thead>
