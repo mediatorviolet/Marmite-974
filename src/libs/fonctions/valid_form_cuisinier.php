@@ -1,4 +1,5 @@
 <?php
+// sécurisation du formulaire d'inscription cuisinier
 include "src/libs/fonctions/envoi_json.php";
 
 $class_alert = "";
@@ -14,6 +15,7 @@ function validationForm()
     $count = 0;
     $required_input = ["Nom_Cuisinier", "Prenom_Cuisinier", "Email_Cuisinier", "Password_Cuisinier", "Confirmation_Pass_Cuisinier"];
     
+    // renvoi un message d'erreur spécifique à chaque champs si vide
     foreach ($required_input as $input) {
         if (empty($_POST["$input"])) {
             $count++;
@@ -23,7 +25,9 @@ function validationForm()
             $Password_Cuisinier_Err = "Veuillez entrer un mot de passe";
             $Confirmation_Pass_Cuisinier_Err = "Veuillez confirmer votre mot de passe.";
             $class_alert = "alert-danger";
-        } else {
+
+    // si ok formate les données
+        } else { 
             $_POST["$input"] = trim($_POST["$input"]);
             $_POST["$input"] = stripslashes($_POST["$input"]);
             $_POST["$input"] = htmlspecialchars($_POST["$input"]);
@@ -37,12 +41,15 @@ function validationForm()
     if (!empty($_POST["Specialite_Cuisinier"])) {
         $Specialite_Cuisinier = trim(stripslashes(htmlspecialchars($_POST["Specialite_Cuisinier"])));
     }
+    // verifier si le mot de passe et sa confirmation correspond
     if ($_POST["Password_Cuisinier"] != $_POST["Confirmation_Pass_Cuisinier"]) {
         $count++;
         $Password_Cuisinier_Err = "Les mots de passes sont différents.";
         $Confirmation_Pass_Cuisinier_Err = "Les mots de passes sont différents.";
         $class_alert = "alert-danger";
     }
+
+    // appelle la fonction doublonEmail et si retourne faux, indique un message d'erreur
     if (doublonEmail() == false) {
         $count ++;
         $Email_Cuisinier_Err = "Cet email est déjà utilisé.";
@@ -57,7 +64,7 @@ function validationForm()
     }
 }
 
-// fonction verification doublon email
+// fonction verification doublon email (vérfication dans les 2 fichiers de données utilisateur et cuisinier)
 function doublonEmail()
 {
     $data_cuisinier = 'src\libs\DB\cuisinier.json';

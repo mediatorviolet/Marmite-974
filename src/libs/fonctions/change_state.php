@@ -1,5 +1,6 @@
-<?php
 
+<?php
+// fonction switch etat des ateliers
 function change_state() {
     $data_file = "src/libs/DB/atelier.json";
     $id = $_POST["indice"];

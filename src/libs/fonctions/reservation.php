@@ -1,5 +1,5 @@
 <?php
-
+// rattache l'id de l'atelier à l'utilisateur dans le fichier json et vice versa
 function reservation() {
     if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["reservation"])) {
         $data_file = "src/libs/DB/atelier.json";

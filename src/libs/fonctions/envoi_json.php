@@ -68,19 +68,18 @@ function ajout_json()
 
         
    
-        // Affecter les atelier (id) dans l'élément ateliers des cuisiniers. Avec SESSION car post servait pour les formulaires. DEt session récupère les POST deja faites et qui sont stocké durant la session.
+        
         $data_file_cuisinier = 'src/libs/DB/cuisinier.json';
         $json_array_cuisinier = json_decode(file_get_contents($data_file_cuisinier), true);
 
 
-        //ici on stosck dans cle l id du cuisinier recherché dans cuisinier.json en fonction de session
+        // recherche une correspondance avec l'id du cuisinier
         $cle = research($json_array_cuisinier, $_SESSION['cuisinier']['id'],"id");
-        //Renvoie la valeur dans 'atelier=[]
-        //aray_push (destination  , elemement a pushé)
+        // ajoute l'atelier au cuisinier dans le fichier json
         array_push( $json_array_cuisinier[$cle]['ateliers'] ,  $_POST["id_atelier"]  );
         file_put_contents($data_file_cuisinier, json_encode($json_array_cuisinier));
        
- 
+        // bouton modifier => renvoi les modifications dans le fichier de données
     
     } elseif (isset($_POST['Modifier_Atelier'])) {
         $data_file = 'src/libs/DB/atelier.json';

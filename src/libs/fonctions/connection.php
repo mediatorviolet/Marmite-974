@@ -1,5 +1,5 @@
 <?php
-
+// fonction research avec 2 paramètres ( ici l'index du tableau et la ligne correspondante à l'intérieur du tableau) s'il trouve une correspondance avec le 3 parametre indiqué lorsque foreach parcourt les tableaux, renvoi $key
 function research($array, $something, $clef)
 {
     foreach ($array as $key => $val) {
@@ -9,7 +9,7 @@ function research($array, $something, $clef)
     }
 }
 
-
+// la fonction verifie si les informations correspondent à un utilisateur ou a un cuisinier dans les bases de données correspondantes
 function connection()
 {
     $data_cuisinier = "src/libs/DB/cuisinier.json";
@@ -35,7 +35,7 @@ function connection()
             }
         }
     }
-
+// suppression des données stockées dans session lors de la deconnexion et renvoi vers la page d'acceuil
     if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["deconnexion"])) {
         $_SESSION["cuisinier"] = false;
         session_destroy();

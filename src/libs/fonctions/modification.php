@@ -4,6 +4,8 @@
     $class_alert = "";
     $msg_alert = "";
 
+//Vérification des inputs du formulaire
+
     function validation_modif() {
         global $required_input;
         global $class_alert;
@@ -50,7 +52,7 @@
             }
         }
     }
-    
+    // modifie les données de l'atelier et les stocke dans le fichier json et renvoie sur la page tableau cuisinier
     function modif_atelier() {
         $json_array = json_decode(file_get_contents("src/libs/DB/atelier.json"), true);
         $id = $_POST["id"];
