@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["state"])) {
       $data_file_atelier = 'src/libs/DB/atelier.json';
       $json_array_atelier = json_decode(file_get_contents($data_file_atelier), true);
 
-      //On cherche id du cuisinier donc quel cimpote a creer les atelier
+      //On cherche l'id correspondant à la liste des ateliers
       $cle = research($json_array_cuisinier, $_SESSION['cuisinier']['id'], "id");
       ?>
 

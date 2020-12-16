@@ -2,7 +2,7 @@
 
 require_once "src/libs/fonctions/modification.php";
 
-
+// si action sur le bouton, on lance les fonctions de validation 
 if (isset($_POST['modifier']))
 {
   validation_modif();
