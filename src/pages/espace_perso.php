@@ -8,10 +8,10 @@ $cle = research($utilisateur_array, $_SESSION["particulier"]["id"], "id"); // On
 ?>
 
 <div class="bg-dark p-5 mt-5">
-    <h2 class="display-4 text-light" style="font-family:Robotto;">Bienvenue <?= $_SESSION["particulier"]["prenom"] ?></h2>
+    <h2 class="display-4 text-light" style="font-family:Roboto;">Bienvenue <?= $_SESSION["particulier"]["prenom"] ?></h2>
 </div>
 <div class="container-fluid p-lg-4 p-md-3 espace-perso">
-    <h2 class="display-4 text-center p-lg-5 p-md-3 py-3" style="font-family:Robotto;">Vous êtes inscrit aux ateliers suivants :</h2>
+    <h2 class="display-4 text-center p-lg-5 p-md-3 py-3" style="font-family:Roboto;">Vous êtes inscrit aux ateliers suivants :</h2>
 
     <div class="accordion" id="accordionExample">
         <?php foreach ($utilisateur_array[$cle]["ateliers"] as $val) { // On parcours le tableau "ateliers" du cuisinier qui à créé les ateliers

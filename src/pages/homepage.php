@@ -11,12 +11,11 @@ reservation();
 <div class="container-fluid p-lg-5 p-md-3 homepage">
     <h2 class="display-4 text-center px-lg-5 py-lg-4 p-md-3 py-3" style="font-family:Roboto;" >NOS ATELIERS</h2>
 
-
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
         <?php foreach ($json_array as $key => $val) : ?>
             <?php if ($val["Etat"] == "actif") : ?>
                 <div class="col">
-                    <div class="card">
+                    <div class="card h-100">
                         <img src="<?= $val["Image"] ?>" class="card-img-top" alt="Illustration atelier" style="max-height: 18rem;">
                         <div class="date bg-light p-3 position-absolute d-flex justify-content-center align-items-center fw-bold"><?= $val["Date"] ?></div>
                         <div class="card-body">
@@ -45,14 +44,14 @@ reservation();
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Fermer</button>
-                                                    <button type="submit" name="reservation" class="btn btn-warning px-4" <?= $val["Effectif_max"] <= 0 ? "disabled" : "" ?>>S'inscrire</button>
+                                                    <button type="submit" name="reservation" class="btn btn-warning px-4" <?= $val["Effectif_max"] - count($val["Participants"]) <= 0 ? "disabled" : "" ?>>S'inscrire</button>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
 
                                     <input type="hidden" name="id" value="<?= $key ?>">
-                                    <button type="submit" name="reservation" class="btn btn-warning px-4" <?= $val["Effectif_max"] <= 0 ? "disabled" : "" ?>>S'inscrire</button>
+                                    <button type="submit" name="reservation" class="btn btn-warning px-4" <?= $val["Effectif_max"] - count($val["Participants"]) <= 0 ? "disabled" : "" ?>>S'inscrire</button>
                                 </form>
                             </div>
                         </div>

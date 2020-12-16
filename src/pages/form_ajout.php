@@ -5,22 +5,15 @@
 <?php include "src/libs/fonctions/secure_ajout.php";
 include "src/libs/fonctions/upload_img.php" ;
 
-
-
-
-
-
-
-
-
-if (isset($_POST['Inscrire_Atelier']))
-{ validationAjout();
-    img_upload();}
+if (isset($_POST['Inscrire_Atelier'])) {
+    validationAjout();
+    img_upload();
+}
 ?>
 
 
 <div class="container-fluid  form-ajout">
-<h2 class="display-4 text-center p-lg-5 p-md-3 py-3" style="font-family:Robotto;">AJOUTER UN ATELIER</h2>
+<h2 class="display-4 text-center p-lg-5 p-md-3 py-3" style="font-family:Roboto;">AJOUTER UN ATELIER</h2>
 
 
 <?php
