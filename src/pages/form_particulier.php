@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["Inscrire_Particulier"
 
 <div class="col-3 text-center mx-auto alert <?= $class_alert ?>"><?= $msg_alert ?></div>
 
-<!---DAV 2 PARTICULIER FORMULAIRE INSCRIPTION---->
+<!--DAV 2 PARTICULIER FORMULAIRE INSCRIPTION-->
 
 
 <div class="container col-8 pb-5 form-particulier">
@@ -77,7 +77,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["Inscrire_Particulier"
             <button type="submit" name="Inscrire_Particulier" class="btn  btn-warning px-4">S'inscrire</button>
         </div>
         <div class="form-group row">
-            <label for="id_particulier" class="col-md-3 col-form-label font-weight-bold"></label>
             <div class="col-md-9">
                 <input type="hidden" class="form-control" id="id_particulier" name="id_particulier">
             </div>
