@@ -84,7 +84,6 @@ par sécurité on preferera que l'utilisateur retape son mot de passe à chaque 
             <button type="submit" name="Inscrire_Cuisinier" class="btn btn-warning px-4">S'inscrire</button>
         </div>
         <div class="form-group row">
-            <label for="id_cuisinier" class="col-md-3 col-form-label font-weight-bold"></label>
             <div class="col-md-9">
                 <input type="hidden" class="form-control" id="id_cuisinier" name="id_cuisinier">
             </div>
