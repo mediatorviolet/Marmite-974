@@ -30,7 +30,7 @@
                                     <a href="index.php?page=form_cuisinier" class="btn btn-warning text-uppercase px-4 hvr-float-shadow">Cuisinier</a>
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Fermer</button>
+                                    <button type="button" class="btn btn-warning px-4" data-bs-dismiss="modal">Fermer</button>
                                 </div>
                             </div>
                         </div>
