@@ -30,7 +30,7 @@ if (isset($_POST['Inscrire_Atelier'])) {
             <label for="titre" class="form-label">Titre de l'atelier</label>
         </div>
         <div class="col-12 form-floating mb-3">
-            <textarea type="text-area" class="form-control" name="description" placeholder="" required style="height: 150px;"></textarea>
+            <textarea class="form-control" name="description" placeholder="" required style="height: 150px;"></textarea>
             <label for="description" class="form-label">Description</label>
         </div>
         <div class="col-md-6 form-floating mb-3">
