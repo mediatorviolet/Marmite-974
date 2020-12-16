@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["Inscrire_Cuisinier"])
 
 <div class="container d-flex justify-content-center mt-3  mb-3">
     
-<h2 class="display-4 text-center px-lg-5 py-lg-4 p-md-3 py-3" style="font-family:Robotto;" >CUISINIER</h2>
+<h2 class="display-4 text-center px-lg-5 py-lg-4 p-md-3 py-3" style="font-family:Roboto;" >CUISINIER</h2>
 </div>
 
 <div class="col-3 text-center mx-auto alert <?= $class_alert ?>"><?= $msg_alert ?></div>
