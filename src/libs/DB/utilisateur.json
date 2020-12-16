@@ -78,5 +78,15 @@
         "telephone": "",
         "etat": "actif",
         "ateliers": []
+    },
+    {
+        "id": "p_c42bbae6b7dafe0ea0ae9114931dc42a",
+        "nom": "test",
+        "prenom": "test",
+        "email": "sdgfqdsgfsdgds@test.fr",
+        "password": "test",
+        "telephone": "",
+        "etat": "actif",
+        "ateliers": []
     }
 ]

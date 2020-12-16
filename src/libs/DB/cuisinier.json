@@ -32,62 +32,12 @@
         "ateliers": []
     },
     {
-        "id": "c_7112c8ef3646b2cf21e4cc39809dc957",
-        "nom": "Ass",
-        "prenom": "Aaa",
-        "email": "toto.idiot@gmail.com",
-        "password": "",
-        "specialite": "",
-        "etat": "actif",
-        "ateliers": []
-    },
-    {
-        "id": "c_3d943afb54b4acdbe9f9a034326ffb2f",
-        "nom": "Ass",
-        "prenom": "Aaa",
-        "email": "toto.idiot@gmail.com",
-        "password": "",
-        "specialite": "",
-        "etat": "actif",
-        "ateliers": []
-    },
-    {
-        "id": "c_88696136845892a9cc9ff0afddfaa44a",
-        "nom": "Ass",
-        "prenom": "Aaa",
-        "email": "toto.idiot@gmail.com",
-        "password": "",
-        "specialite": "",
-        "etat": "actif",
-        "ateliers": []
-    },
-    {
-        "id": "c_3bf6cac338423fc89c84803975309510",
-        "nom": "Zeee",
-        "prenom": "Asszss",
-        "email": "toto.idiot@gmail.com",
-        "password": "",
-        "specialite": "",
-        "etat": "actif",
-        "ateliers": []
-    },
-    {
-        "id": "c_b425f732e398e894eb36e72aa3840b1d",
-        "nom": "Assssssssssssssssssssss",
-        "prenom": "Asszss",
-        "email": "toto.idiot@gmail.com",
-        "password": "",
-        "specialite": "",
-        "etat": "actif",
-        "ateliers": []
-    },
-    {
-        "id": "c_e49d9ca9099da9178b9b2cf5bffb22f9",
-        "nom": "test",
-        "prenom": "test",
-        "email": "test@test.fr",
+        "id": "c_260b936c215bb09bef2ed7da8ea86eb8",
+        "nom": "Test",
+        "prenom": "Testeur",
+        "email": "aaa@test.fr",
         "password": "test",
-        "specialite": "",
+        "specialite": "Testing",
         "etat": "actif",
         "ateliers": []
     }
