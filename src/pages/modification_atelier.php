@@ -15,7 +15,7 @@ $id = $_POST["id"];
 ?>
 
 <div class="container-fluid mt-5 form-ajout">
-    <h1 class="text-uppercase text-center">Modifier un atelier</h1>
+    <h1 class=" text-center" style="font-family:Roboto;">MODIFIER UN ATELIER</h1>
 
 
 

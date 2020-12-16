@@ -6,6 +6,7 @@ $class_alert = "";
 $msg_alert = "";
 $Nom_Particulier = $Prenom_Particulier = $Email_Particulier = $Telephone_Particulier = "";
 $Nom_Particulier_Err = $Prenom_Particulier_Err = $Email_Particulier_Err = $Password_Particulier_Err = $Confirmation_Pass_Particulier_Err = "";
+
 function validationForm()
 {
     global $class_alert;

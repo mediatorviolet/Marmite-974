@@ -25,3 +25,13 @@ html, body {
     color:white;
 }
 
+p{
+    font-family: Verdana;
+}
+.modal-header ,.modal-body, .modal-title{
+    font-family: Verdana !important;
+
+}
+
+
+
