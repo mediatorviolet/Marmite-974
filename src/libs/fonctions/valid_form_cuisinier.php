@@ -5,6 +5,7 @@ $class_alert = "";
 $msg_alert = "";
 $Nom_Cuisinier = $Prenom_Cuisinier = $Email_Cuisinier = $Specialite_Cuisinier = "";
 $Nom_Cuisinier_Err = $Prenom_Cuisinier_Err = $Email_Cuisinier_Err = $Password_Cuisinier_Err = $Confirmation_Pass_Cuisinier_Err = "";
+
 function validationForm()
 {
     global $class_alert;
