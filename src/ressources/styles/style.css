@@ -8,15 +8,20 @@ html, body {
     min-height: 100vh !important;
     display: flex !important;
     flex-direction: column !important;
+    font-family: Verdana;
 }
 
 .form-cuisinier, .espace-perso, .form-ajout, .form-modif, .form-particulier, .homepage, .tableau-cuisinier {
     flex: 1 !important;
     
 }
+.card-text{
+    font-family: Verdana, Geneva, Tahoma, sans-serif !important;
+}
 
 
-.charte{
-    color:#d05c62 !important ;
+.link{
+    font-family: Verdana;
+    color:white;
 }
 
