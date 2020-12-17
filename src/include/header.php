@@ -1,4 +1,6 @@
-<?php include "src/libs/fonctions/connection.php"; ?>
+<?php include "src/libs/fonctions/connection.php"; 
+connection();
+?>
 
 <nav class="navbar navbar-expand-lg navbar-light  px-3" style="background-color:#f3671f;">
     <div class="container-fluid">
@@ -42,7 +44,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="<?= connection() ?>" method="POST" class="col-9 mx-auto">
+                                    <form action="<?= $_SERVER["PHP_SELF"] ?>" method="POST" class="col-9 mx-auto">
                                         <div class="row mb-3 form-floating">
                                             <input type="email" name="email" class="form-control" id="email" placeholder="">
                                             <label for="email" class="col-form-label">Email</label>

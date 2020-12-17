@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION["cuisinier"])) {
+    $_SESSION["cuisinier"] = false;
+}
+if (!isset($_SESSION["particulier"])) {
+    $_SESSION["particulier"] = false;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,16 +31,6 @@
 </head>
 
 <body>
-    <?php
-    session_start();
-
-    if (!isset($_SESSION["cuisinier"])) {
-        $_SESSION["cuisinier"] = false;
-    }
-    if (!isset($_SESSION["particulier"])) {
-        $_SESSION["particulier"] = false;
-    }
-    ?>
     <?php include 'src/include/header.php' ?>
 
     <?php $page_ok = array(
