@@ -77,15 +77,11 @@ function doublonEmail()
     foreach ($tab_cuisinier as $key => $value) {
         if ($_POST['Email_Cuisinier'] == $value['email']) {
             return false;
-        } else {
-            return true;
         }
     }
     foreach($tab_utilisateur as $key => $value) {
         if ($_POST["Email_Cuisinier"] == $value["email"]) {
             return false;
-        } else {
-            return true;
         }
     }
 }
