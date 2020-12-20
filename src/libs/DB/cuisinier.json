@@ -22,5 +22,15 @@
             "a_8c68d109c6e06e41d1d89d812d33241a",
             "a_6d622ce31fb2948aa65f4c2b4fda6848"
         ]
+    },
+    {
+        "id": "c_00ee73ae9d41394bb047b3bbc3fae499",
+        "nom": "Lochet",
+        "prenom": "Bruno",
+        "email": "brunolochet@test.fr",
+        "password": "test",
+        "specialite": "Pas pape",
+        "etat": "actif",
+        "ateliers": []
     }
 ]
