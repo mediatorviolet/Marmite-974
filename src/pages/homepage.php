@@ -50,7 +50,7 @@ reservation();
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Fermer</button>
                                                         <button type="submit" name="reservation" class="btn btn-warning px-4" 
-                                                        <?= $val["Effectif_max"] - count($val["Participants"]) <= 0 || $_SESSION["cuisinier"] == true ? "disabled" : "" ?>>S'inscrire</button>
+                                                        <?= $val["Effectif_max"] - count($val["Participants"]) <= 0 || $_SESSION["cuisinier"] == true || in_array($_SESSION["particulier"]["id"], $val["Participants"]) ? "disabled" : "" ?>>S'inscrire</button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -58,7 +58,7 @@ reservation();
 
                                         <input type="hidden" name="id" value="<?= $key ?>">
                                         <button type="submit" name="reservation" class="btn btn-warning px-4" 
-                                        <?= $val["Effectif_max"] - count($val["Participants"]) <= 0 || $_SESSION["cuisinier"] == true ? "disabled" : "" ?>>S'inscrire</button>
+                                        <?= $val["Effectif_max"] - count($val["Participants"]) <= 0 || $_SESSION["cuisinier"] == true || in_array($_SESSION["particulier"]["id"], $val["Participants"]) ? "disabled" : "" ?>>S'inscrire</button>
                                     </form>
                                 </div>
                             </div>

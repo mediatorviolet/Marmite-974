@@ -18,9 +18,9 @@
         "telephone": "",
         "etat": "actif",
         "ateliers": [
-            "a_6d622ce31fb2948aa65f4c2b4fda6848",
             "a_8c68d109c6e06e41d1d89d812d33241a",
-            "a_18d9250b53cd4bd6016796f40b066929"
+            "a_18d9250b53cd4bd6016796f40b066929",
+            "a_6d622ce31fb2948aa65f4c2b4fda6848"
         ]
     }
 ]
