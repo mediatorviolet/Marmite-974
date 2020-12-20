@@ -1,6 +1,7 @@
 <?php
 include "src/libs/fonctions/valid_form_particulier.php";
 global $count;
+global $dblCuisinier, $dblParticulier;
 if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["Inscrire_Particulier"])) {
     validationForm();
 }
@@ -12,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["Inscrire_Particulier"
 
 </div>
 
-<div class="col-3 text-center mx-auto mb-0 alert <?= $class_alert ?>"><?= $msg_alert ?></div>
+<div class="col-3 text-center mx-auto alert <?= $class_alert ?>"><?= $msg_alert ?></div>
 
 <!--DAV 2 PARTICULIER FORMULAIRE INSCRIPTION-->
 

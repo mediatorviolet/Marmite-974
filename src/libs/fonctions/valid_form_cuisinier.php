@@ -7,6 +7,27 @@ $msg_alert = "";
 $Nom_Cuisinier = $Prenom_Cuisinier = $Email_Cuisinier = $Specialite_Cuisinier = "";
 $Nom_Cuisinier_Err = $Prenom_Cuisinier_Err = $Email_Cuisinier_Err = $Password_Cuisinier_Err = $Confirmation_Pass_Cuisinier_Err = "";
 
+// fonction verification doublon email (vérfication dans les 2 fichiers de données utilisateur et cuisinier)
+function doublonEmail()
+{
+    $data_cuisinier = 'src\libs\DB\cuisinier.json';
+    $data_utilisateur = "src/libs/DB/utilisateur.json";
+    $tab_cuisinier = json_decode(file_get_contents($data_cuisinier), true);
+    $tab_utilisateur = json_decode(file_get_contents($data_utilisateur), true);
+
+    foreach ($tab_cuisinier as $key => $value) {
+        if ($_POST['Email_Cuisinier'] == $value['email']) {
+            return false;
+        }
+    }
+    foreach($tab_utilisateur as $key => $value) {
+        if ($_POST["Email_Cuisinier"] == $value["email"]) {
+            return false;
+        }
+    }
+    return true;
+}
+
 function validationForm()
 {
     global $class_alert;
@@ -51,6 +72,7 @@ function validationForm()
     }
 
     // appelle la fonction doublonEmail et si retourne faux, indique un message d'erreur
+    doublonEmail();
     if (doublonEmail() == false) {
         $count ++;
         $Email_Cuisinier_Err = "Cet email est déjà utilisé.";
@@ -62,26 +84,5 @@ function validationForm()
         $class_alert = "alert-success";
         $msg_alert = "Compte créé avec succés.";
         ajout_json();
-    }
-}
-
-// fonction verification doublon email (vérfication dans les 2 fichiers de données utilisateur et cuisinier)
-function doublonEmail()
-{
-    $data_cuisinier = 'src\libs\DB\cuisinier.json';
-    $data_utilisateur = "src/libs/DB/utilisateur.json";
-    $tab_cuisinier = json_decode(file_get_contents($data_cuisinier), true);
-    $tab_utilisateur = json_decode(file_get_contents($data_utilisateur), true);
-    //$count = 0;
-
-    foreach ($tab_cuisinier as $key => $value) {
-        if ($_POST['Email_Cuisinier'] == $value['email']) {
-            return false;
-        }
-    }
-    foreach($tab_utilisateur as $key => $value) {
-        if ($_POST["Email_Cuisinier"] == $value["email"]) {
-            return false;
-        }
     }
 }

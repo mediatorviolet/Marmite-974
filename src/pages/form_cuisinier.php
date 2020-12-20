@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["Inscrire_Cuisinier"])
 <h2 class="display-4 text-center px-lg-5 py-lg-4 p-md-3 py-0" style="font-family:Roboto;" >CUISINIER</h2>
 </div>
 
-<div class="col-3 text-center mx-auto mb-0 alert <?= $class_alert ?>"><?= $msg_alert ?></div>
+<div class="col-3 text-center mx-auto alert <?= $class_alert ?>"><?= $msg_alert ?></div>
 
 <!-- VALUE sert a recuperer les post traiter en amont et les reafficher dans le champs. Evite à l'utilisateur de tout re ecrire 
 par sécurité on preferera que l'utilisateur retape son mot de passe à chaque fois pour la confirmation -->

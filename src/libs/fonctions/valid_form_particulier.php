@@ -7,8 +7,30 @@ $msg_alert = "";
 $Nom_Particulier = $Prenom_Particulier = $Email_Particulier = $Telephone_Particulier = "";
 $Nom_Particulier_Err = $Prenom_Particulier_Err = $Email_Particulier_Err = $Password_Particulier_Err = $Confirmation_Pass_Particulier_Err = "";
 
+// fonction verification doublon email ( vérfication dans les 2 fichiers de données user et cuisinier)
+function doublonEmail()
+{
+    $data_cuisinier = 'src/libs/DB/cuisinier.json';
+    $data_utilisateur = "src/libs/DB/utilisateur.json";
+    $tab_cuisinier = json_decode(file_get_contents($data_cuisinier), true);
+    $tab_utilisateur = json_decode(file_get_contents($data_utilisateur), true);
+
+    foreach ($tab_cuisinier as $value) {
+        if ($_POST['Email_Particulier'] == $value['email']) {
+            return false;
+        }
+    }
+    foreach($tab_utilisateur as $value) {
+        if ($_POST["Email_Particulier"] == $value["email"]) {
+            return false;
+        }
+    }
+    return true;
+}
+
 function validationForm()
 {
+    global $dblCuisinier, $dblParticulier;
     global $class_alert;
     global $msg_alert;
     global  $Email_Particulier, $Nom_Particulier, $Prenom_Particulier, $Telephone_Particulier;
@@ -48,6 +70,7 @@ function validationForm()
         $Confirmation_Pass_Particulier_Err = "Les mots de passes sont différents.";
         $class_alert = "alert-danger";
     }
+    doublonEmail();
     if (doublonEmail() == false) { // appelle la fonction doublonEmail et si retourne faux, indique un message d'erreur
         $count ++;
         $Email_Particulier_Err = "Cet email est déjà utilisé.";
@@ -60,26 +83,5 @@ function validationForm()
         $class_alert = "alert-success";
         $msg_alert = "Compte créé avec succés.";
         ajout_json();
-    }
-}
-
-// fonction verification doublon email ( vérfication dans les 2 fichiers de données user et cuisinier)
-function doublonEmail()
-{
-    $data_cuisinier = 'src\libs\DB\cuisinier.json';
-    $data_utilisateur = "src/libs/DB/utilisateur.json";
-    $tab_cuisinier = json_decode(file_get_contents($data_cuisinier), true);
-    $tab_utilisateur = json_decode(file_get_contents($data_utilisateur), true);
-    //$count = 0;
-
-    foreach ($tab_cuisinier as $key => $value) {
-        if ($_POST['Email_Particulier'] == $value['email']) {
-            return false;
-        }
-    }
-    foreach($tab_utilisateur as $key => $value) {
-        if ($_POST["Email_Particulier"] == $value["email"]) {
-            return false;
-        }
     }
 }

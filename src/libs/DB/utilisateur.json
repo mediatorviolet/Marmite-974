@@ -22,5 +22,15 @@
             "a_18d9250b53cd4bd6016796f40b066929",
             "a_6d622ce31fb2948aa65f4c2b4fda6848"
         ]
+    },
+    {
+        "id": "p_1b25ba35e8cea42b71ac9e4fbd8842cf",
+        "nom": "Bon",
+        "prenom": "Jean",
+        "email": "jeanbon@test.fr",
+        "password": "test",
+        "telephone": "06 92 00 00 00",
+        "etat": "actif",
+        "ateliers": []
     }
 ]
