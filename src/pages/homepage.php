@@ -49,16 +49,26 @@ reservation();
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary px-4" data-bs-dismiss="modal">Fermer</button>
-                                                        <button type="submit" name="reservation" class="btn btn-warning px-4" 
-                                                        <?= $val["Effectif_max"] - count($val["Participants"]) <= 0 || $_SESSION["cuisinier"] == true || in_array($_SESSION["particulier"]["id"], $val["Participants"]) ? "disabled" : "" ?>>S'inscrire</button>
+                                                        <?php if ($_SESSION["particulier"] == true or $_SESSION["cuisinier"] == true) { ?>
+                                                            <button type="submit" name="reservation" class="btn btn-warning px-4" <?= $val["Effectif_max"] - count($val["Participants"]) <= 0 || $_SESSION["cuisinier"] == true || in_array($_SESSION["particulier"]["id"], $val["Participants"]) ? "disabled" : "" ?>>S'inscrire</button>
+                                                        <?php } else {
+                                                            echo "<button type=\"button\" name=\"reservation\" class=\"btn btn-warning px-4\" data-bs-dismiss=\"modal\" data-bs-toggle=\"modal\" data-bs-target=\"#choix_inscription\">";
+                                                            echo "S'inscrire";
+                                                            echo "</button>";
+                                                        } ?>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
 
                                         <input type="hidden" name="id" value="<?= $key ?>">
-                                        <button type="submit" name="reservation" class="btn btn-warning px-4" 
-                                        <?= $val["Effectif_max"] - count($val["Participants"]) <= 0 || $_SESSION["cuisinier"] == true || in_array($_SESSION["particulier"]["id"], $val["Participants"]) ? "disabled" : "" ?>>S'inscrire</button>
+                                        <?php if ($_SESSION["particulier"] == true or $_SESSION["cuisinier"] == true) { ?>
+                                            <button type="submit" name="reservation" class="btn btn-warning px-4" <?= $val["Effectif_max"] - count($val["Participants"]) <= 0 || $_SESSION["cuisinier"] == true || in_array($_SESSION["particulier"]["id"], $val["Participants"]) ? "disabled" : "" ?>>S'inscrire</button>
+                                        <?php } else {
+                                            echo "<button type=\"button\" name=\"reservation\" class=\"btn btn-warning px-4\" data-bs-toggle=\"modal\" data-bs-target=\"#choix_inscription\">";
+                                            echo "S'inscrire";
+                                            echo "</button>";
+                                        } ?>
                                     </form>
                                 </div>
                             </div>

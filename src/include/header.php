@@ -13,7 +13,7 @@ connection();
             <div class="d-flex justify-content-end w-100 mt-md-0 mt-sm-3">
                 <?php if ($_SESSION["cuisinier"] == false and $_SESSION["particulier"] == false) { ?>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-light me-3 px-4 hvr-box-shadow-outset" data-bs-toggle="modal" data-bs-target="#choix_inscription">S'inscrire</button>
+                    <button type="button" class="btn btn-light me-3 px-4 hvr-box-shadow-outset" data-bs-toggle="modal" data-bs-target="#choix_inscription">Inscription</button>
                     <!-- Modal -->
                     <div class="modal fade" id="choix_inscription" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
