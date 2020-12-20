@@ -27,7 +27,7 @@ connection();
                                     <a href="index.php?page=form_cuisinier" class="btn btn-warning text-uppercase px-4 hvr-float-shadow">Cuisinier</a>
                                 </div>
                                 <div class="modal-footer d-flex justify-content-between">
-                                    <a href="" class="link-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#form_connexion">Déjà inscrit ? Connectez-vous !</a>
+                                    <a href="#" class="link-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#form_connexion">Déjà inscrit ? Connectez-vous !</a>
                                     <button type="button" class="btn btn-warning px-4" data-bs-dismiss="modal">Fermer</button>
                                 </div>
                             </div>
