@@ -8,16 +8,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["Inscrire_Particulier"
 
 <div class="container d-flex justify-content-center mt-3  mb-3">
 
-<h2 class="display-4 text-center px-lg-5 py-lg-4 p-md-3 py-3" style="font-family:Roboto;" >PARTICULIER</h2>
+<h2 class="display-4 text-center px-lg-5 py-lg-4 p-md-3 py-0" style="font-family:Roboto;" >PARTICULIER</h2>
 
 </div>
 
-<div class="col-3 text-center mx-auto alert <?= $class_alert ?>"><?= $msg_alert ?></div>
+<div class="col-3 text-center mx-auto mb-0 alert <?= $class_alert ?>"><?= $msg_alert ?></div>
 
 <!--DAV 2 PARTICULIER FORMULAIRE INSCRIPTION-->
 
 
-<div class="container col-8 pb-5 form-particulier">
+<div class="container col-lg-8 col-md-12 col-11 pb-5 form-particulier">
 
     <form method="POST" action="" class="form" id="Form_Particulier">
 
@@ -73,8 +73,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["Inscrire_Particulier"
             </div>
         </div>
 
-        <div class="col-sm-10 offset-2">
-            <button type="submit" name="Inscrire_Particulier" class="btn  btn-warning px-4">S'inscrire</button>
+        <div class="col-sm-10 offset-md-2">
+            <button type="submit" name="Inscrire_Particulier" class="btn btn-warning px-4 mt-2">S'inscrire</button>
         </div>
         <div class="form-group row">
             <div class="col-md-9">
@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["Inscrire_Particulier"
         </div>
 
     </form>
-    <div class="col-sm-8 offset-2">
-        <p><i>(Les champs présentant le symbole * sont obligatoires.)</i></p>
+    <div class="col-sm-8 offset-md-2">
+        <p><i>(Les champs présentant le symbole * sont obligatoires)</i></p>
     </div>
 </div>
