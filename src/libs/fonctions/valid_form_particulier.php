@@ -16,10 +16,10 @@ function doublonEmail()
         die('Erreur : ' . $e->getMessage());
     }
 
-    $req = $bdd->prepare('SELECT EXISTS (SELECT email FROM utilisateur WHERE email = :email)');
+    $req = $bdd->prepare('SELECT EXISTS (SELECT email FROM utilisateur WHERE email = :email) AS email_exists');
     $req->execute(array('email' => $_POST["Email_Particulier"]));
-    $req->fetch();
-    if ($req) {
+    $email = $req->fetch();
+    if ($email['email_exists']) {
         return false;
     }
     return true;

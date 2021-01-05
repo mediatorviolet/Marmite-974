@@ -14,22 +14,7 @@ function ajout_json()
 
     //envoi des données des formulaires vers les fichiers json appropriés
     if (isset($_POST['Inscrire_Particulier'])) {
-        // $data_file = 'src/libs/DB/utilisateur.json';
-        // $json_array = json_decode(file_get_contents($data_file), true);
-        // $id = "p_" . md5(uniqid(rand(), true));
-        // $_POST["id_particulier"] = $id;
-        // $particulier_post = array(
-        //     "id" => $_POST["id_particulier"],
-        //     "nom" => $_POST["Nom_Particulier"],
-        //     "prenom" => $_POST["Prenom_Particulier"],
-        //     "email" => $_POST["Email_Particulier"],
-        //     "password" => $_POST["Password_Particulier"],
-        //     "telephone" => $_POST["Telephone_Particulier"],
-        //     "etat" => "actif",
-        //     "ateliers" => array()
-        // );
-        // array_push($json_array, $particulier_post);
-        // file_put_contents($data_file, json_encode($json_array));
+        
         $req = $bdd->prepare('INSERT INTO utilisateur(id_role, nom, prenom, email, password) VALUES(2, :nom, :prenom, :email, :password)');
         $req->execute(array(
             'nom' => $_POST["Nom_Particulier"],
@@ -45,23 +30,6 @@ function ajout_json()
         $response->closeCursor();
 
     } elseif (isset($_POST['Inscrire_Cuisinier'])) {
-        // $data_file = 'src/libs/DB/cuisinier.json';
-        // $json_array = json_decode(file_get_contents($data_file), true);
-        // $id = "c_" . md5(uniqid(rand(), true));
-        // $_POST["id_cuisinier"] = $id;
-        // $cuisinier_post = array(
-        //     "id" => $_POST["id_cuisinier"],
-        //     "nom" => $_POST["Nom_Cuisinier"],
-        //     "prenom" => $_POST["Prenom_Cuisinier"],
-        //     "email" => $_POST["Email_Cuisinier"],
-        //     "password" => $_POST["Password_Cuisinier"],
-        //     "specialite" => $_POST["Specialite_Cuisinier"],
-        //     "etat" => "actif",
-        //     // repere
-        //     "ateliers" => array()
-        // );
-        // array_push($json_array, $cuisinier_post);
-        // file_put_contents($data_file, json_encode($json_array));
 
         $req = $bdd->prepare('INSERT INTO utilisateur(id_role, nom, prenom, email, password) VALUES(1, :nom, :prenom, :email, :password)');
         $req->execute(array(
@@ -76,7 +44,7 @@ function ajout_json()
         $req = $bdd->prepare('INSERT INTO cuisinier(id_utilisateur, specialite) VALUES(:id_utilisateur, :specialite)');
         $req->execute(array('id_utilisateur' => $id_utilisateur['id_utilisateur'], 'specialite' => $_POST["Specialite_Cuisinier"]));
         $response->closeCursor();
-        
+
     } elseif (isset($_POST['Inscrire_Atelier'])) {
         $data_file = 'src/libs/DB/atelier.json';
         $json_array = json_decode(file_get_contents($data_file), true);
