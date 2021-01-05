@@ -69,7 +69,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["Inscrire_Particulier"
             <label for="Telephone_Particulier" class="col-sm-2 col-form-label">Téléphone : </label>
             <div class="col-sm-8">
                 <input type="tel" class="form-control" id="Telephone_Particulier" name="Telephone_Particulier" placeholder="Exemple: 06 92 00 00 00" 
-                pattern="[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2} [0-9]{2}" value="<?= $Telephone_Particulier ?>">
+                 value="<?= $Telephone_Particulier ?>">
 
             </div>
         </div>

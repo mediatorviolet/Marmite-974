@@ -15,6 +15,14 @@ reservation();
     }
     if ($count > 0) { ?>
         <h2 class="display-4 text-center px-lg-5 py-lg-4 p-md-3 py-3" style="font-family:Roboto;">NOS ATELIERS</h2>
+        <?php
+        // $array = [0 => "a", 1 => "b", 2 => "c", 3 => [
+        //     "d", "e"
+        // ]];
+        // unset($array[3][0]);
+        // $array[3] = array_values($array[3]);
+        // print_r($array);
+        ?>
         <!-- On balaye le fichier atelier.json et on affiche la liste des ateliers actifs -->
         <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
             <?php foreach ($json_array as $key => $val) : ?>

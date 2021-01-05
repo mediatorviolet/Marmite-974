@@ -5,11 +5,32 @@ $data_atelier = "src/libs/DB/atelier.json";
 $atelier_array = json_decode(file_get_contents($data_atelier), true);
 
 $cle = research($utilisateur_array, $_SESSION["particulier"]["id"], "id"); // On cherche l'id du particulier qui s'est inscrit à l'atelier
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" and isset($_POST["desinscritpion"])) {
+    desinscription();
+}
 ?>
 
 <div class="bg-dark p-5 mt-5">
     <h2 class="display-4 text-light" style="font-family:Roboto;">Bienvenue <?= $_SESSION["particulier"]["prenom"] ?></h2>
 </div>
+<?php
+// print_r($_SESSION["particulier"]["id"]);
+// $clef = research($utilisateur_array, $_SESSION["particulier"]["id"], "id");
+// echo "<br>" . $clef . "<br>";
+// print_r($utilisateur_array[$clef]["ateliers"]);
+// unset($utilisateur_array[$clef]["ateliers"][1]);
+// echo "<br>";
+// $utilisateur_array[$clef]["ateliers"] = array_values($utilisateur_array[$clef]["ateliers"]);
+// print_r($utilisateur_array[$clef]["ateliers"]);
+// $cle = research($utilisateur_array, $_SESSION["particulier"]["id"], "id");
+// $id_atelier = "a_6d622ce31fb2948aa65f4c2b4fda6848";
+// $cle_atelier = array_search($id_atelier, $utilisateur_array[$cle]["ateliers"]);
+// print_r($utilisateur_array[$cle]["ateliers"]);
+// echo "<br>" . $cle_atelier . "<br>";
+// unset($utilisateur_array[$cle]["ateliers"][$cle_atelier]);
+// print_r($utilisateur_array[$cle]["ateliers"]);
+?>
 <div class="container-fluid p-lg-4 p-md-3 espace-perso">
     <?php
     if (!empty($utilisateur_array[$cle]["ateliers"])) { ?>
@@ -34,7 +55,8 @@ $cle = research($utilisateur_array, $_SESSION["particulier"]["id"], "id"); // On
                             <p>Prix : <strong><?= $atelier_array[$key]["Prix"] ?>€</strong></p>
                             <p style="text-align: justify;"><?= $atelier_array[$key]["Description"] ?></p>
                             <div class="text-end">
-                                <form action="" method="post">
+                                <form action="<?= $_SERVER["PHP_SELF"] ?>" method="post">
+                                    <input type="hidden" name="indice" value="<?= $atelier_array[$key]["Id"] ?>">
                                     <button type="submit" name="desinscritpion" class="btn btn-warning px-4">Se désinscrire</button>
                                 </form>
                             </div>

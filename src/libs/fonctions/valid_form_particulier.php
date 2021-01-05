@@ -10,20 +10,17 @@ $Nom_Particulier_Err = $Prenom_Particulier_Err = $Email_Particulier_Err = $Passw
 // fonction verification doublon email ( vérfication dans les 2 fichiers de données user et cuisinier)
 function doublonEmail()
 {
-    $data_cuisinier = 'src/libs/DB/cuisinier.json';
-    $data_utilisateur = "src/libs/DB/utilisateur.json";
-    $tab_cuisinier = json_decode(file_get_contents($data_cuisinier), true);
-    $tab_utilisateur = json_decode(file_get_contents($data_utilisateur), true);
-
-    foreach ($tab_cuisinier as $value) {
-        if ($_POST['Email_Particulier'] == $value['email']) {
-            return false;
-        }
+    try {
+        $bdd = new PDO('mysql:host=localhost;dbname=marmite974;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
     }
-    foreach($tab_utilisateur as $value) {
-        if ($_POST["Email_Particulier"] == $value["email"]) {
-            return false;
-        }
+
+    $req = $bdd->prepare('SELECT EXISTS (SELECT email FROM utilisateur WHERE email = :email)');
+    $req->execute(array('email' => $_POST["Email_Particulier"]));
+    $req->fetch();
+    if ($req) {
+        return false;
     }
     return true;
 }

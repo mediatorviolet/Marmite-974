@@ -18,7 +18,7 @@ $Nom_Particulier_Err = $Prenom_Particulier_Err = $Email_Particulier_Err = $Passw
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["Nom_Cuisinier"])) {
-        $Nom_Cuisinier_Err = "Veuillez entrer votre NOM.";
+        $Nom_Cuisinier_Err = "Veuillez entrer votre nom.";
     }
     if (empty($_POST["Prenom_Cuisinier"])) {
         $Prenom_Cuisinier_Err = "Veuillez entrer votre prénom.";
@@ -39,25 +39,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-  
-      
-    
-
-
-
-
-
-
-
-
-
-
-
-
 // DAV ( 2 )POUR PARTICULIER Vérification des champs vides afin d'éviter les envoie coté serveur meme si les champs sont vides
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (empty($_POST["Nom_Particulier"])) {
-        $Nom_Particulier_Err = "Veuillez entrer votre .";
+        $Nom_Particulier_Err = "Veuillez entrer votre nom.";
     }
     if (empty($_POST["Prenom_Particulier"])) {
         $Prenom_Particulier_Err = "Veuillez entrer votre prénom.";
@@ -149,26 +134,43 @@ function validationForm_Particulier()
 function Inscription_Cuisinier()
 {
     // Création d'un id unique pour chaque inscription cuisinier
-    $id_cuisinier = "cuisinier_" . md5(uniqid(rand(), true));
-    $_POST["id"] = $id_cuisinier;
+    // $id_cuisinier = "cuisinier_" . md5(uniqid(rand(), true));
+    // $_POST["id"] = $id_cuisinier;
 
-    // Ajout du de l'article dans le tableau $json_array
-    $Post_Array_Cuisinier = array(
-        "id" => $id_cuisinier,
-        "Nom_Cuisinier" => ($_POST["Nom_Cuisinier"]),
-        "Prenom_Cuisinier" => ($_POST["Prenom_Cuisinier"]),
-        "Email_Cuisinier" => ($_POST["Email_Cuisinier"]),
-        "Password_Cuisinier" => ($_POST["Password_Cuisinier"]),
-        "Specialite_Cuisinier" => ($_POST["Specialite_Cuisinier"]),
-        "etat" => "inactif",
-    );
+    // // Ajout du de l'article dans le tableau $json_array
+    // $Post_Array_Cuisinier = array(
+    //     "id" => $id_cuisinier,
+    //     "Nom_Cuisinier" => ($_POST["Nom_Cuisinier"]),
+    //     "Prenom_Cuisinier" => ($_POST["Prenom_Cuisinier"]),
+    //     "Email_Cuisinier" => ($_POST["Email_Cuisinier"]),
+    //     "Password_Cuisinier" => ($_POST["Password_Cuisinier"]),
+    //     "Specialite_Cuisinier" => ($_POST["Specialite_Cuisinier"]),
+    //     "etat" => "inactif",
+    // );
 
 
-    // A effacer plus tard. test si les post fonctionne
-    $Data_File_Cuisinier = 'src/libs/DB/cuisinier.json';
-    $Json_Array_Cuisinier = json_decode(file_get_contents($Data_File_Cuisinier), true);
-    array_unshift($Json_Array_Cuisinier, $Post_Array_Cuisinier);
-    file_put_contents($Data_File_Cuisinier, json_encode($Json_Array_Cuisinier));
+    // // A effacer plus tard. test si les post fonctionne
+    // $Data_File_Cuisinier = 'src/libs/DB/cuisinier.json';
+    // $Json_Array_Cuisinier = json_decode(file_get_contents($Data_File_Cuisinier), true);
+    // array_unshift($Json_Array_Cuisinier, $Post_Array_Cuisinier);
+    // file_put_contents($Data_File_Cuisinier, json_encode($Json_Array_Cuisinier));
+
+    try {
+        $bdd = new PDO('mysql:host=localhost;dbname=marmite974;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+
+    $req = $bdd->prepare('INSERT INTO utilisateur(id_role, nom, prenom, email, password) VALUES(1, :nom, :prenom, :email, :password)');
+    $req->execute(array(
+        'nom' => $_POST["Nom_Cuisinier"],
+        'prenom' => $_POST["Prenom_Cuisinier"],
+        'email' => $_POST["Email_Cuisinier"],
+        'password' => $_POST["Password_Cuisinier"]
+    ));
+
+    $req = $bdd->prepare('INSERT INTO cuisinier(specialite) VALUES(:specialite)');
+    $req->execute(array('specialite' => $_POST["Specialite_Cuisinier"]));
 }
 
 
